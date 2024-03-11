@@ -26,11 +26,13 @@
 .fa-sun:before {
     content: "\f185";
     margin-right: 39px;
+    color: yellow;
 }
 
 .fa-moon:before {
     content: "\f186";
     margin-right: 39px;
+    color: white;
 }
 
 img{

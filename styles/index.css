@@ -16,7 +16,21 @@
     --color-gradient: linear-gradient(90deg, var(--color-purple-50), var(--color-purple-100), var(--color-purple-200));
 }
 
+.icon{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
 
+.fa-moon:before {
+    content: "\f186";
+    margin-right: 39px;
+}
+
+img{
+    margin: 0 auto;
+}
 
 /* Header */
 header {

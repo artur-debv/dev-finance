@@ -1,11 +1,18 @@
-const modeIcon = document.getElementById('mode_icon');
-let isDarkMode = true; // Inicialmente, assume que está no modo escuro
+const mode = document.getElementById('mode_icon');
 
-modeIcon.addEventListener('click', () => {
-    isDarkMode = !isDarkMode; // Alterna entre modo escuro e claro
-    updateIcon(); // Atualiza o ícone
+mode.addEventListener('click', () => {
+    const form = document.querySelector('.darkmode');
+
+    if(mode.classList.contains('fa-moon')) {
+        mode.classList.remove('fa-moon');
+        mode.classList.add('fa-sun');
+
+        form.classList.add('dark');
+        return ;
+    }
+    
+    mode.classList.remove('fa-sun');
+    mode.classList.add('fa-moon');
+
+    form.classList.remove('dark');
 });
-
-function updateIcon() {
-    modeIcon.className = isDarkMode ? 'fa-solid fa-moon' : 'fa-solid fa-sun'; // Lua ou sol
-}

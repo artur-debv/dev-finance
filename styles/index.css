@@ -20,8 +20,10 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
 }
+
+
+
 
 .fa-sun:before {
     content: "\f185";
@@ -258,4 +260,55 @@ footer {
 
     padding: 4rem 0 2rem;
     text-align: center;
+}
+
+.dark .card{
+    background-color: #000;
+}
+
+.dark span{
+    color: white;
+}
+
+.dark .card p{
+    color: white;
+}
+
+.dark .card.total.positive{
+    background-color: black;
+}
+
+.dark table thead tr th:first-child, table tbody tr td:first-child{
+    background-color: #000;
+    color: white;
+}
+
+.dark table thead th{
+    background-color: #000;
+    color: white;
+}
+
+.dark table thead tr th:last-child, table tbody tr td:last-child{
+    color: white;
+}
+
+.dark header{
+    background-color: #000;
+}
+
+.dark .float-button{
+    background-color: #000;
+}
+
+.dark button{
+    background-color: #000;
+}
+
+.dark .button.cancel{
+    border: 1px solid black;
+    color: black;
+}
+
+.dark h2{
+    color: black;
 }

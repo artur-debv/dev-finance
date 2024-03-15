@@ -263,7 +263,7 @@ footer {
 }
 
 .dark .card{
-    background-color: #1F2020;
+    background-color: #282828;
 }
 
 .dark span{
@@ -275,16 +275,16 @@ footer {
 }
 
 .dark .card.total.positive{
-    background-color: #1F2020;
+    background-color: #282828;
 }
 
 .dark table thead tr th:first-child, table tbody tr td:first-child{
-    background-color: #1F2020;
+    background-color: #282828;
     color: white;
 }
 
 .dark table thead th{
-    background-color: #1F2020;
+    background-color:#282828;
     color: white;
 }
 
@@ -293,11 +293,11 @@ footer {
 }
 
 .dark header{
-    background-color: #1F2020;
+    background-color: #3C3C3C;
 }
 
 .dark .float-button{
-    background-color: #1F2020;
+    background-color: #282828;
 }
 
 .dark button{

@@ -183,7 +183,7 @@ button:hover {
     background: var(--normal-green);
 }
 .card.total.negative {
-    background: var(--normal-red);
+    background: #8d041a;
 }
 
 

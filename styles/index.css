@@ -310,3 +310,14 @@ footer {
 .select #sidebar{
     background-color: #282828;
 }
+
+.dark table thead tr th:first-child, table tbody tr td:first-child{
+    background-color:#282828;
+    color: white;
+}
+
+
+.dark table tbody td{
+    background-color:#282828;
+    color: white;
+}

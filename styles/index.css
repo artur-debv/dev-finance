@@ -235,7 +235,7 @@ td.income {
     color: var(--money-green);
 }
 td.expense {
-    color: var(--money-red);
+    color: var(--light-blue);
 }
 
 

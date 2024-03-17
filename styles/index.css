@@ -39,6 +39,7 @@
 
 img{
     margin: 0 auto;
+    filter: grayscale(100%);
 }
 
 /* Header */
@@ -272,7 +273,9 @@ footer {
     background-color: #282828;
 }
 
-
+.description{
+    background-color: white;
+}
 
 .dark table thead th{
     background-color:#282828;
@@ -308,10 +311,7 @@ footer {
     background-color: #282828;
 }
 
-.dark table thead tr th:first-child, table tbody tr td:first-child{
-    background-color:#282828;
-    color: white;
-}
+
 
 
 .dark table tbody td{

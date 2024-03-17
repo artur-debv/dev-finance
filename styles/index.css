@@ -225,7 +225,7 @@ table thead th {
 table tbody td {
     background: white;
     border-spacing: 0 0.5rem; /* Vertical | Horizontal */
-
+    text-align: center;
     padding: 1rem 2rem;
 }
 td.description {

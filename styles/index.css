@@ -313,6 +313,7 @@ footer {
     color: #1F2020;
 }
 
-.dark .mode{
+
+.mode #sidebar {
     background-color: red;
 }

@@ -5,7 +5,6 @@ mode.addEventListener('click', () => {
     const form2 = document.querySelector('.mode');
 
 
-    console.log
 
     if(mode.classList.contains('fa-moon')) {
         mode.classList.remove('fa-moon');
@@ -13,6 +12,7 @@ mode.addEventListener('click', () => {
 
         form.classList.add('dark');
         form2.classList.add('mode');
+        console.log(form2)
         return ;
     }
     

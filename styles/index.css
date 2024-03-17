@@ -273,8 +273,8 @@ footer {
 }
 
 .dark table thead tr th:first-child, table tbody tr td:first-child{
-    background-color: #282828;
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 .dark table thead th{

@@ -220,7 +220,7 @@ table thead th {
     font-weight: normal;
     padding: 1rem 2rem;
 
-    text-align: left;
+    text-align: center;
 }
 table tbody td {
     background: white;

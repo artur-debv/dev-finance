@@ -113,7 +113,7 @@ main{
     border-radius: 8px;
     text-align: start;
     cursor: pointer;
-    background-color: black;
+    background-color: rgb(26 24 24);
 }
 
 #open_btn {

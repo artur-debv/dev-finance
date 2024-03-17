@@ -312,3 +312,7 @@ footer {
 .dark h2{
     color: #1F2020;
 }
+
+.select #sidebar{
+    background-color: red;
+}

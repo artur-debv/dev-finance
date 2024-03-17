@@ -221,12 +221,6 @@ table thead th {
 
     text-align: left;
 }
-table tbody tr {
-    opacity: 0.7;
-}
-table tbody tr:hover {
-    opacity: 1;
-}
 table tbody td {
     background: white;
     border-spacing: 0 0.5rem; /* Vertical | Horizontal */

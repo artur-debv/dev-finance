@@ -39,6 +39,7 @@
 
 img{
     margin: 0 auto;
+    filter: grayscale(100%);
 }
 
 /* Header */
@@ -182,7 +183,7 @@ button:hover {
     background: var(--normal-green);
 }
 .card.total.negative {
-    background: var(--normal-red);
+    background: #8d041a;
 }
 
 
@@ -219,18 +220,12 @@ table thead th {
     font-weight: normal;
     padding: 1rem 2rem;
 
-    text-align: left;
-}
-table tbody tr {
-    opacity: 0.7;
-}
-table tbody tr:hover {
-    opacity: 1;
+    text-align: center;
 }
 table tbody td {
     background: white;
     border-spacing: 0 0.5rem; /* Vertical | Horizontal */
-
+    text-align: center;
     padding: 1rem 2rem;
 }
 td.description {
@@ -240,13 +235,15 @@ td.income {
     color: var(--money-green);
 }
 td.expense {
-    color: var(--money-red);
+    color: var(--light-blue);
 }
 
 
 
 img.remove {
     cursor: pointer;
+    display: block;
+    margin: 0 auto;
 }
 
 
@@ -278,9 +275,8 @@ footer {
     background-color: #282828;
 }
 
-.dark table thead tr th:first-child, table tbody tr td:first-child{
-    background-color: #282828;
-    color: white;
+.description{
+    background-color: white;
 }
 
 .dark table thead th{
@@ -311,4 +307,16 @@ footer {
 
 .dark h2{
     color: #1F2020;
+}
+
+.select #sidebar{
+    background-color: #282828;
+}
+
+
+
+
+.dark table tbody td{
+    background-color:#282828;
+    color: white;
 }

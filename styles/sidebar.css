@@ -113,14 +113,14 @@ main{
     border-radius: 8px;
     text-align: start;
     cursor: pointer;
-    background-color: black;
+    background-color: rgb(26 24 24);
 }
 
 #open_btn {
     position: absolute;
     top: 30px;
     right: -10px;
-    background-color: #4f46e5;
+    background-color: black;
     color: #e3e9f7;
     border-radius: 100%;
     width: 20px;

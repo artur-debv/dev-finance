@@ -21,7 +21,7 @@ main{
     justify-content: space-between;
     background-color: #ffffff;
     height: 100vh;
-    position: relative;
+    position: fixed;
     transition: all .5s;
     min-width: 82px;
     z-index: 2;

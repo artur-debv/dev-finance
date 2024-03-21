@@ -137,6 +137,7 @@ header{
     border-radius: 30px;
     outline: none;
     transition: .2s ease;
+    margin-bottom: 20px;
 }
 .input-field:hover, .input-field:focus{
     background: rgba(255, 255, 255, 0.25);

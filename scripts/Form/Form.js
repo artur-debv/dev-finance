@@ -28,45 +28,19 @@ function myMenuFunction() {
         y.style.opacity = 1;
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const mode = document.getElementById('mode_icon');
-        const form = document.querySelector('.darkmode');
-        const form2 = document.querySelector('.mode');
-    
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                mode.classList.remove('fa-moon');
-                mode.classList.add('fa-sun');
-                form.classList.add('dark');
-                form2.classList.add('select');
-            } else {
-                mode.classList.remove('fa-sun');
-                mode.classList.add('fa-moon');
-                form.classList.remove('dark');
-                form2.classList.remove('select');
-            }
-        }
-    
-        function toggleTheme() {
-            const currentTheme = localStorage.getItem('themes') || 'light';
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            localStorage.setItem('themes', newTheme);
-            setTheme(newTheme);
-        }
-    
-        function setThemeFromPreference() {
-            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-            const systemPreference = prefersDarkScheme.matches ? 'dark' : 'light';
-            if (!localStorage.getItem('themes')) {
-                localStorage.setItem('themes', systemPreference);
-            }
-            setTheme(localStorage.getItem('themes'));
-        }
-    
-        setThemeFromPreference();
-    
-        mode.addEventListener('click', () => {
-            toggleTheme();
-        });
-    });
+    // Referência ao elemento do ícone
+var modeIcon = document.getElementById('mode_icon');
+
+// Função para alternar entre os ícones moon e sun
+function toggleModeIcon(mode) {
+    if (mode) {
+        // Se o modo escuro está ativado
+        modeIcon.classList.remove('fa-moon');
+        modeIcon.classList.add('fa-sun');
+    } else {
+        // Se o modo claro está ativado
+        modeIcon.classList.remove('fa-sun');
+        modeIcon.classList.add('fa-moon');
+    }
+}
     

@@ -126,6 +126,12 @@ header{
     display: flex;
     gap: 10px;
 }
+
+.icon{
+ display: flex;
+ align-items: center;
+}
+
 .input-field{
     font-size: 15px;
     background: rgba(255, 255, 255, 0.2);

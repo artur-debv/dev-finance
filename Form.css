@@ -186,6 +186,13 @@ header{
 .two label a:hover{
     text-decoration: underline;
 }
+
+.icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media only screen and (max-width: 786px){
     .nav-button{
         display: none;

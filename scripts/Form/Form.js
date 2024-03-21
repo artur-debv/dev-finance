@@ -45,5 +45,6 @@ function myMenuFunction() {
                 form.classList.remove('dark');
                 form2.classList.remove('select');
             }
+        }
     });
     

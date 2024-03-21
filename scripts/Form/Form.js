@@ -33,7 +33,6 @@ function myMenuFunction() {
         const form = document.querySelector('.darkmode');
         const form2 = document.querySelector('.mode');
     
-        function setTheme(theme) {
             if (theme === 'dark') {
                 mode.classList.remove('fa-moon');
                 mode.classList.add('fa-sun');
@@ -46,5 +45,5 @@ function myMenuFunction() {
                 form2.classList.remove('select');
             }
         }
-    });
+   );
     

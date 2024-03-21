@@ -255,6 +255,11 @@ header{
     }
 }
 
+.fa-sun:before {
+    content: "\f185";
+    color: yellow;
+}
+
 img{
     display: block;
     margin: 0 auto;

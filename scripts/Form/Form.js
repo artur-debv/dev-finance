@@ -29,18 +29,14 @@ function myMenuFunction() {
     }
 
     // Referência ao elemento do ícone
-var modeIcon = document.getElementById('mode_icon');
+const modeIcon = document.getElementById('mode_icon');
 
-// Função para alternar entre os ícones moon e sun
-function toggleModeIcon(mode) {
-    if (mode) {
-        // Se o modo escuro está ativado
+// Função para alternar entre os ícones moon e sun{
+    if (modeIcon) {
         modeIcon.classList.remove('fa-moon');
         modeIcon.classList.add('fa-sun');
     } else {
-        // Se o modo claro está ativado
         modeIcon.classList.remove('fa-sun');
         modeIcon.classList.add('fa-moon');
     }
-}
     

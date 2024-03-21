@@ -270,3 +270,7 @@ img{
 header{
    font-size: 14px;
 }
+
+.dark .wrapper{
+    background-color: #282828;
+}

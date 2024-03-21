@@ -33,6 +33,7 @@ function myMenuFunction() {
         const form = document.querySelector('.darkmode');
         const form2 = document.querySelector('.mode');
     
+        function setTheme(theme) {
             if (theme === 'dark') {
                 mode.classList.remove('fa-moon');
                 mode.classList.add('fa-sun');
@@ -45,5 +46,27 @@ function myMenuFunction() {
                 form2.classList.remove('select');
             }
         }
-   );
+    
+        function toggleTheme() {
+            const currentTheme = localStorage.getItem('themes') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            localStorage.setItem('themes', newTheme);
+            setTheme(newTheme);
+        }
+    
+        function setThemeFromPreference() {
+            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+            const systemPreference = prefersDarkScheme.matches ? 'dark' : 'light';
+            if (!localStorage.getItem('themes')) {
+                localStorage.setItem('themes', systemPreference);
+            }
+            setTheme(localStorage.getItem('themes'));
+        }
+    
+        setThemeFromPreference();
+    
+        mode.addEventListener('click', () => {
+            toggleTheme();
+        });
+    });
     

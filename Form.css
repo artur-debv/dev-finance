@@ -275,7 +275,6 @@ header{
 .dark .wrapper{
     background-color: #282828;
 }
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
 .modal {
@@ -308,11 +307,7 @@ header{
 
 /* Estilos extras */
 
-body {
-  background: #fafafa;
-  height: 90vh;
-  padding: 0 1rem;
-}
+
 
 body,
 button {

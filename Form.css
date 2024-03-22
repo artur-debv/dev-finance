@@ -275,3 +275,73 @@ header{
 .dark .wrapper{
     background-color: #282828;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+.modal {
+  background: #fafafa;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+  width: min(37rem, 80%);
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, .7);
+}   
+
+.modal h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+  color: #0d114f;
+}
+
+.modal p {
+  margin-bottom: 1.5rem;
+  color: #4d5e77;
+}
+
+.modal button {
+  cursor: pointer;
+}
+
+/* Estilos extras */
+
+body {
+  background: #fafafa;
+  height: 90vh;
+  padding: 0 1rem;
+}
+
+body,
+button {
+  font-family: "Poppins", sans-serif;
+}
+
+.btn {
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  background: #3485ff;
+  color: #fafafa;
+  transition: filter 0.2s;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+.btn.close {
+  display: flex;
+  align-items: center;
+  clip-path: circle();
+  position: absolute;
+  top: 2rem;  
+  right: 2rem;
+  height: 1rem;
+  aspect-ratio: 1/1;
+}
+
+.btn:hover, .btn:focus, button:hover, button:focus {
+  filter: brightness(1.2);
+}

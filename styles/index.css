@@ -314,6 +314,9 @@ footer {
 }
 
 
+.dark #user{
+    color: white;
+}
 
 
 .dark table tbody td{

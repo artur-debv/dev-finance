@@ -43,7 +43,6 @@ main{
     height: 50px;
     object-fit: cover;
     border-radius: 20px;
-    color: white;
 }
 
 #user_infos {

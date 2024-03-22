@@ -110,6 +110,7 @@ body{
     padding: 10px 0;
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
 .top span a{
     font-weight: 500;

@@ -329,3 +329,7 @@ footer {
     align-items: center;
     gap: 9px;
 }
+
+.login{
+    color: white;
+}

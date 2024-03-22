@@ -23,4 +23,9 @@
         display: none;
     }
 }
-   
+
+@media (max-width: 1000px) {
+     #user_avatar{
+        color: white;
+    }
+}

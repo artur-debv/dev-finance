@@ -323,3 +323,9 @@ footer {
     background-color:#282828;
     color: white;
 }
+
+.icons_account{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}

@@ -68,7 +68,6 @@ h2 {
 
 /* Links & Buttons */
 a {
-   color: var(--link-dark-green);
    text-decoration: none;
 }
 a:hover {

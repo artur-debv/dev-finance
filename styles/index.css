@@ -70,9 +70,7 @@ h2 {
 a {
    text-decoration: none;
 }
-a:hover {
-    color: var(--link-light-green);
-}
+
 .button.new {
     display: inline-block;
     margin-bottom: 0.8rem;

@@ -261,6 +261,11 @@ header{
     color: yellow;
 }
 
+.fa-moon:before {
+    content: "\f186";
+    margin-right: 6px;
+}
+
 img{
     display: block;
     margin: 0 auto;

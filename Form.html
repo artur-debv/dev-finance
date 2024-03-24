@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="icon" href="assets/user.png" type="image/x-icon">
+    <link rel="icon" href="assets/user.png" type="image/x-icon">
     <title>Login</title>
 </head>
 
 <body>
     <div class="modes">
-        
+
         <div class="wrapper">
-        
+
 
             <!----------------------------- Form box ----------------------------------->
             <div class="form-box">
@@ -88,6 +88,23 @@
             </div>
         </div>
         <script src="scripts/Form/Form.js"></script>
+        <script>
+            function handleCredentialResponse(response) {
+                console.log("Encoded JWT ID token: " + response.credential);
+            }
+            window.onload = function () {
+                google.accounts.id.initialize({
+                    client_id:
+                        "939125828914-u6tbs2k30r4tn6fr17k0erjb6j39l69d.apps.googleusercontent.com",
+                    callback: handleCredentialResponse,
+                });
+                google.accounts.id.renderButton(
+                    document.getElementById("buttonDiv"),
+                    { theme: "outline", size: "large" } // customization attributes
+                );
+                google.accounts.id.prompt(); // also display the One Tap dialog
+            };
+        </script>
     </div>
 </body>
 

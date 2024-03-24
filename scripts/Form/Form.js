@@ -1,3 +1,5 @@
+// alternar entre fazer login e cadastrar
+
 function myMenuFunction() {
     var i = document.getElementById("navMenu");
     if(i.className === "nav-menu") {
@@ -28,6 +30,7 @@ function myMenuFunction() {
         y.style.opacity = 1;
     }
 
+    // função para darkmode/lightmode
     document.addEventListener('DOMContentLoaded', () => {
         const mode = document.getElementById('mode_icon');
         const form = document.querySelector('.modes');

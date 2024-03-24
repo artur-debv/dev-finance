@@ -259,6 +259,7 @@ header{
 .fa-sun:before {
     content: "\f185";
     color: yellow;
+    margin-right: 6px;
 }
 
 .fa-moon:before {

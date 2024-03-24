@@ -259,12 +259,12 @@ header{
 .fa-sun:before {
     content: "\f185";
     color: yellow;
-    margin-right: 6px;
+    margin-right: 14px;
 }
 
 .fa-moon:before {
     content: "\f186";
-    margin-right: 6px;
+    margin-right: 14px;
 }
 
 img{

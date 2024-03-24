@@ -73,7 +73,7 @@ function myMenuFunction() {
 
    
 
-      function handleCredentialResponse(response) {
+    function handleCredentialResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
       }
       window.onload = function () {

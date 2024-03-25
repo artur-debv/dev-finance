@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-import * as jwt_decode from 'jwt-decode';
+import jwt_decode from 'jwt-decode';
 
 function handleCredentialResponse(response) {
     const data = jwt_decode(response.credential)

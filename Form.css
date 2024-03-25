@@ -354,3 +354,12 @@ button {
     margin: 0 auto;
     margin-bottom: 20px;
 }
+
+.div_icon{
+    text-align: center;
+    display: flex;
+    gap: 20px;
+    color: white;
+    justify-content: center;
+    margin-bottom: 20px;
+}

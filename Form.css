@@ -347,3 +347,10 @@ button {
 .btn:hover, .btn:focus, button:hover, button:focus {
   filter: brightness(1.2);
 }
+
+#buttonDiv{
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}

@@ -9,7 +9,7 @@
 <p>-Sidebar Elegante: Perfil personalizado com sua foto e nome</p>
 
 
-<p>🔜 Em Breve </p>
+ <h1>🔜 Em Breve</h1>
 
 <p>-Login com Google: Acesso rápido e seguro com autenticação via Google.</p>
 <p>-Recuperação de Senha: Esqueceu sua senha? Sem problemas, recupere-a facilmente.</p>

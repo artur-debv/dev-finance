@@ -15,7 +15,7 @@
 <p>Recuperação de Senha: Esqueceu sua senha? Sem problemas, recupere-a facilmente.</p>
 <p>Lembrar de Mim: Para uma experiência mais fluida e sem esforços.</p>
 
-<div style="display:flex">
+<div>
 ![1](https://github.com/artur-debv/dev-finance/assets/97331300/5c46c149-6d82-4687-a35b-3e62d684e373)
 ![2](https://github.com/artur-debv/dev-finance/assets/97331300/5e591aea-afa0-4a4c-afa4-d2f87c0a3beb)
 ![3](https://github.com/artur-debv/dev-finance/assets/97331300/e2eba9f0-74ca-4c65-a96c-3dbf0912dba3)

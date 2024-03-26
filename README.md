@@ -4,10 +4,10 @@
 
 <h1> ✨ Novidades no Sistema ✨ </h1>
 
-<p>-Login Personalizado: Com darkmode/lightmode para se adaptar ao seu estilo.
--Dashboard Financeiro Intuitivo: Também com darkmode/lightmode, para uma visão confortável das suas finanças.
--Sidebar Elegante: Perfil personalizado com sua foto e nome
-</p>
+<p>-Login Personalizado: Com darkmode/lightmode para se adaptar ao seu estilo.</p>
+<p>-Dashboard Financeiro Intuitivo: Também com darkmode/lightmode, para uma visão confortável das suas finanças.</p>
+<p>-Sidebar Elegante: Perfil personalizado com sua foto e nome</p>
+
 
 <p>🔜 Em Breve </p>
 

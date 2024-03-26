@@ -4,13 +4,13 @@
 
 <h1> ✨ Novidades no Sistema ✨ </h1>
 
-<p>-Login Personalizado: Com darkmode/lightmode para se adaptar ao seu estilo.</p>
-<p>-Dashboard Financeiro Intuitivo: Também com darkmode/lightmode, para uma visão confortável das suas finanças.</p>
-<p>-Sidebar Elegante: Perfil personalizado com sua foto e nome</p>
+<p>Login Personalizado: Com darkmode/lightmode para se adaptar ao seu estilo.</p>
+<p>Dashboard Financeiro Intuitivo: Também com darkmode/lightmode, para uma visão confortável das suas finanças.</p>
+<p>Sidebar Elegante: Perfil personalizado com sua foto e nome</p>
 
 
  <h1>🔜 Em Breve</h1>
 
-<p>-Login com Google: Acesso rápido e seguro com autenticação via Google.</p>
-<p>-Recuperação de Senha: Esqueceu sua senha? Sem problemas, recupere-a facilmente.</p>
-<p>-Lembrar de Mim: Para uma experiência mais fluida e sem esforços.</p>
+<p>Login com Google: Acesso rápido e seguro com autenticação via Google.</p>
+<p>Recuperação de Senha: Esqueceu sua senha? Sem problemas, recupere-a facilmente.</p>
+<p>Lembrar de Mim: Para uma experiência mais fluida e sem esforços.</p>

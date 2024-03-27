@@ -79,12 +79,12 @@ function handleCredentialResponse(response) {
     console.log(informations)
     console.log(data)
 
-    sub.textContent = data.sub
+    /*sub.textContent = data.sub
     given_name.textContent = data.given_name
     family_name.textContent = data.family_name
     email.textContent = data.email
     verifiedEmail.textContent = data.email_verified
-    picture.setAttribute("src", data.picture)
+    picture.setAttribute("src", data.picture)*/
   }
   
   window.onload = function () {

@@ -75,8 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
 function handleCredentialResponse(response) {
     const data = response.credential
 
-    const informations = document.querySelector(".h2_information").innerHTML = `${data.name}`
+    const informations = document.querySelector(".h2_information").innerHTML = `${data.email}`
     console.log(informations)
+    console.log(data)
 
     sub.textContent = data.sub
     given_name.textContent = data.given_name

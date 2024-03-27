@@ -72,36 +72,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// Função para lidar com a resposta de credenciais
 function handleCredentialResponse(response) {
-    const data = jwt_decode(response.credential)
-  
-    fullName.textContent = data.name
-    sub.textContent = data.sub
-    given_name.textContent = data.given_name
-    family_name.textContent = data.family_name
-    email.textContent = data.email
-    verifiedEmail.textContent = data.email_verified
-    picture.setAttribute("src", data.picture)
-  }
-  
-  window.onload = function () {
-    const clientID = window.prompt("Cole a sua Cliente ID", "")
-  
-    google.accounts.id.initialize({
+  const data = response.credential;
+
+  // Atualize os elementos HTML com os dados do usuário
+  fullName.textContent = data.name;
+  sub.textContent = data.sub;
+  given_name.textContent = data.given_name;
+  family_name.textContent = data.family_name;
+  email.textContent = data.email;
+  verifiedEmail.textContent = data.email_verified;
+  picture.setAttribute("src", data.picture);
+}
+
+// Carregamento da página
+window.onload = function () {
+  // Solicite ao usuário que cole o ID do cliente do Google
+  const clientID = window.prompt("Cole a sua Cliente ID", "");
+
+  // Inicialize a autenticação com o Google
+  google.accounts.id.initialize({
       client_id: clientID,
       callback: handleCredentialResponse
-    });
-  
-    google.accounts.id.renderButton(
+  });
+
+  // Renderize o botão de login do Google
+  google.accounts.id.renderButton(
       document.getElementById("buttonDiv"), {
-      theme: "filled_black",
-      size: "large",
-      type: "standard",
-      shape: "pill",
-      locale: "pt-BR",
-      logo_alignment: "left",
-    } // customization attributes
-    );
-  
-    google.accounts.id.prompt(); // also display the One Tap dialog
-}
+          theme: "filled_black",
+          size: "large",
+          type: "standard",
+          shape: "pill",
+          locale: "pt-BR",
+          logo_alignment: "left",
+          prompt_parent_id: "buttonDiv" // Adicione esta linha para exibir a janela de seleção de conta automaticamente
+      } // atributos de personalização
+  );
+};

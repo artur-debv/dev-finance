@@ -9,6 +9,9 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
+const infos = document.querySelector('.item-description')
+console.log(infos)
+
 // Obter os valores dos parâmetros de query string
 var name = getParameterByName('name');
 var email = getParameterByName('email');

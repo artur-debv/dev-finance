@@ -123,8 +123,6 @@ function handleCredentialResponse(response) {
 
   // Exibindo informações na página
   document.querySelector('user_infos').innerHTML = "Nome: " + decodedToken.given_name;
-  document.getElementById('email').innerHTML = "Email: " + decodedToken.email;
-  document.getElementById('profile-pic').src = decodedToken.picture;
 }
 
 function parseJwt(token) {

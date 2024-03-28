@@ -79,6 +79,21 @@ function handleCredentialResponse(response) {
     console.log(informations)
     console.log(data)
 
+    
+    // Verifique se a propriedade 'email' está presente no objeto
+    if (data.email) {
+      // Atualize os elementos HTML com os dados do usuário
+      fullName.textContent = data.name;
+      sub.textContent = data.sub;
+      given_name.textContent = data.given_name;
+      family_name.textContent = data.family_name;
+      email.textContent = data.email;
+      verifiedEmail.textContent = data.email_verified;
+      picture.setAttribute("src", data.picture);
+  } else {
+      console.error("Email não encontrado na resposta de credenciais.");
+  }
+
     /*sub.textContent = data.sub
     given_name.textContent = data.given_name
     family_name.textContent = data.family_name

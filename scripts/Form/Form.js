@@ -103,37 +103,34 @@ function handleCredentialResponse(response) {
 }
 
 
-        function handleCredentialResponse(response) {
-            console.log("Encoded JWT ID token: " + response.credential);
-            var jwtToken = response.credential;
-            var decodedToken = parseJwt(jwtToken);
-            console.log(decodedToken);
-            
-            // Redirecionar para a página index.html com informações como parâmetros de query string
-            var queryString = "?name=" + encodeURIComponent(decodedToken.given_name) +
-                              "&email=" + encodeURIComponent(decodedToken.email) +
-                              "&picture=" + encodeURIComponent(decodedToken.picture);
-            window.location.href = "index.html" + queryString;
-        }
+window.onload = function () {
+  google.accounts.id.initialize({
+    client_id: "939125828914-u6tbs2k30r4tn6fr17k0erjb6j39l69d.apps.googleusercontent.com",
+    callback: handleCredentialResponse
+  });
+  google.accounts.id.renderButton(
+    document.getElementById("buttonDiv"),
+    { theme: "outline", size: "large" }  // customization attributes
+  );
+  google.accounts.id.prompt(); // also display the One Tap dialog
+}
 
-        function parseJwt(token) {
-            var base64Url = token.split('.')[1];
-            var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-            var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-            }).join(''));
 
-            return JSON.parse(jsonPayload);
-        }
+function handleCredentialResponse(response) {
+  console.log("Encoded JWT ID token: " + response.credential);
+  var jwtToken = response.credential;
+  var decodedToken = parseJwt(jwtToken);
+  console.log(decodedToken);
 
-        // Inicializa o botão de login
-        function initializeButton() {
-            google.accounts.id.initialize({
-                client_id: "939125828914-u6tbs2k30r4tn6fr17k0erjb6j39l69d.apps.googleusercontent.com",
-                callback: handleCredentialResponse
-            });
-            google.accounts.id.renderButton(
-                document.getElementById("buttonDiv"),
-                { theme: "outline", size: "large" }
-            );
-        }
+
+}
+
+function parseJwt(token) {
+  var base64Url = token.split('.')[1];
+  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  var jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+
+  return JSON.parse(jsonPayload);
+}

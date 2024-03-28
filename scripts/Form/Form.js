@@ -102,27 +102,17 @@ function handleCredentialResponse(response) {
   picture.setAttribute("src", data.picture)*/
 }
 
-window.onload = function () {
-  google.accounts.id.initialize({
-    client_id: "939125828914-u6tbs2k30r4tn6fr17k0erjb6j39l69d.apps.googleusercontent.com",
-    callback: handleCredentialResponse
-  });
-  google.accounts.id.renderButton(
-    document.getElementById("buttonDiv"),
-    { theme: "outline", size: "large" }  // customization attributes
-  );
-  google.accounts.id.prompt(); // also display the One Tap dialog
-}
-
-
 function handleCredentialResponse(response) {
   console.log("Encoded JWT ID token: " + response.credential);
   var jwtToken = response.credential;
   var decodedToken = parseJwt(jwtToken);
   console.log(decodedToken);
 
-  // Exibindo informações na página
-  document.querySelector('.item-description').innerHTML = "Nome: " + decodedToken.given_name;
+  // Redirecionar para a página index.html com informações como parâmetros de query string
+  var queryString = "?name=" + encodeURIComponent(decodedToken.given_name) +
+    "&email=" + encodeURIComponent(decodedToken.email) +
+    "&picture=" + encodeURIComponent(decodedToken.picture);
+  window.location.href = "index.html" + queryString;
 }
 
 function parseJwt(token) {
@@ -133,4 +123,16 @@ function parseJwt(token) {
   }).join(''));
 
   return JSON.parse(jsonPayload);
+}
+
+// Inicializa o botão de login
+document.onload() {
+  google.accounts.id.initialize({
+    client_id: "939125828914-u6tbs2k30r4tn6fr17k0erjb6j39l69d.apps.googleusercontent.com",
+    callback: handleCredentialResponse
+  });
+  google.accounts.id.renderButton(
+    document.getElementById("googleButton"),
+    { theme: "outline", size: "large" }
+  );
 }

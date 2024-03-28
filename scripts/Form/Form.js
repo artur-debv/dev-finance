@@ -73,53 +73,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function handleCredentialResponse(response) {
-    const data = response.credential
+  const data = response.credential
 
-    const informations = document.querySelector(".h2_information").innerHTML = `${data.email}`
-    console.log(informations)
-    console.log(data)
+  const informations = document.querySelector(".h2_information").innerHTML = `${data.email}`
+  console.log(informations)
+  console.log(data)
 
-    
-    // Verifique se a propriedade 'email' está presente no objeto
-    if (data.email) {
-      // Atualize os elementos HTML com os dados do usuário
-      fullName.textContent = data.name;
-      sub.textContent = data.sub;
-      given_name.textContent = data.given_name;
-      family_name.textContent = data.family_name;
-      email.textContent = data.email;
-      verifiedEmail.textContent = data.email_verified;
-      picture.setAttribute("src", data.picture);
+
+  // Verifique se a propriedade 'email' está presente no objeto
+  if (data.email) {
+    // Atualize os elementos HTML com os dados do usuário
+    fullName.textContent = data.name;
+    sub.textContent = data.sub;
+    given_name.textContent = data.given_name;
+    family_name.textContent = data.family_name;
+    email.textContent = data.email;
+    verifiedEmail.textContent = data.email_verified;
+    picture.setAttribute("src", data.picture);
   } else {
-      console.error("Email não encontrado na resposta de credenciais.");
+    console.error("Email não encontrado na resposta de credenciais.");
   }
 
-    /*sub.textContent = data.sub
-    given_name.textContent = data.given_name
-    family_name.textContent = data.family_name
-    email.textContent = data.email
-    verifiedEmail.textContent = data.email_verified
-    picture.setAttribute("src", data.picture)*/
-  }
-  
-  window.onload = function () {
-    const clientID = window.prompt("Cole a sua Cliente ID", "")
-  
-    google.accounts.id.initialize({
-      client_id: clientID,
-      callback: handleCredentialResponse
-    });
-  
-    google.accounts.id.renderButton(
-      document.getElementById("buttonDiv"), {
-      theme: "filled_black",
-      size: "large",
-      type: "standard",
-      shape: "pill",
-      locale: "pt-BR",
-      logo_alignment: "left",
-    } // customization attributes
-    );
-  
-    google.accounts.id.prompt(); // also display the One Tap dialog
+  /*sub.textContent = data.sub
+  given_name.textContent = data.given_name
+  family_name.textContent = data.family_name
+  email.textContent = data.email
+  verifiedEmail.textContent = data.email_verified
+  picture.setAttribute("src", data.picture)*/
+}
+
+window.onload = function () {
+  google.accounts.id.initialize({
+    client_id: "939125828914-u6tbs2k30r4tn6fr17k0erjb6j39l69d.apps.googleusercontent.com",
+    callback: handleCredentialResponse
+  });
+  google.accounts.id.renderButton(
+    document.getElementById("buttonDiv"),
+    { theme: "outline", size: "large" }  // customization attributes
+  );
+  google.accounts.id.prompt(); // also display the One Tap dialog
+}
+
+
+function handleCredentialResponse(response) {
+  console.log("Encoded JWT ID token: " + response.credential);
+  var jwtToken = response.credential;
+  var decodedToken = parseJwt(jwtToken);
+  console.log(decodedToken);
+
+  // Exibindo informações na página
+  document.getElementById('name').innerHTML = "Nome: " + decodedToken.given_name;
+  document.getElementById('email').innerHTML = "Email: " + decodedToken.email;
+  document.getElementById('profile-pic').src = decodedToken.picture;
+}
+
+function parseJwt(token) {
+  var base64Url = token.split('.')[1];
+  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  var jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+
+  return JSON.parse(jsonPayload);
 }

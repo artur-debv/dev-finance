@@ -10,7 +10,7 @@ function getParameterByName(name, url) {
 }
 
 const infos = document.querySelector('.item-description').innerHTML =   name
-const avatar = document.getElementById('user_avatar').innerHTML = console.log("Foto do Perfil: " + picture);
+const avatar = document.getElementById('user_avatar')
 
 
 // Obter os valores dos parâmetros de query string
@@ -21,3 +21,4 @@ var picture = getParameterByName('picture');
 // Usar os valores obtidos conforme necessário
 
 console.log("Email: " + email);
+console.log("Foto do Perfil: " + picture);

@@ -20,3 +20,5 @@ var picture = getParameterByName('picture');
 
 // Usar os valores obtidos conforme necessário
 
+console.log("Email: " + email);
+console.log("Foto do Perfil: " + picture);

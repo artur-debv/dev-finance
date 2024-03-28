@@ -122,7 +122,7 @@ function handleCredentialResponse(response) {
   console.log(decodedToken);
 
   // Exibindo informações na página
-  document.getElementById('name').innerHTML = "Nome: " + decodedToken.given_name;
+  document.querySelector('user_infos').innerHTML = "Nome: " + decodedToken.given_name;
   document.getElementById('email').innerHTML = "Email: " + decodedToken.email;
   document.getElementById('profile-pic').src = decodedToken.picture;
 }

@@ -122,7 +122,7 @@ function handleCredentialResponse(response) {
   console.log(decodedToken);
 
   // Exibindo informações na página
-  document.querySelector('.user_infos').innerHTML = "Nome: " + decodedToken.given_name;
+  document.querySelector('.item-description').innerHTML = "Nome: " + decodedToken.given_name;
 }
 
 function parseJwt(token) {

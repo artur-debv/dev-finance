@@ -12,7 +12,7 @@ function getParameterByName(name, url) {
 }
 
 const infos = document.querySelector('.item-description').innerHTML =   name
-const avatar = document.getElementById('user_avatar').src = `https://lh3.googleusercontent.com/a/ACg8ocK0X8ZHKRqRv_UNO5qgwQ45WGvIUifz72V4gft8R1ri=s96-c`
+const avatar = document.getElementById('user_avatar').src = picture
 
 
 // Obter os valores dos parâmetros de query string

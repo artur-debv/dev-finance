@@ -15,7 +15,19 @@ function getParameterByName(name, url) {
 
 
 const infos = document.querySelector('.item-description').innerHTML =   name
-const avatar = document.getElementById('user_avatar').src = picture
+
+// Obter o valor do parâmetro 'picture' da URL
+var pictureUrl = getParameterByName('picture');
+
+// Criar um novo elemento <img>
+var imgElement = document.createElement('img');
+
+// Definir o atributo src do elemento <img> com a URL da imagem
+imgElement.src = pictureUrl;
+
+// Adicionar o elemento <img> ao DOM, por exemplo, ao body do documento
+document.body.appendChild(imgElement);
+
 
 
 // Obter os valores dos parâmetros de query string

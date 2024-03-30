@@ -6,17 +6,11 @@ function getParameterByName(name, url) {
     var results = [];
     var match;
     while (match = regex.exec(url)) {
-        var value = decodeURIComponent(match[2].replace(/\+/g, " "));
-        // Tratar especificamente o parâmetro 'picture'
-        if (name === 'picture') {
-            // Decodificar o valor da URL da imagem
-            value = decodeURIComponent(value);
-        }
-        results.push(value);
+        results.push(decodeURIComponent(match[2].replace(/\+/g, " ")));
     }
     return results;
+    
 }
-
 
 
 

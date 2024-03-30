@@ -9,7 +9,10 @@ function getParameterByName(name, url) {
         results.push(decodeURIComponent(match[2].replace(/\+/g, " ")));
     }
     return results;
+    
 }
+
+console.log(results)
 
 const infos = document.querySelector('.item-description').innerHTML =   name
 const avatar = document.getElementById('user_avatar').src = picture

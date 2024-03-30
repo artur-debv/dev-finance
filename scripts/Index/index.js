@@ -17,6 +17,7 @@ const avatar = document.getElementById('user_avatar')
 var name = getParameterByName('name');
 var email = getParameterByName('email');
 var picture = getParameterByName('picture');
+var decodedPicture = decodeURIComponent(picture);
 console.log(picture)
 
 // Usar os valores obtidos conforme necessário

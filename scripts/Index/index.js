@@ -23,6 +23,3 @@ var picture = getParameterByName('picture');
 console.log("Email: " + email);
 console.log("Foto do Perfil: " + picture);
 
-setTimeout(function() {
-    location.reload();
-}, 1000);

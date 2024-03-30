@@ -12,7 +12,7 @@ function getParameterByName(name, url) {
     
 }
 
-console.log(results)
+
 
 const infos = document.querySelector('.item-description').innerHTML =   name
 const avatar = document.getElementById('user_avatar').src = picture

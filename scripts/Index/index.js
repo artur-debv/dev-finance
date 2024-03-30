@@ -1,8 +1,8 @@
 // Função para obter parâmetros de query string da URL
-function getParameterByName(name, url) {
+function getParameterByName(email, url) {
     if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    email= name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + email + "(=([^&#]*)|&|#|$)"),
         results = regex.exec(url);
     if (!results) return null;
     if (!results[2]) return '';

@@ -114,7 +114,6 @@ function handleCredentialResponse(response) {
                     "&email=" + encodeURIComponent(decodedToken.email) +
                     "&picture=" + encodeURIComponent(decodedToken.picture);
   window.location.href = "index.html" + queryString;
-  location.reload();
 }
 
 function parseJwt(token) {

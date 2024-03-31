@@ -24,9 +24,6 @@ avatarElement.src = pictureUrl;
 
 const infos = document.querySelector('.item-description').innerHTML =   name
 
-// Atualizar a URL sem os parâmetros de consulta visíveis
-var newUrl = window.location.pathname;
-window.history.pushState({}, '', newUrl);
 
 
 // Obter os valores dos parâmetros de query string

@@ -4,7 +4,7 @@ document.getElementById('open_btn').addEventListener('click', function () {
 
 
 // Crie uma instância do cliente OAuth2 com o seu client ID
-const client = new OAuth2Client({ clientId: '' });
+const client = new OAuth2Client({ clientId: '939125828914-u6tbs2k30r4tn6fr17k0erjb6j39l69d.apps.googleusercontent.com' });
 
 // Função para desconectar a conta do Google
 async function signOut() {

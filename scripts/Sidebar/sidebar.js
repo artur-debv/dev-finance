@@ -3,6 +3,7 @@ document.getElementById('open_btn').addEventListener('click', function () {
 });
 
 const Buttonlogout = document.getElementById('logout_btn')
+console.log(Buttonlogout)
 
 Buttonlogout.addEventListener('click',function(){
     google.accounts.id.cancel();

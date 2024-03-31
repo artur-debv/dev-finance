@@ -15,7 +15,7 @@ function getParameterByName(name, url) {
 
 
 const infos = document.querySelector('.item-description').innerHTML =   name
-const user = document.getElementById('user').src = picture
+
 
 
 

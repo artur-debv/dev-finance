@@ -2,10 +2,9 @@ document.getElementById('open_btn').addEventListener('click', function () {
     document.getElementById('sidebar').classList.toggle('open-sidebar');
 });
 
-import { OAuth2Client } from 'google-auth-library';
 
 // Crie uma instância do cliente OAuth2 com o seu client ID
-const client = new OAuth2Client({ clientId: '939125828914-u6tbs2k30r4tn6fr17k0erjb6j39l69d.apps.googleusercontent.com' });
+const client = new OAuth2Client({ clientId: '' });
 
 // Função para desconectar a conta do Google
 async function signOut() {

@@ -309,6 +309,9 @@ footer {
     background-color: #282828;
 }
 
+.select #user_infos span:last-child{
+    color: white;
+}
 
 .dark #user{
     color: white;

@@ -105,17 +105,17 @@ function handleCredentialResponse(response) {
 
 function handleCredentialResponse(response) {
   if (response.credential) {
-    console.log("Encoded JWT ID token: " + response.credential);
-    var jwtToken = response.credential;
-    localStorage.setItem('jwtToken', jwtToken); // Armazenar o token na sessionStorage
-    // Redirecionar para a página index.html
-    window.location.href = "index.html";
-} else {
-    console.error("Credencial não encontrada na resposta.");
-    // Lidar com o erro de forma apropriada
+      console.log("Encoded JWT ID token: " + response.credential);
+      var jwtToken = response.credential;
+      localStorage.setItem('jwtToken', jwtToken); // Armazenar o token no localStorage
+      localStorage.setItem('url', window.location.href); // Armazenar a URL completa no localStorage
+      // Redirecionar para a página index.html
+      window.location.href = "index.html";
+  } else {
+      console.error("Credencial não encontrada na resposta.");
+      // Lidar com o erro de forma apropriada
+  }
 }
-}
-
 
 function parseJwt(token) {
   var base64Url = token.split('.')[1];

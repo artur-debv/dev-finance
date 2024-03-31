@@ -17,7 +17,6 @@ var pictureUrl = getParameterByName('picture');
 
 // Criar um novo elemento <img>
 var imgElement = document.createElement('img');
-imgElement.classList('user_avatar')
 
 // Definir o atributo src do elemento <img> com a URL da imagem
 imgElement.src = pictureUrl;

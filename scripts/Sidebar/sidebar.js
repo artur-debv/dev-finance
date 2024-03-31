@@ -5,5 +5,5 @@ document.getElementById('open_btn').addEventListener('click', function () {
 const Buttonlogout = document.getElementById('logout_btn')
 
 Buttonlogout.addEventListener('click',function(){
-    console.log('clicou')
+    google.accounts.id.cancel();
 })

@@ -32,7 +32,3 @@ var name = getParameterByName('name');
 var email = getParameterByName('email');
 
 
-// Usar os valores obtidos conforme necessário
-
-console.log("Email: " + email);
-console.log("Foto do Perfil: " + picture);

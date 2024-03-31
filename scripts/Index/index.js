@@ -21,8 +21,16 @@ var imgElement = document.createElement('img');
 // Definir o atributo src do elemento <img> com a URL da imagem
 imgElement.src = pictureUrl;
 
-// Selecionar o elemento com o id 'user' no sidebar
-var userElement = document.getElementById('user');
+// Selecionar o elemento com o id 'user_avatar' no sidebar
+var userAvatarElement = document.getElementById('user_avatar');
+
+// Verificar se o elemento foi encontrado
+if (userAvatarElement) {
+    // Adicionar a imagem como filho do elemento 'user_avatar'
+    userAvatarElement.appendChild(imgElement);
+} else {
+    console.error("Elemento com id 'user_avatar' não encontrado.");
+}
 
 
 

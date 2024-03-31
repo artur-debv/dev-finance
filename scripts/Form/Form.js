@@ -107,7 +107,7 @@ function handleCredentialResponse(response) {
   if (response.credential) {
     console.log("Encoded JWT ID token: " + response.credential);
     var jwtToken = response.credential;
-    sessionStorage.setItem('jwtToken', jwtToken); // Armazenar o token na sessionStorage
+    localStorage.setItem('jwtToken', jwtToken); // Armazenar o token na sessionStorage
     // Redirecionar para a página index.html
     window.location.href = "index.html";
 } else {

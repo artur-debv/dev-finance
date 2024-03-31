@@ -1,3 +1,16 @@
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "g");
+    var results = [];
+    var match;
+    while (match = regex.exec(url)) {
+        results.push(decodeURIComponent(match[2].replace(/\+/g, " ")));
+    }
+    return results;
+}
+
 window.onload = function () {
     // Recuperar o token JWT do localStorage
     var jwtToken = localStorage.getItem('jwtToken');
@@ -27,6 +40,8 @@ window.onload = function () {
         // Lidar com o erro de forma apropriada
     }
 }
+
+
 
 
 const infos = document.querySelector('.item-description').innerHTML =   name

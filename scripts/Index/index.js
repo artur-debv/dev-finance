@@ -25,8 +25,6 @@ imgElement.src = pictureUrl;
 var userElement = document.getElementById('user');
 
 
-// Limpar o conteúdo atual do elemento 'user' (caso necessário)
-userElement.innerHTML = '';
 
 // Adicionar o elemento <img> como filho do elemento 'user' no sidebar
 userElement.appendChild(imgElement);

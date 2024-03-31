@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Seu código que depende da API do Google aqui
 
     // Exemplo: definir um manipulador de eventos para o botão de logout
-    var logoutButton = document.getElementById("logoutButton");
+    var logoutButton = document.getElementById("logout_btn");
     logoutButton.addEventListener("click", function() {
         signOut();
     });

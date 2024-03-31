@@ -12,6 +12,11 @@ function getParameterByName(name, url) {
     
 }
 
+function UpdateData(name,email,pictureUrl){
+    document.querySelector('.item-description').innerHTML =   name
+    avatarElement.src = pictureUrl;
+}
+
 // Obter o valor do parâmetro 'picture' da URL
 var pictureUrl = getParameterByName('picture');
 
@@ -21,12 +26,8 @@ var avatarElement = document.getElementById('user_avatar');
 // Definir o atributo src do elemento <img> com a URL da imagem
 avatarElement.src = pictureUrl;
 
-
-const infos = document.querySelector('.item-description').innerHTML =   name
-
-
-
-
 // Obter os valores dos parâmetros de query string
 var name = getParameterByName('name');
 var email = getParameterByName('email');
+
+UpdateData(name,email,pictureUrl)

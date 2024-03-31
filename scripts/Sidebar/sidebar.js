@@ -11,3 +11,5 @@ function signOut() {
       console.error('Error signing out:', error);
     });
 }
+
+signOut()

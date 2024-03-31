@@ -25,7 +25,7 @@ window.onload = function () {
         // Faça o que for necessário com as informações
 
         // Recuperar a URL completa da sessionStorage
-        var url = sessionStorage.getItem('url');
+        var url = localStorage.getItem('url');
         if (url) {
             // Extrair as informações da query string da URL
             var pictureParam = getParameterByName('picture', url);

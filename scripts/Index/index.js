@@ -32,5 +32,3 @@ var email = getParameterByName('email');
 
 UpdateData(name,email,pictureUrl)
 
-var newUrl = window.location.pathname;
-window.history.pushState({}, '', newUrl);

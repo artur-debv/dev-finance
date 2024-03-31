@@ -12,7 +12,7 @@ function getParameterByName(name, url) {
 
 // Função para obter parâmetros de query string da sessionStorage
 function getParameterFromSessionStorage(name) {
-    var url = sessionStorage.getItem('url');
+    var url = localStorage.getItem('url');
     if (url) {
         return getParameterByName(name, url);
     }

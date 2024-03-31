@@ -21,13 +21,18 @@ var imgElement = document.createElement('img');
 // Definir o atributo src do elemento <img> com a URL da imagem
 imgElement.src = pictureUrl;
 
+// Adicionar a classe 'user_avatar' ao elemento <img>
+imgElement.classList.add('user_avatar');
+
 // Selecionar o elemento com o id 'user' no sidebar
-var userElement = document.getElementById('user_avatar');
+var userElement = document.getElementById('user');
 
-
+// Limpar o conteúdo atual do elemento 'user' (caso necessário)
+userElement.innerHTML = '';
 
 // Adicionar o elemento <img> como filho do elemento 'user' no sidebar
 userElement.appendChild(imgElement);
+
 
 
 const infos = document.querySelector('.item-description').innerHTML =   name

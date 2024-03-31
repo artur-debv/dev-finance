@@ -30,4 +30,3 @@ const infos = document.querySelector('.item-description').innerHTML =   name
 var name = getParameterByName('name');
 var email = getParameterByName('email');
 
-window.location.reload();

@@ -22,7 +22,7 @@ var imgElement = document.createElement('img');
 imgElement.src = pictureUrl;
 
 // Selecionar o elemento com o id 'user' no sidebar
-var userElement = document.getElementById('user');
+var userElement = document.getElementById('user_avatar');
 
 
 

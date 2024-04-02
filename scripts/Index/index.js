@@ -44,3 +44,25 @@ window.history.pushState({}, '', newUrl);
  menuBar.addEventListener('click', function() {
      sidebar.classList.toggle('open-sidebar');
  });
+
+ // Adicionar evento de clique ao botão do menu para mostrar o sidebar em telas menores que 900px
+ const openBtn = document.getElementById('open_btn');
+ openBtn.addEventListener('click', function() {
+     if (window.innerWidth <= 900 && sidebar.classList.contains('hide-sidebar')) {
+         sidebar.classList.remove('hide-sidebar');
+     }
+ });
+
+ // Adicionar evento de redimensionamento da janela para esconder o sidebar em telas menores que 900px
+ window.addEventListener('resize', function() {
+     if (window.innerWidth <= 900) {
+         sidebar.classList.add('hide-sidebar');
+     }
+ });
+
+ // Verificar a largura da janela ao carregar a página
+ window.addEventListener('load', function() {
+     if (window.innerWidth <= 900) {
+         sidebar.classList.add('hide-sidebar');
+     }
+ });

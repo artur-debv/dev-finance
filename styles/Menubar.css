@@ -1,0 +1,18 @@
+#sidebar.open-sidebar {
+    left: 0;
+}
+
+/* Estilos do menu bar */
+#menu-bar {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 999;
+    cursor: pointer;
+}
+
+/* Estilos do conteúdo principal */
+#main-content {
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+}

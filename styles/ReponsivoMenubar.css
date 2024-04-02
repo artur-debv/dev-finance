@@ -1,0 +1,14 @@
+  /* Media query para telas menores */
+  @media screen and (max-width: 768px) {
+    #sidebar {
+        left: 0;
+    }
+
+    #main-content {
+        margin-left: 250px;
+    }
+
+    #sidebar.hide-sidebar {
+        display: none;
+    }
+}

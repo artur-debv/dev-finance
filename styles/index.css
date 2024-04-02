@@ -39,7 +39,6 @@
 
 img{
     margin: 0 auto;
-    filter: grayscale(100%);
 }
 
 /* Header */
@@ -310,6 +309,9 @@ footer {
     background-color: #282828;
 }
 
+.select #user_infos span:last-child{
+    color: white;
+}
 
 .dark #user{
     color: white;

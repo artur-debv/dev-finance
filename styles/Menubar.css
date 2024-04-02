@@ -6,7 +6,7 @@
 /* Estilos do menu bar */
 #menu-bar {
     position: fixed;
-    top: 140px;
+    top: 30px;
     left: 140px;
     cursor: pointer;
 }

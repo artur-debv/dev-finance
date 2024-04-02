@@ -12,24 +12,18 @@ function getParameterByName(name, url) {
     
 }
 
- // Verificar autenticação do usuário antes de carregar a página
- window.onload = function() {
-    if (!isAuthenticated()) {
-        // Redirecionar usuário não autenticado para a página de login
-        window.location.href = 'https://devfinancesss.netlify.app/form'; // Substitua 'login.html' pela página de login real
-    }else{
-       console.log('deu certo')
-    }
+if (name  && pictureUrl) {
+    // O usuário está autenticado, então atualize os dados na página
+    UpdateData(name, email, pictureUrl);
+
+    // Remover os parâmetros de autenticação da URL
+    var newUrl = window.location.pathname;
+    window.history.pushState({}, '', newUrl);
+} else {
+    // Redirecionar o usuário para a página de login
+    window.location.href = 'https://devfinancesss.netlify.app/form';
 }
 
-// Função para verificar se o usuário está autenticado
-function isAuthenticated() {
-    // Verificar se os parâmetros de query string estão presentes na URL
-    var urlParams = new URLSearchParams(window.location.search);
-    return urlParams.has('name') && urlParams.has('email') && urlParams.has('picture');
-    // Retorna true se os parâmetros de query string estiverem presentes, indicando que o usuário está autenticado
-    // Retorna false se os parâmetros de query string estiverem ausentes, indicando que o usuário não está autenticado
-}
 
 function UpdateData(name,email,pictureUrl){
     document.querySelector('.item-description').innerHTML =   name

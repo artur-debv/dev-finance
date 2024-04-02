@@ -1,13 +1,13 @@
 #sidebar.open-sidebar {
     left: 0;
+    z-index: 999;
 }
 
 /* Estilos do menu bar */
 #menu-bar {
     position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 999;
+    top: 140px;
+    left: 140px;
     cursor: pointer;
 }
 

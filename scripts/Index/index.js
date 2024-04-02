@@ -12,17 +12,6 @@ function getParameterByName(name, url) {
     
 }
 
-if (name  && pictureUrl) {
-    // O usuário está autenticado, então atualize os dados na página
-    UpdateData(name, email, pictureUrl);
-
-    // Remover os parâmetros de autenticação da URL
-    var newUrl = window.location.pathname;
-    window.history.pushState({}, '', newUrl);
-} else {
-    // Redirecionar o usuário para a página de login
-    window.location.href = 'https://devfinancesss.netlify.app/form';
-}
 
 
 function UpdateData(name,email,pictureUrl){

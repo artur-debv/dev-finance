@@ -19,8 +19,3 @@
     transition: margin-left 0.3s ease;
 }
 
-
-#sidebar.open-sidebar {
-    display: block; /* Mostra o sidebar quando a classe open-sidebar é adicionada */
-    left: 0; /* Define a posição do sidebar quando estiver aberto */
-}

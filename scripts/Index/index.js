@@ -37,7 +37,7 @@ window.history.pushState({}, '', newUrl);
 
  // Selecionar elementos do DOM
  const menuBar = document.getElementById('menu-bar');
- console.log(menuBar)
+ console.log('deu certo',menuBar)
  const menuIcon = document.getElementById('menu-icon');
  const sidebar = document.getElementById('sidebar');
 

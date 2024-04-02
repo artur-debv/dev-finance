@@ -138,7 +138,7 @@ main{
     transform: rotate(180deg);
 }
 
-.item-description {
+.item-descriptions {
     width: 0px;
     overflow: hidden;
     white-space: nowrap;

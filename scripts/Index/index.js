@@ -16,7 +16,7 @@ function getParameterByName(name, url) {
  window.onload = function() {
     if (!isAuthenticated()) {
         // Redirecionar usuário não autenticado para a página de login
-        window.location.href = 'login.html'; // Substitua 'login.html' pela página de login real
+        window.location.href = ''; // Substitua 'login.html' pela página de login real
     }
 }
 

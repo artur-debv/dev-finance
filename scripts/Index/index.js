@@ -17,6 +17,8 @@ function getParameterByName(name, url) {
     if (!isAuthenticated()) {
         // Redirecionar usuário não autenticado para a página de login
         window.location.href = 'https://devfinancesss.netlify.app/form'; // Substitua 'login.html' pela página de login real
+    }else{
+       console.log('deu certo')
     }
 }
 

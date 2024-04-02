@@ -13,12 +13,7 @@ function getParameterByName(name, url) {
 }
 
  // Verificar autenticação do usuário antes de carregar a página
- window.onload = function() {
-    if (!isAuthenticated()) {
-        // Redirecionar usuário não autenticado para a página de login
-        window.location.href = ''; // Substitua 'login.html' pela página de login real
-    }
-}
+ 
 
 // Função para verificar se o usuário está autenticado
 function isAuthenticated() {

@@ -18,8 +18,3 @@
     
 }
 
-@media (max-width: 900px) {
-    #sidebar{
-        display: none;
-    }
-}

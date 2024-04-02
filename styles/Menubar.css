@@ -3,9 +3,7 @@
     z-index: 999;
 }
 
-#sidebar.open-sidebar {
-    left: 0;
-}
+
 
 /* Estilos do menu bar */
 #menu-bar {
@@ -19,4 +17,10 @@
 #main-content {
     margin-left: 0;
     transition: margin-left 0.3s ease;
+}
+
+
+#sidebar.open-sidebar {
+    display: block; /* Mostra o sidebar quando a classe open-sidebar é adicionada */
+    left: 0; /* Define a posição do sidebar quando estiver aberto */
 }

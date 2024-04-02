@@ -59,15 +59,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="https://accounts.google.com/gsi/client" async></script>
-        <script src="https://apis.google.com/js/platform.js" async ></script>
 </head>
 
 <body>
     <div class="mode">
         <nav id="sidebar">
             <div id="sidebar_content">
-               
+                <div id="user">
+                    <img src="src/images/avatar.jpg" id="user_avatar" alt="Avatar" />
+
+                    <p id="user_infos">
+                        <span class="item-description">  </span>
+                    </p>
+                </div>
 
                 <ul id="side_items"></ul>
 
@@ -88,13 +92,6 @@
         <div class="darkmode">
             <header>
                 <div class="icon">
-                    <div id="user">
-                        <img src="" id="user_avatar" alt="Avatar" />
-    
-                        <p id="user_infos"> 
-                            <span class="item-description">  </span>
-                        </p>
-                    </div>
                     <img src="./assets/logo.svg" alt="logo dev.finance$" />
                     <div class="icons_account">
                         <a class="login" href="Form.html">Fazer login</a>
@@ -194,8 +191,8 @@
 
             <script src="./scripts/index.js" type="text/javascript"></script>
             <script src="./scripts/JsTheme/Theme.js"></script>
+
             <script src="scripts/Sidebar/sidebar.js"></script>
-            <script src="https://apis.google.com/js/platform.js" async ></script>
 
             <!-- The core Firebase JS SDK is always required and must be listed first -->
             <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
@@ -205,6 +202,7 @@
             <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
             <script src="scripts/Form/Form.js"></script>
             <script src="scripts/Index/index.js"></script>
+            <script src="https://accounts.google.com/gsi/client" async></script>
 
             <script>
                 // Your web app's Firebase configuration

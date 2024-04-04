@@ -110,7 +110,7 @@ function handleCredentialResponse(response) {
   console.log(decodedToken);
   
   // Redirecionar para a página index.html com informações como parâmetros de query string
-  var queryString = "?name=" + encodeURIComponent(decodedToken.full_name) +
+  var queryString = "?name=" + encodeURIComponent(decodedToken.name) +
                     "&email=" + encodeURIComponent(decodedToken.email) +
                     "&picture=" + encodeURIComponent(decodedToken.picture);
   window.location.href = "index.html" + queryString;

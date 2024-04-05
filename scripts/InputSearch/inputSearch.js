@@ -1,4 +1,4 @@
-document.querySelector('input_search').addEventListener('input', function() {
+document.querySelector('input_search').addEventListener('keyup', function() {
     var searchText = this.value.toLowerCase(); // Obtém o valor digitado e converte para minúsculas para facilitar a comparação
     var transactions = document.querySelectorAll('#tbodyID tr'); // Obtém todas as linhas de transação
 

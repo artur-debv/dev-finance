@@ -1,5 +1,5 @@
 
-const Form = document.querySelector('input_search').value
+const Form = document.querySelector('.input_search').value
 
 Form.addEventListener('keyup',function(){
     console.log('clicou')

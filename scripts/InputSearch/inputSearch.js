@@ -1,4 +1,11 @@
-document.querySelector('input_search').addEventListener('keyup', function() {
+
+const Form = document.querySelector('input_search').value
+
+Form.addEventListener('keyup',function(){
+    console.log('clicou')
+})
+
+/*document.querySelector('input_search').addEventListener('keyup', function() {
     var searchText = this.value.toLowerCase(); // Obtém o valor digitado e converte para minúsculas para facilitar a comparação
     var transactions = document.querySelectorAll('#tbodyID tr'); // Obtém todas as linhas de transação
 
@@ -14,4 +21,4 @@ document.querySelector('input_search').addEventListener('keyup', function() {
             transaction.style.display = 'none'; // Oculta a transação se não houver correspondência
         }
     });
-});
+});*/

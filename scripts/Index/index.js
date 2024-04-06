@@ -34,3 +34,8 @@ UpdateData(name,email,pictureUrl)
 
 var newUrl = window.location.pathname;
 window.history.pushState({}, '', newUrl);
+
+ // Selecionar elementos do DOM
+ const menuBar = document.getElementById('menu-bar');
+ const menuIcon = document.getElementById('menu-icon');
+ const sidebar = document.getElementById('sidebar');

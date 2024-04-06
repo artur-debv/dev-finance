@@ -1,25 +1,11 @@
-@media (min-width: 800px) {
-    html {
-        font-size: 87.5%;/*14px*/
-    }
-    #balance {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        /*ou grid-template-columns: 1fr 1fr 1fr;*/
-        gap: 2rem;/*Espaçamento entre ...*/
-    }
-    div#toast {
-        font-size: 14px;
-    }
-    .float-button {
-        bottom: 40px;
-        right: 40px;
-    }
-    
-}
-
 @media (max-width: 900px) {
-    #sidebar{
-        display: none;
+    #sidebar {
+        display: none; /* Esconde o sidebar */
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between; /* Alinha a logo e a foto de perfil lado a lado */
+        align-items: center; /* Centraliza verticalmente */
     }
 }

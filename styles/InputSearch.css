@@ -4,3 +4,10 @@
     box-sizing: border-box;
 }
 
+.input_search{
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 0.2rem;
+    border-radius: 20px;
+}

@@ -1,7 +1,5 @@
 
-const Form = document.querySelector('.input_search').value
 
-console.log(Form)
 
 /*document.querySelector('input_search').addEventListener('keyup', function() {
     var searchText = this.value.toLowerCase(); // Obtém o valor digitado e converte para minúsculas para facilitar a comparação

@@ -4,6 +4,6 @@ const input = document.getElementById('input_Search').value
 
 
 buttons.addEventListener('click',function(){
-    input.innerHTML = `${input.value}`
+    console.log(input)
 })
 

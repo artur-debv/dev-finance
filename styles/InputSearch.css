@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.input_search{
+#input_search{
     width: 10px;
     padding: 0.8rem;
     border: none;

@@ -4,6 +4,7 @@ const buttonSearch = document.getElementById('button_search');
 buttonSearch.addEventListener('click', function() {
     const searchText = document.getElementById('input_Search').value.trim().toLowerCase();
     const transactions = document.querySelectorAll('.tbodys tr');
+    console.log(transactions)
 
     transactions.forEach(function(transaction) {
         const transactionDescription = transaction.querySelector('td:nth-child(1)').textContent.toLowerCase();

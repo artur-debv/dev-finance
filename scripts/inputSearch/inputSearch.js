@@ -1,4 +1,7 @@
 
 const buttons = document.getElementById('button_search')
 
-console.log(buttons)
+buttons.addEventListener('click',function(){
+    console.log('clicou')
+})
+

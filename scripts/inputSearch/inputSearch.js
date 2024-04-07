@@ -1,23 +1,21 @@
 
-const buttons = document.getElementById('button_search')
+const buttonSearch = document.getElementById('button_search');
 
-
-
-buttons.addEventListener('click',function(){
-    const inputValue = document.getElementById('input_Search').value.toLowerCase()
-    const transactions = document.querySelectorAll('tbodys td');
-    console.log(transactions)
+buttonSearch.addEventListener('click', function() {
+    const searchText = document.getElementById('input_Search').value.trim().toLowerCase();
+    const transactions = document.querySelectorAll('.tbodys tr');
 
     transactions.forEach(function(transaction) {
-        const transactionName = transaction.querySelector('.description').textContent.toLowerCase();
-        const transactionDsescription = transaction.querySelector('.expense').textContent.toLowerCase();
-        const transactionDate = transaction.querySelector('.date').textContent.toLowerCase();
+        const transactionDescription = transaction.querySelector('td:nth-child(1)').textContent.toLowerCase();
+        const transactionValue = transaction.querySelector('td:nth-child(2)').textContent.toLowerCase();
+        const transactionDate = transaction.querySelector('td:nth-child(3)').textContent.toLowerCase();
 
-        if (transactionName.includes(inputValue) || transactionDsescription.includes(inputValue) || transactionDate.includes(inputValue)) {
-            transaction.style.display = ''; // Exibe a transação se houver uma correspondência
+        if (transactionDescription.includes(searchText) || 
+            transactionValue.includes(searchText) || 
+            transactionDate.includes(searchText)) {
+            transaction.style.display = ''; // Exibe a transação se houver correspondência
         } else {
             transaction.style.display = 'none'; // Oculta a transação se não houver correspondência
         }
     });
-})
-
+});

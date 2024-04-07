@@ -9,11 +9,11 @@ buttons.addEventListener('click',function(){
     console.log(transactions)
 
     transactions.forEach(function(transaction) {
-        const transactionName = transaction.querySelector('.transactionName').textContent.toLowerCase();
-        const transactionDsescription = transaction.querySelector('.transactionDescription').textContent.toLowerCase();
-        const transactionDate = transaction.querySelector('.transactionDate').textContent.toLowerCase();
+        const transactionName = transaction.querySelector('.description').textContent.toLowerCase();
+        const transactionDsescription = transaction.querySelector('.expense').textContent.toLowerCase();
+        const transactionDate = transaction.querySelector('.date').textContent.toLowerCase();
 
-        if (transactionName.includes(inputValue) || transactionDescription.includes(inputValue) || transactionDate.includes(inputValue)) {
+        if (transactionName.includes(inputValue) || transactionDsescription.includes(inputValue) || transactionDate.includes(inputValue)) {
             transaction.style.display = ''; // Exibe a transação se houver uma correspondência
         } else {
             transaction.style.display = 'none'; // Oculta a transação se não houver correspondência

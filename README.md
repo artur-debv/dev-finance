@@ -17,7 +17,7 @@
 
 <h1>Deploy</h1>
 
-[Drop store](https://devfinancesss.netlify.app/form)
+[Dev Finance](https://devfinancesss.netlify.app/form)
 
 
 ![1](https://github.com/artur-debv/dev-finance/assets/97331300/5c46c149-6d82-4687-a35b-3e62d684e373)

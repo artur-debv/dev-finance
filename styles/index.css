@@ -90,7 +90,7 @@ button {
     -moz-border-radius: 0.25rem;
     -ms-border-radius: 0.25rem;
     -o-border-radius: 0.25rem;
-
+    margin-bottom: 20px;
     cursor: pointer;
 }
 button:hover {

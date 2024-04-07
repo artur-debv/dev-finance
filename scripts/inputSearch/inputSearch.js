@@ -5,7 +5,7 @@ const buttons = document.getElementById('button_search')
 
 buttons.addEventListener('click',function(){
     const inputValue = document.getElementById('input_Search').value.toLowerCase()
-    const transactions = document.querySelectorAll('tbodys tr');
+    const transactions = document.querySelectorAll('tbodys td');
     console.log(transactions)
 
     transactions.forEach(function(transaction) {

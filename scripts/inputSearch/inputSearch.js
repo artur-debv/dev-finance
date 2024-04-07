@@ -1,10 +1,9 @@
 
 const buttons = document.getElementById('button_search')
-
+const input = document.getElementById('input_Search').value
 
 
 buttons.addEventListener('click',function(){
-    const input = document.getElementById('input_Search')
-    console.log(input)
+    input.innerHTML = `${input.value}`
 })
 

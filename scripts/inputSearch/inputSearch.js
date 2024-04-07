@@ -1,6 +1,6 @@
 document.getElementById('input_search').addEventListener('keyup', function() {
     var searchText = this.value.toLowerCase(); // Obtém o valor digitado e converte para minúsculas para facilitar a comparação
-    var transactions = document.querySelectorAll('#tbodyID tr'); // Obtém todas as linhas de transação
+    var transactions = document.querySelectorAll('tbody tr'); // Obtém todas as linhas de transação
 
     transactions.forEach(function(transaction) {
         var transactionName = transaction.querySelector('.transactionName').textContent.toLowerCase(); // Obtém o nome da transação

@@ -239,7 +239,7 @@ const Form = {
   submit(event) {
     // Submete o formulário de adição de transações
     event.preventDefault(); // Previne o comportamento padrão de envio do formulário
-
+    const toastError = document.querySelector("toast")
     try {
       Form.validateFields(); // Valida os campos do formulário
       const transaction = Form.formatValues(); // Formata os valores dos campos do formulário

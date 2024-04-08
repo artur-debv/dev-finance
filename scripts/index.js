@@ -82,7 +82,7 @@ const DOM = {
     tr.innerHTML = DOM.innerHTMLTransaction(transactions, index); // Define o conteúdo HTML da linha da tabela
     tr.dataset.index = index; // Define o atributo 'data-index' da linha da tabela com o índice da transação
 
-    DOM.transactionsContainer.appendChild(tr); // Adiciona a linha da tabela ao container de transações
+    DOM.transactionsContainer.prepend(tr); // Adiciona a linha da tabela ao container de transações
   },
 
   innerHTMLTransaction(transactions, index) {

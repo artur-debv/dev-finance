@@ -11,6 +11,6 @@
 .a_history{
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     color: white;
 }

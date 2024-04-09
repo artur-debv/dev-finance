@@ -354,8 +354,8 @@ table thead th{
 #data-table {
     width: 40%;
     color: var(--light-blue);
-    margin-top: 20px;
     margin: 0 auto;
+    margin-top: 20px;
 }
 
 table thead th {

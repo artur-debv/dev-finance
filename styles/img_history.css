@@ -4,9 +4,7 @@
     box-sizing: border-box;
 }
 
-.img_history{
-    width: 20px;
-}
+
 
 .a_history{
     display: flex;
@@ -22,4 +20,8 @@
 
 .Infos{
     color: white;
+}
+
+#user .img_history{
+    width: 20px;
 }

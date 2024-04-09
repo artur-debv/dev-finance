@@ -33,5 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
    setThemeFromPreference();
 
-   
+   mode.addEventListener('click', () => {
+       toggleTheme();
+   });
 });

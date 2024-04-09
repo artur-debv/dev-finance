@@ -5,7 +5,7 @@
 }
 
 .img_history{
-    width: 30px;
+    width: 20px;
 }
 
 .a_history{
@@ -13,6 +13,7 @@
     align-items: center;
     gap: 5px;
     color: white;
+    font-size: 14px;
 }
 
 #users{

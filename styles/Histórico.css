@@ -352,9 +352,8 @@ table thead th{
 }
 
 #data-table {
-    width: 70%;
+    width: 40%;
     color: var(--light-blue);
-    display: block;
     margin-top: 20px;
     margin: 0 auto;
 }

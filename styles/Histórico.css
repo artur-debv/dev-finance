@@ -345,3 +345,7 @@ footer {
 .dark header{
     background-color: #1F2020;
 }
+
+table thead th{
+    background-color: #1F2020;
+}

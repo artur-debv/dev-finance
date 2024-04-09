@@ -14,3 +14,8 @@
     gap: 5px;
     color: white;
 }
+
+.users{
+    display: flex;
+    align-items: center;
+}

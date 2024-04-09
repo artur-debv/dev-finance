@@ -82,7 +82,7 @@ const DOM = {
     tr.innerHTML = DOM.innerHTMLTransaction(transactions, index); // Define o conteúdo HTML da linha da tabela
     tr.dataset.index = index; // Define o atributo 'data-index' da linha da tabela com o índice da transação
 
-    DOM.transactionsContainer.appendChild(tr); // Adiciona a linha da tabela ao container de transações
+    DOM.transactionsContainer.prepend(tr); // Adiciona a linha da tabela ao container de transações
   },
 
   innerHTMLTransaction(transactions, index) {
@@ -239,7 +239,7 @@ const Form = {
   submit(event) {
     // Submete o formulário de adição de transações
     event.preventDefault(); // Previne o comportamento padrão de envio do formulário
-
+    const toastError = document.querySelector("toast")
     try {
       Form.validateFields(); // Valida os campos do formulário
       const transaction = Form.formatValues(); // Formata os valores dos campos do formulário

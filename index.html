@@ -53,6 +53,7 @@
     <link rel="stylesheet" href="styles/responsivobutton.css" />
     <link rel="stylesheet" href="styles/responsivosidebar.css">
     <link rel="stylesheet" href="styles/InputSearch.css">
+    <link rel="stylesheet" href="/styles/img_history.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
         rel="stylesheet" />
@@ -72,7 +73,19 @@
                     <p id="user_infos">
                         <span class="item-description">  </span>
                     </p>
+                
                 </div>
+
+                <div>
+                    <div id="users">
+                        <a href="Histórico.html" target="_self" class="a_history"><img class="img_history" src="/assets/Histórico.png"  alt="Avatar" />Histórico</a>
+    
+                        
+                    
+                    </div>
+                </div>
+                
+              
 
                 <ul id="side_items"></ul>
 
@@ -126,15 +139,17 @@
                     </div>
                 </section>
 
+                
                 <section id="transaction">
                     <h2 class="sr-only">Transações</h2>
 
                     <!-- Substituído pelo FloatButton -->
                     <!-- <a href="#" onclick="Modal.open()" class="button new">+ Nova Transação</a> -->
-                    <div class="input_icons">
-                        <!--<i class='bx bx-search-alt-2'></i>-->  
-                        <input type="text" class="input_search" placeholder="Pesquisar Transação">
+                    <div class="containers">
+                        <input type="text" id="input_Search" placeholder="Digite sua Transação">
+                        <button  id="button_search">Pesquisar</button>
                     </div>
+                
                     <table id="data-table">
                         <thead>
                             <tr>
@@ -144,7 +159,7 @@
                                 <th>Deletar Despesa</th>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody class="tbodys"></tbody>
                     </table>
                 </section>
             </main>
@@ -198,6 +213,7 @@
 
             <script src="scripts/Sidebar/sidebar.js"></script>
             <script src="scripts/InputSearch/inputSearch.js"></script>
+            <script src="/scripts/History/History.js"></script>
 
             <!-- The core Firebase JS SDK is always required and must be listed first -->
             <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>

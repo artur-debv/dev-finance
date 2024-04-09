@@ -90,7 +90,6 @@ button {
     -moz-border-radius: 0.25rem;
     -ms-border-radius: 0.25rem;
     -o-border-radius: 0.25rem;
-
     cursor: pointer;
 }
 button:hover {
@@ -193,6 +192,7 @@ button:hover {
 #data-table {
     width: 100%;
     color: var(--light-blue);
+    margin-top: 20px;
 }
 table thead tr th:first-child,
 table tbody tr td:first-child { /*1°Filho*/
@@ -308,6 +308,8 @@ footer {
 .select #sidebar{
     background-color: #282828;
 }
+
+
 
 .select #user_infos span:last-child{
     color: white;

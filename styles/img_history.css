@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.img_history{
+    width: 30px;
+}
+
+.a_history{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+}
+
+#users{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.Infos{
+    color: white;
+}
+

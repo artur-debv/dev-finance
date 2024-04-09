@@ -192,7 +192,7 @@ button:hover {
 #data-table {
     width: 100%;
     color: var(--light-blue);
-    margin-top: 20pxs;
+    margin-top: 20px;
 }
 table thead tr th:first-child,
 table tbody tr td:first-child { /*1°Filho*/

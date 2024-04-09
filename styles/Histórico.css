@@ -50,7 +50,7 @@ img{
 
 /* Header */
 header {
-    background: #3C3C3C;
+    background: var(--dark-green);
 
     padding: 2rem 0 11rem;
     text-align: center;
@@ -342,24 +342,3 @@ footer {
     color: white;
 }
 
-.dark header{
-    background-color: #1F2020;
-}
-
-table thead th{
-    background-color: #1F2020;
-    color: white;
-}
-
-#data-table {
-    width: 100%;
-    color: var(--light-blue);
-    margin-top: 20px;
-}
-
-table thead th {
-    background: #282828;
-    font-weight: normal;
-    padding: 1rem 2rem;
-    text-align: center;
-}

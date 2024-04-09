@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
    const mode = document.getElementById('mode_icon');
    const form = document.querySelector('.darkmode');
-   const form2 = document.querySelector('.mode');
+
 
    function setTheme(theme) {
        if (theme === 'dark') {
@@ -33,7 +33,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
    setThemeFromPreference();
 
-   mode.addEventListener('click', () => {
-       toggleTheme();
-   });
+   
 });

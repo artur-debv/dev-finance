@@ -356,6 +356,7 @@ table thead th{
     color: var(--light-blue);
     display: block;
     margin-top: 20px;
+    margin: 0 auto;
 }
 
 table thead th {

@@ -1,3 +1,10 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     /* Light */
     --color-light-50: #f8fafc;
@@ -43,7 +50,7 @@ img{
 
 /* Header */
 header {
-    background: var(--dark-green);
+    background: #3C3C3C;
 
     padding: 2rem 0 11rem;
     text-align: center;

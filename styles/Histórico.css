@@ -356,3 +356,10 @@ table thead th{
     color: var(--light-blue);
     margin-top: 20px;
 }
+
+table thead th {
+    background: white;
+    font-weight: normal;
+    padding: 1rem 2rem;
+    text-align: center;
+}

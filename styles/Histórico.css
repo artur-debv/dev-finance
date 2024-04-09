@@ -358,7 +358,7 @@ table thead th{
 }
 
 table thead th {
-    background: white;
+    background: #282828;
     font-weight: normal;
     padding: 1rem 2rem;
     text-align: center;

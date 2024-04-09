@@ -364,3 +364,9 @@ table thead th {
     padding: 1rem 2rem;
     text-align: center;
 }
+
+.logins{
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+}

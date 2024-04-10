@@ -1,2 +1,2 @@
-const transaction = JSON.parse(localStorage.getItem('transactions')) || [];
+const transaction = JSON.parse(localStorage.getItem("dev.finances:transactions")) || []; // Obtém as transações armazenadas no localStorage ou retorna um array vazio se não houver transações
  console.log(transaction)

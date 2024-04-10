@@ -3,6 +3,7 @@ const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
 
 // Objeto para armazenar o total gasto em cada mês
 const monthlyExpenses = {};
+console.log(monthlyExpenses)
 
 // Percorrendo as transações
 transactions.forEach(transaction => {

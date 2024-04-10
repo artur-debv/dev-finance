@@ -7,10 +7,10 @@ const monthlyExpenses = {};
 // Iterar sobre as transações
 transactions.forEach(transaction => {
     const { amount, date } = transaction;
-    const [_, month, year] = date.split('/'); // Ignorar o dia, se não for necessário
+    const [day, month, year] = date.split('/'); // Ignorar o dia, se não for necessário
 
     // Calcular o total gasto para cada mês
-    const monthYear = `${month}/${year}`;
+    const monthYear = `${day}/${month}/${year}`;
     monthlyExpenses[monthYear] = (monthlyExpenses[monthYear] || 0) + parseFloat(amount);
 });
 

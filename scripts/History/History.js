@@ -29,5 +29,7 @@ const topMonths = monthlyExpensesArray.slice(0, 3); // Pegar os 3 primeiros mese
 const Date = document.querySelector(".Data")
 const Value = document.querySelector(".Valor")
 
+const primeiroArray = monthlyExpenses[0];
+console.log(primeiroArray)
 
 console.log('Meses mais gastos:', topMonths);

@@ -226,7 +226,7 @@ table thead th {
     text-align: center;
 }
 table tbody td {
-    background: white;
+    background: #282828;
     border-spacing: 0 0.5rem; /* Vertical | Horizontal */
     text-align: center;
     padding: 1rem 2rem;

@@ -4,6 +4,9 @@ const transactions = JSON.parse(localStorage.getItem("dev.finances:transactions"
 // Objeto para armazenar o total gasto em cada mês
 const monthlyExpenses = {};
 
+const Date = document.querySelector(".Data").innerHTML ="1";
+const Value = document.querySelector(".valor").innerHTML ="2"; 
+
 // Iterar sobre as transações
 transactions.forEach(transaction => {
     const { amount, date } = transaction;

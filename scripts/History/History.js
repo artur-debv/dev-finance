@@ -5,7 +5,7 @@ const transactions = JSON.parse(localStorage.getItem("dev.finances:transactions"
 const monthlyExpenses = {};
 
 const Date = document.querySelector(".Data").innerHTML ="1";
-const Value = document.querySelector(".valor").innerHTML ="2"; 
+const Value = document.querySelector(".Valor").innerHTML ="2"; 
 
 // Iterar sobre as transações
 transactions.forEach(transaction => {

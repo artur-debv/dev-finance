@@ -1,11 +1,4 @@
 
- const Historys = document.querySelector(".a_history")
-
- Historys.addEventListener("click",function(){
-    window.open("nova_pagina.html", "_self")
- })
- 
-
  const transactionDescription = transaction.querySelector('td:nth-child(1)')
  const transactionValue = transaction.querySelector('td:nth-child(2)')
  const transactionDate = transaction.querySelector('td:nth-child(3)')

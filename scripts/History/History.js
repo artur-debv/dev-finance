@@ -25,11 +25,13 @@ monthlyExpensesArray.sort((a, b) => b[1] - a[1]);
 // Obter os meses mais gastos
 const topMonths = monthlyExpensesArray.slice(0, 3); // Pegar os 3 primeiros meses mais gastos
 
+// Acessar os elementos de cada mês mais gasto
+topMonths.forEach(month => {
+    const data = month[0]; // Acessa a data do mês
+    const valor = month[1]; // Acessa o valor do mês
 
-const Date = document.querySelector(".Data")
-const Value = document.querySelector(".Valor")
-
-const primeiroArray = monthlyExpenses[0];
-console.log(primeiroArray)
+    console.log("Data:", data);
+    console.log("Valor:", valor);
+});
 
 console.log('Meses mais gastos:', topMonths);

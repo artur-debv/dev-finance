@@ -7,8 +7,8 @@ const monthlyExpenses = {};
 // Percorrendo as transações
 transactions.forEach(transaction => {
     // Extraindo o mês e o ano da data da transação
-    const [day, month, year] = transaction.date.split('/');
-    const monthYear = `${day}/${month}/${year}`;
+    const [date, month, year] = transaction.date.split('/'); // Aqui estamos dividindo a data em dia, mês e ano
+    const monthYear = `${month}/${year}`;
 
     // Se o mês já estiver no objeto monthlyExpenses, adiciona o valor da transação à soma existente; caso contrário, cria uma nova entrada com o valor da transação
     if (monthlyExpenses[monthYear]) {

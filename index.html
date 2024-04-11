@@ -76,147 +76,148 @@
             </nav>
         </div>
     </div>
-    <main>
-        <div class="darkmode">
-            <header>
-                <div class="icon">
-                    <img src="./assets/logo.svg" alt="logo dev.finance$" />
-                    <div class="icons_account">
-                        <a class="login" href="Form.html">Fazer login</a>
-                        <i id="mode_icon" class="fa-solid fa-moon"></i>
+    <div class="height-100 bg-light">
+        <main>
+            <div class="darkmode">
+                <header>
+                    <div class="icon">
+                        <img src="./assets/logo.svg" alt="logo dev.finance$" />
+                        <div class="icons_account">
+                            <a class="login" href="Form.html">Fazer login</a>
+                            <i id="mode_icon" class="fa-solid fa-moon"></i>
+                        </div>
+                    </div>
+                </header>
+                <main class="container">
+                    <section id="balance">
+                        <h2 class="sr-only">Balanço</h2>
+                        <div class="card">
+                            <h3>
+                                <span>Entradas</span>
+                                <img src="./assets/income.svg" alt="Imagem de entradas" />
+                            </h3>
+                            <p id="incomeDisplay">R$ 0,00</p>
+                        </div>
+                        <div class="card">
+                            <h3>
+                                <span>Saídas</span>
+                                <img src="./assets/expense.svg" alt="Imagem de saídas" />
+                            </h3>
+                            <p id="expenseDisplay">R$ 0,00</p>
+                        </div>
+                        <div class="card total">
+                            <h3>
+                                <span>Total</span>
+                                <img src="./assets/total.svg" alt="Imagem de total" />
+                            </h3>
+                            <p id="totalDisplay">R$ 0,00</p>
+                        </div>
+                    </section>
+    
+                    
+                    <section id="transaction">
+                        <h2 class="sr-only">Transações</h2>
+    
+                        <!-- Substituído pelo FloatButton -->
+                        <!-- <a href="#" onclick="Modal.open()" class="button new">+ Nova Transação</a> -->
+                        <div class="containers">
+                            <input type="text" id="input_Search" placeholder="Digite sua Transação">
+                            <button  id="button_search">Pesquisar</button>
+                        </div>
+                    
+                        <table id="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Descrição</th>
+                                    <th>Valor</th>
+                                    <th>Data</th>
+                                    <th>Deletar Despesa</th>
+                                </tr>
+                            </thead>
+                            <tbody class="tbodys"></tbody>
+                        </table>
+                    </section>
+                </main>
+    
+                <div class="modal-overlay">
+                    <div class="modal">
+                        <div id="form">
+                            <h2>Nova Transação</h2>
+    
+                            <form action="" onsubmit="Form.submit(event)">
+                                <div class="input-group">
+                                    <label for="description" class="sr-only">Descrição</label>
+                                    <input type="text" id="description" name="description" placeholder="Description" />
+                                </div>
+    
+                                <div class="input-group">
+                                    <label for="amount" class="sr-only">Valor</label>
+                                    <input type="number" id="amount" name="amount" placeholder="0,00" step="0.01" />
+                                </div>
+    
+                                <small class="help-for-modal">Use o sinal - (negativo) para despesas e , (vírgula) para
+                                    casas decimais</small>
+    
+                                <div class="input-group">
+                                    <label for="date" class="sr-only">Data</label>
+                                    <input type="date" id="date" name="date" />
+                                </div>
+    
+                                <div class="input-group actions">
+                                    <a href="#" onclick="Modal.close()" class="button cancel">Cancelar</a>
+                                    <button type="submit">Salvar</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </header>
-            <main class="container">
-                <section id="balance">
-                    <h2 class="sr-only">Balanço</h2>
-                    <div class="card">
-                        <h3>
-                            <span>Entradas</span>
-                            <img src="./assets/income.svg" alt="Imagem de entradas" />
-                        </h3>
-                        <p id="incomeDisplay">R$ 0,00</p>
+    
+                <div id="toast">
+                    <div class="img">
+                        <h1>×</h1>
                     </div>
-                    <div class="card">
-                        <h3>
-                            <span>Saídas</span>
-                            <img src="./assets/expense.svg" alt="Imagem de saídas" />
-                        </h3>
-                        <p id="expenseDisplay">R$ 0,00</p>
-                    </div>
-                    <div class="card total">
-                        <h3>
-                            <span>Total</span>
-                            <img src="./assets/total.svg" alt="Imagem de total" />
-                        </h3>
-                        <p id="totalDisplay">R$ 0,00</p>
-                    </div>
-                </section>
-
-                
-                <section id="transaction">
-                    <h2 class="sr-only">Transações</h2>
-
-                    <!-- Substituído pelo FloatButton -->
-                    <!-- <a href="#" onclick="Modal.open()" class="button new">+ Nova Transação</a> -->
-                    <div class="containers">
-                        <input type="text" id="input_Search" placeholder="Digite sua Transação">
-                        <button  id="button_search">Pesquisar</button>
-                    </div>
-                
-                    <table id="data-table">
-                        <thead>
-                            <tr>
-                                <th>Descrição</th>
-                                <th>Valor</th>
-                                <th>Data</th>
-                                <th>Deletar Despesa</th>
-                            </tr>
-                        </thead>
-                        <tbody class="tbodys"></tbody>
-                    </table>
-                </section>
-            </main>
-
-            <div class="modal-overlay">
-                <div class="modal">
-                    <div id="form">
-                        <h2>Nova Transação</h2>
-
-                        <form action="" onsubmit="Form.submit(event)">
-                            <div class="input-group">
-                                <label for="description" class="sr-only">Descrição</label>
-                                <input type="text" id="description" name="description" placeholder="Description" />
-                            </div>
-
-                            <div class="input-group">
-                                <label for="amount" class="sr-only">Valor</label>
-                                <input type="number" id="amount" name="amount" placeholder="0,00" step="0.01" />
-                            </div>
-
-                            <small class="help-for-modal">Use o sinal - (negativo) para despesas e , (vírgula) para
-                                casas decimais</small>
-
-                            <div class="input-group">
-                                <label for="date" class="sr-only">Data</label>
-                                <input type="date" id="date" name="date" />
-                            </div>
-
-                            <div class="input-group actions">
-                                <a href="#" onclick="Modal.close()" class="button cancel">Cancelar</a>
-                                <button type="submit">Salvar</button>
-                            </div>
-                        </form>
-                    </div>
+                    <div class="description">Por favor, preencha todos os campos!</div>
                 </div>
+    
+                <a href="#" onclick="Modal.open()" class="float-button">
+                    <img src="./assets/float-plus.svg" alt="Adicionar" width="16px" />
+                </a>
+    
+                <script src="./scripts/index.js" type="text/javascript"></script>
+                <script src="./scripts/JsTheme/Theme.js"></script>
+    
+                <script src="scripts/Sidebar/sidebar.js"></script>
+                <script src="scripts/InputSearch/inputSearch.js"></script>
+                <script src="/scripts/History/History.js"></script>
+    
+                <!-- The core Firebase JS SDK is always required and must be listed first -->
+                <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    
+                <!-- TODO: Add SDKs for Firebase products that you want to use
+                     https://firebase.google.com/docs/web/setup#available-libraries -->
+                <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+                <script src="scripts/Form/Form.js"></script>
+                <script src="scripts/Index/index.js"></script>
+                <script src="https://accounts.google.com/gsi/client" async></script>
+    
+                <script>
+                    // Your web app's Firebase configuration
+                    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+                    var firebaseConfig = {
+                        apiKey: "AIzaSyACsu8pWaxRfoj8WiRpzI2Mo2vnSn8wVns",
+                        authDomain: "devfinances777.firebaseapp.com",
+                        projectId: "devfinances777",
+                        storageBucket: "devfinances777.appspot.com",
+                        messagingSenderId: "164547638392",
+                        appId: "1:164547638392:web:5324d388a389684bafa98d",
+                        measurementId: "G-VWV8XMYM95",
+                    };
+                    // Initialize Firebase
+                    firebase.initializeApp(firebaseConfig);
+                    firebase.analytics();
+                </script>
             </div>
-
-            <div id="toast">
-                <div class="img">
-                    <h1>×</h1>
-                </div>
-                <div class="description">Por favor, preencha todos os campos!</div>
-            </div>
-
-            <a href="#" onclick="Modal.open()" class="float-button">
-                <img src="./assets/float-plus.svg" alt="Adicionar" width="16px" />
-            </a>
-
-            <script src="./scripts/index.js" type="text/javascript"></script>
-            <script src="./scripts/JsTheme/Theme.js"></script>
-
-            <script src="scripts/Sidebar/sidebar.js"></script>
-            <script src="scripts/InputSearch/inputSearch.js"></script>
-            <script src="/scripts/History/History.js"></script>
-
-            <!-- The core Firebase JS SDK is always required and must be listed first -->
-            <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
-
-            <!-- TODO: Add SDKs for Firebase products that you want to use
-                 https://firebase.google.com/docs/web/setup#available-libraries -->
-            <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
-            <script src="scripts/Form/Form.js"></script>
-            <script src="scripts/Index/index.js"></script>
-            <script src="https://accounts.google.com/gsi/client" async></script>
-
-            <script>
-                // Your web app's Firebase configuration
-                // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-                var firebaseConfig = {
-                    apiKey: "AIzaSyACsu8pWaxRfoj8WiRpzI2Mo2vnSn8wVns",
-                    authDomain: "devfinances777.firebaseapp.com",
-                    projectId: "devfinances777",
-                    storageBucket: "devfinances777.appspot.com",
-                    messagingSenderId: "164547638392",
-                    appId: "1:164547638392:web:5324d388a389684bafa98d",
-                    measurementId: "G-VWV8XMYM95",
-                };
-                // Initialize Firebase
-                firebase.initializeApp(firebaseConfig);
-                firebase.analytics();
-            </script>
-        </div>
-    </main>
+        </main>
+    </div>
 </body>
-
 </html>

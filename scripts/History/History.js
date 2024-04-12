@@ -32,8 +32,6 @@ topMonths.forEach((month) => {
 
     dataElement.textContent = month[0]; // Atualiza a data
     valorElement.textContent = month[1]; // Atualiza o valor
-    dataElement.textContent = topMonths[0][0]; // Atualiza a data
-    valorElement.textContent = topMonths[0][1]; // Atualiza o valor
 });
 
 console.log('Meses mais gastos:', topMonths);

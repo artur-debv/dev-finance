@@ -1,6 +1,6 @@
 
 // Verifica se a página atual é 'histórico.html'
-if (window.location.pathname === '/histórico.html') {
+if (window.location.pathname === 'https://devfinancesss.netlify.app/hist%C3%B3rico') {
   // Define um indicador no localStorage
   localStorage.setItem("historicoPageVisited", true);
 }

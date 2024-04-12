@@ -22,8 +22,6 @@ document.querySelector("#data-table tbody") // Seleciona o elemento que contém 
  // Ordenar o array por total gasto em ordem decrescente
  monthlyExpensesArray.sort((a, b) => b[1] - a[1]);
 
- // Limpar conteúdo atual da tabela
- this.transactionsContainer.innerHTML = '';
 
  // Adiciona transações com os maiores gastos à lista de transações
  monthlyExpensesArray.forEach((month, index) => {

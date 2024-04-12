@@ -30,8 +30,8 @@ topMonths.forEach((month) => {
     const dataElement = document.querySelector(".Data"); // Supondo que os elementos HTML tenham classes como "data1", "data2", etc.
     const valorElement = document.querySelector(".Valor"); // Supondo que os elementos HTML tenham classes como "valor1", "valor2", etc.
 
-    dataElement.textContent = month[0]; // Atualiza a data
-    valorElement.textContent = month[1]; // Atualiza o valor
+    dataElement.textContent = month[1]; // Atualiza a data
+    valorElement.textContent = month[0]; // Atualiza o valor
 });
 
 console.log('Meses mais gastos:', topMonths);

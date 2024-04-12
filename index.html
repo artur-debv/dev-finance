@@ -123,11 +123,6 @@
                     console.error('Google API not loaded or gapi.auth2 not available.');
                 }
             }
-    
-            // Espera até que o DOM esteja completamente carregado antes de adicionar um manipulador de evento ao botão de logout
-            document.addEventListener('DOMContentLoaded', function() {
-                document.getElementById("signOutButton").addEventListener("click", signOut);
-            });
         </script>
         <div class="darkmode">
             <header>

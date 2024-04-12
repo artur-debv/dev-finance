@@ -1,3 +1,12 @@
+
+// Verifica se a página atual é 'histórico.html'
+if (window.location.pathname === '/histórico.html') {
+  // Define um indicador no localStorage
+  localStorage.setItem("historicoPageVisited", true);
+}
+
+
+
 const transactionsContainer = document.querySelector("#data-table tbody");
 
  // Recuperando as transações do localStorage
@@ -40,5 +49,7 @@ const transactionsContainer = document.querySelector("#data-table tbody");
 
    transactionsContainer.appendChild(tr)
  });
+
+ 
 
  

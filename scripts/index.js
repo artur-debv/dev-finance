@@ -1,3 +1,10 @@
+
+// Verifica se o indicador está presente no localStorage
+if (localStorage.getItem("historicoPageVisited")) {
+  // Remove o indicador do localStorage
+  localStorage.removeItem("historicoPageVisited");
+}
+
 const Modal = {
   // Objeto responsável por controlar a exibição do modal
   open() {

@@ -71,21 +71,22 @@
                     <img src="src/images/avatar.jpg" id="user_avatar" alt="Avatar" />
 
                     <p id="user_infos">
-                        <span class="item-description">  </span>
+                        <span class="item-description"> </span>
                     </p>
-                
+
                 </div>
 
                 <div>
                     <div id="users">
-                        <a href="Histórico.html" target="_self" class="a_history"><img class="img_history" src="/assets/Histórico.png"  alt="Avatar" />Histórico</a>
-    
-                        
-                    
+                        <a href="Histórico.html" target="_self" class="a_history"><img class="img_history"
+                                src="/assets/Histórico.png" alt="Avatar" />Histórico</a>
+
+
+
                     </div>
                 </div>
-                
-              
+
+
 
                 <ul id="side_items"></ul>
 
@@ -139,7 +140,7 @@
                     </div>
                 </section>
 
-                
+
                 <section id="transaction">
                     <h2 class="sr-only">Transações</h2>
 
@@ -147,9 +148,9 @@
                     <!-- <a href="#" onclick="Modal.open()" class="button new">+ Nova Transação</a> -->
                     <div class="containers">
                         <input type="text" id="input_Search" placeholder="Digite sua Transação">
-                        <button  id="button_search">Pesquisar</button>
+                        <button id="button_search">Pesquisar</button>
                     </div>
-                
+
                     <table id="data-table">
                         <thead>
                             <tr>
@@ -225,6 +226,18 @@
             <script src="scripts/Index/index.js"></script>
             <script src="https://accounts.google.com/gsi/client" async></script>
             <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+            <a href="#" onclick="signOut();">Sign out</a>
+            <script>
+                function signOut() {
+                    var auth2 = gapi.auth2.getAuthInstance();
+                    auth2.signOut().then(function () {
+                        console.log('User signed out.');
+                    });
+                }
+            </script>
+
             <script>
                 // Your web app's Firebase configuration
                 // For Firebase JS SDK v7.20.0 and later, measurementId is optional

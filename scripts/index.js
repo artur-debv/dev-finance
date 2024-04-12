@@ -1,7 +1,7 @@
 
 // Verifica se a página visitada anteriormente foi histórico.html
 const lastVisitedPage = localStorage.getItem("currentPage");
-if (lastVisitedPage === "https://devfinancesss.netlify.app/hist%C3%B3rico") {
+if (lastVisitedPage === "histórico.html") {
     // Armazena a informação do mês mais gasto no localStorage
     localStorage.setItem("mêsMaisGasto", mêsMaisGasto);
 }

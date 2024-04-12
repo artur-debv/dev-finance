@@ -32,7 +32,7 @@ monthlyExpensesArray.forEach((month, index) => {
         const valorElement = valorElements[index];
 
         // Atualizar os elementos HTML com os valores do mês mais gasto
-        dataElement.textContent = month[0]; // Assumindo que o primeiro elemento do par seja a data
-        valorElement.textContent = month[1]; // Assumindo que o segundo elemento do par seja o valor
+        dataElement.textContent = month[1]; // Assumindo que o primeiro elemento do par seja a data
+        valorElement.textContent = month[0]; // Assumindo que o segundo elemento do par seja o valor
     }
 });

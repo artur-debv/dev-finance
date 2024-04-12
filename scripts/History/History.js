@@ -27,8 +27,8 @@ const transactionsContainer = document.querySelector("#data-table tbody");
  // Adiciona transações com os maiores gastos à lista de transações
  monthlyExpensesArray.forEach((month, index) => {
    const tr = document.createElement("tr"); // Cria um novo elemento 'tr' (linha da tabela)
-   const date = month[1]; // Assume que o primeiro elemento do par seja a data
-   const value = month[0]; // Assume que o segundo elemento do par seja o valor
+   const date = month[0]; // Assume que o primeiro elemento do par seja a data
+   const value = month[1]; // Assume que o segundo elemento do par seja o valor
 
    // Define o conteúdo HTML da linha da tabela
    tr.innerHTML = `

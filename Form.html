@@ -17,7 +17,7 @@
 <body>
     <div class="modes">
 
-        <a href="#" onclick="signOut();">Sign out</a>
+        <a href="#" id="signOutButton">Sign out</a>
 
         <!-- Carregar a biblioteca da API do Google -->
         <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -32,13 +32,18 @@
                         auth2.signOut().then(function () {
                             console.log('User signed out.');
                             // Redirecione para a página de login ou outra página após o logout
-                            window.location.href = "https://devfinancesss.netlify.app/index.html";
+                            window.location.href = "https://devfinancesss.netlify.app/form";
                         });
                     }
                 } else {
                     console.error('Google API not loaded or gapi.auth2 not available.');
                 }
             }
+    
+            // Espera até que o DOM esteja completamente carregado antes de adicionar um manipulador de evento ao botão de logout
+            document.addEventListener('DOMContentLoaded', function() {
+                document.getElementById("signOutButton").addEventListener("click", signOut);
+            });
         </script>
 
         <div class="wrapper">

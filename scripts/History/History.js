@@ -1,5 +1,5 @@
 
-const transactionsContainer = document.querySelector("#data-table tbodyss");
+const transactionsContainer = document.querySelector("#data-table tbody");
 
  // Recuperando as transações do localStorage
  const transactions = JSON.parse(localStorage.getItem("dev.finances:transactions")) || [];

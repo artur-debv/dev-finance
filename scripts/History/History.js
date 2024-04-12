@@ -22,7 +22,10 @@ const transactionsContainer = document.querySelector("#data-table tbody");
  // Ordenar o array por total gasto em ordem decrescente
  monthlyExpensesArray.sort((a, b) => b[1] - a[1]);
 
-
+// Função para limpar os dados do localStorage quando a página é recarregada ou fechada
+window.addEventListener("beforeunload", function() {
+  localStorage.removeItem("dev.finances:transactions");
+});
 
  // Adiciona transações com os maiores gastos à lista de transações
  monthlyExpensesArray.forEach((month, index) => {
@@ -40,3 +43,5 @@ const transactionsContainer = document.querySelector("#data-table tbody");
 
    transactionsContainer.appendChild(tr)
  });
+
+ 

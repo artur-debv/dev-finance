@@ -1,4 +1,4 @@
-document.querySelector("#data-table tbody") // Seleciona o elemento que contém a lista de transações
+const transactionsContainer = document.querySelector("#data-table tbody");
 
  // Recuperando as transações do localStorage
  const transactions = JSON.parse(localStorage.getItem("dev.finances:transactions")) || [];
@@ -23,6 +23,7 @@ document.querySelector("#data-table tbody") // Seleciona o elemento que contém 
  monthlyExpensesArray.sort((a, b) => b[1] - a[1]);
 
 
+
  // Adiciona transações com os maiores gastos à lista de transações
  monthlyExpensesArray.forEach((month, index) => {
    const tr = document.createElement("tr"); // Cria um novo elemento 'tr' (linha da tabela)
@@ -37,5 +38,5 @@ document.querySelector("#data-table tbody") // Seleciona o elemento que contém 
 
    tr.dataset.index = index; // Define o atributo 'data-index' da linha da tabela com o índice da transação
 
-   this.transactionsContainer.appendChild(tr); // Adiciona a linha da tabela ao container de transações
+   transactionsContainer.appendChild(tr)
  });

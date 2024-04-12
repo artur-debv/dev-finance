@@ -1,10 +1,4 @@
 
-// Verifica se a página visitada anteriormente foi histórico.html
-const lastVisitedPage = localStorage.getItem("currentPage");
-if (lastVisitedPage === "histórico.html") {
-    // Armazena a informação do mês mais gasto no localStorage
-    localStorage.setItem("mêsMaisGasto", mêsMaisGasto);
-}
 
 const Modal = {
   // Objeto responsável por controlar a exibição do modal

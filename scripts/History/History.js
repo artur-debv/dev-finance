@@ -1,11 +1,4 @@
-// Define um indicador no localStorage para registrar que está visitando a página histórico.html
-localStorage.setItem("currentPage", "histórico.html");
 
-// Adiciona um ouvinte de evento para detectar quando a página está sendo fechada ou a navegação está mudando
-window.addEventListener("unload", function() {
-    // Remove o indicador do localStorage ao sair da página
-    localStorage.removeItem("currentPage");
-});
 const transactionsContainer = document.querySelector("#data-table tbody");
 
  // Recuperando as transações do localStorage

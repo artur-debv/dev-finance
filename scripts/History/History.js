@@ -4,8 +4,6 @@ const transactions = JSON.parse(localStorage.getItem("dev.finances:transactions"
 // Objeto para armazenar o total gasto em cada mês
 const monthlyExpenses = {};
 
-
-
 // Iterar sobre as transações
 transactions.forEach(transaction => {
     const { amount, date } = transaction;
@@ -22,16 +20,19 @@ const monthlyExpensesArray = Object.entries(monthlyExpenses);
 // Ordenar o array por total gasto em ordem decrescente
 monthlyExpensesArray.sort((a, b) => b[1] - a[1]);
 
-// Obter os meses mais gastos
-const topMonths = monthlyExpensesArray.slice(0, 3); // Pegar os 3 primeiros meses mais gastos
+// Obter os elementos HTML onde você deseja exibir os meses mais gastos
+const dataElements = document.querySelectorAll(".Data");
+const valorElements = document.querySelectorAll(".Valor");
 
-// Acessar os elementos de cada mês mais gasto
-topMonths.forEach((month) => {
-    const dataElement = document.querySelector(".Data"); // Supondo que os elementos HTML tenham classes como "data1", "data2", etc.
-    const valorElement = document.querySelector(".Valor"); // Supondo que os elementos HTML tenham classes como "valor1", "valor2", etc.
+// Iterar sobre os elementos HTML e atualizar com os valores dos meses mais gastos
+monthlyExpensesArray.forEach((month, index) => {
+    // Verificar se existem elementos disponíveis para exibir os meses mais gastos
+    if (index < dataElements.length && index < valorElements.length) {
+        const dataElement = dataElements[index];
+        const valorElement = valorElements[index];
 
-    dataElement.textContent = month[1]; // Atualiza a data
-    valorElement.textContent = month[0]; // Atualiza o valor
+        // Atualizar os elementos HTML com os valores do mês mais gasto
+        dataElement.textContent = month[0]; // Assumindo que o primeiro elemento do par seja a data
+        valorElement.textContent = month[1]; // Assumindo que o segundo elemento do par seja o valor
+    }
 });
-
-console.log('Meses mais gastos:', topMonths);

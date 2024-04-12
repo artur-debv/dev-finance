@@ -1,8 +1,9 @@
 
-// Verifica se o indicador está presente no localStorage
-if (localStorage.getItem("historicoPageVisited")) {
-  // Remove o indicador do localStorage
-  localStorage.removeItem("historicoPageVisited");
+// Verifica se a página visitada anteriormente foi histórico.html
+const lastVisitedPage = localStorage.getItem("currentPage");
+if (lastVisitedPage === "https://devfinancesss.netlify.app/hist%C3%B3rico") {
+    // Armazena a informação do mês mais gasto no localStorage
+    localStorage.setItem("mêsMaisGasto", mêsMaisGasto);
 }
 
 const Modal = {

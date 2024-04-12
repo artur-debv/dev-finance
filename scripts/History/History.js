@@ -1,6 +1,6 @@
 
 // Define um indicador no localStorage para registrar que está visitando a página histórico.html
-localStorage.setItem("currentPage", "histórico.html");
+localStorage.setItem("currentPage", "https://devfinancesss.netlify.app/hist%C3%B3rico");
 
 
 

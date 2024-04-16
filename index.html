@@ -104,13 +104,13 @@
         </nav>
     </div>
     <main>
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
         <script>
             // Função para desconectar o usuário da conta do Google
             function signOut() {
                 // Verifica se a biblioteca da API do Google está carregada
                 if (typeof gapi !== 'undefined' && gapi.auth2) {
-                    var auth2 = gapi.auth2.getAuthInstance();
+                    var auth2 = gapi.auth2.get;
                     if (auth2) {
                         auth2.signOut().then(function () {
                             console.log('User signed out.');

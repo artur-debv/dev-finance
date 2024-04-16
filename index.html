@@ -108,7 +108,9 @@
         <script>
             function init() {
                 gapi.load('auth2', function () {
-                   console.log('deu certo')
+                   gapi.auth2.isSignedIn.get().then(()=>{
+                    console.log('deu certo')
+                   }).catch((error)=>console.log('deu erro'))
                 });
             }
         </script>

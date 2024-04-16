@@ -29,15 +29,11 @@ const transactionsContainer = document.querySelector("#data-table tbody");
  monthlyExpensesArray.forEach((month, index) => {
    const tr = document.createElement("tr"); // Cria um novo elemento 'tr' (linha da tabela)
    const date = month[0]; // Assume que o primeiro elemento do par seja a data
-   const value = month[1]; // Assume que o segundo elemento do par seja o valor
-
-   function formatCurrency(value) {
-    // Formata um valor como uma moeda
-    const signal = Number(value) < 0 ? "-&nbsp;" : "+&nbsp;"; // Define o sinal (+ ou -) com base no valor
-
-    value = String(value).replace(/\D/g, ""); // Remove todos os caracteres não numéricos do valor
-    value = Number(value) / 100; // Converte o valor para centavos
-    value = value.toLocaleString("pt-BR", {
+   function formatCurrency(valor) {
+    const value = month[1]; // Assume que o segundo elemento do par seja o valor
+    valor = String(value).replace(/\D/g, ""); // Remove todos os caracteres não numéricos do valor
+    valor = Number(value) / 100; // Converte o valor para centavos
+    valor = value.toLocaleString("pt-BR", {
       style: "currency",
       currency: "BRL",
     }); // Formata o valor como uma moeda brasileira

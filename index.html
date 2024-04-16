@@ -108,11 +108,27 @@
         <script>
             function init() {
                 gapi.load('auth2', function () {
-                   gapi.auth2.isSignedIn.get().then(()=>{
-                    console.log('deu certo')
-                   }).catch((error)=>console.log('deu erro'))
+                    gapi.auth2.init().then(function () {
+                        var auth2 = gapi.auth2.getAuthInstance();
+                        if (auth2) {
+                            var isSignedIn = auth2.isSignedIn.get();
+                            if (isSignedIn) {
+                                console.log('O usuário está conectado.');
+                            } else {
+                                console.log('O usuário não está conectado.');
+                            }
+                        } else {
+                            console.error('Falha ao obter a instância de autenticação.');
+                        }
+                    }).catch(function (error) {
+                        console.error('Erro ao inicializar auth2:', error);
+                    });
                 });
             }
+
+            // Chama a função init quando a página é carregada
+            init();
+
         </script>
 
         <div class="darkmode">

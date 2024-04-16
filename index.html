@@ -106,26 +106,19 @@
     <main>
         <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
         <script>
-            // Função para desconectar o usuário da conta do Google
-            function signOut() {
-                // Verifica se a biblioteca da API do Google está carregada
-                if (typeof gapi !== 'undefined' && gapi.auth2) {
-                    var auth2 = gapi.auth2.get;
-                    if (auth2) {
-                        auth2.isSignedIn.get().then(function () {
+            function init() {
+                gapi.load('auth2', function () {
+                    auth2.signOut().then(function () {
                             console.log('User signed out.');
                             // Redireciona para a página desejada após o logout
-                            window.location.href = "";
+                            window.location.href = "https://devfinancesss.netlify.app/form";
                         }).catch(function (error) {
                             console.error('Error signing out:', error);
                         });
-                    }
-                } else {
-                    console.error('Google API not loaded or gapi.auth2 not available.');
-                }
+                });
             }
         </script>
-        
+
         <div class="darkmode">
             <header>
                 <div class="icon">
@@ -250,7 +243,7 @@
             <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 
-      
+
 
             <script>
                 // Your web app's Firebase configuration

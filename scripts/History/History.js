@@ -1,52 +1,56 @@
 
 const transactionsContainer = document.querySelector("#data-table tbody");
 
-// Recuperando as transações do localStorage
-const transactions = JSON.parse(localStorage.getItem("dev.finances:transactions")) || [];
+ // Recuperando as transações do localStorage
+ const transactions = JSON.parse(localStorage.getItem("dev.finances:transactions")) || [];
 
-// Objeto para armazenar o total gasto em cada mêsd
-const monthlyExpenses = {};
+ // Objeto para armazenar o total gasto em cada mêsd
+ const monthlyExpenses = {};
 
-// Iterar sobre as transações
-transactions.forEach(transaction => {
-  const { amount, date } = transaction;
-  const [day, month, year] = date.split('/'); // Ignorar o dia, se não for necessário
+ // Iterar sobre as transações
+ transactions.forEach(transaction => {
+     const { amount, date } = transaction;
+     const [day, month, year] = date.split('/'); // Ignorar o dia, se não for necessário
 
-  // Calcular o total gasto para cada mês
-  const monthYear = `${month}/${year}`;
-  monthlyExpenses[monthYear] = (monthlyExpenses[monthYear] || 0) + parseFloat(amount);
-});
+     // Calcular o total gasto para cada mês
+     const monthYear = `${month}/${year}`;
+     monthlyExpenses[monthYear] = (monthlyExpenses[monthYear] || 0) + parseFloat(amount);
+ });
 
-// Transformar o objeto monthlyExpenses em um array de pares (mês/ano, total gasto)
-const monthlyExpensesArray = Object.entries(monthlyExpenses);
+ // Transformar o objeto monthlyExpenses em um array de pares (mês/ano, total gasto)
+ const monthlyExpensesArray = Object.entries(monthlyExpenses);
 
-// Ordenar o array por total gasto em ordem decrescente
-monthlyExpensesArray.sort((a, b) => b[1] - a[1]);
+ // Ordenar o array por total gasto em ordem decrescente
+ monthlyExpensesArray.sort((a, b) => b[1] - a[1]);
 
 
 
-// Adiciona transações com os maiores gastos à lista de transações
-monthlyExpensesArray.forEach((month, index) => {
-  const tr = document.createElement("tr"); // Cria um novo elemento 'tr' (linha da tabela)
-  const date = month[0]; // Assume que o primeiro elemento do par seja a data
-  // Função para formatar como dinheiro
-  function formatarDinheiro(valor) {
-    return 'R$ ' + valor.toLocaleString('pt-BR', { minimumFractionDigits: 0 });
+ // Adiciona transações com os maiores gastos à lista de transações
+ monthlyExpensesArray.forEach((month, index) => {
+   const tr = document.createElement("tr"); // Cria um novo elemento 'tr' (linha da tabela)
+   const date = month[0]; // Assume que o primeiro elemento do par seja a data
+   const value = month[1]; // Assume que o segundo elemento do par seja o valor
+
+   formatCurrency(value); {
+    value = String(value).replace(/\D/g, ""); // Remove todos os caracteres não numéricos do valor
+    value = Number(value) / 100; // Converte o valor para centavos
+    value = value.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }); // Formata o valor como uma moeda brasileira
   }
 
-  const value = month[1]; // Obtendo o valor do segundo elemento do array
-  const valorFormatado = formatarDinheiro(value);
-
-  // Define o conteúdo HTML da linha da tabela
-  tr.innerHTML = `
+   // Define o conteúdo HTML da linha da tabela
+   tr.innerHTML = `
      <td class="Data">${date}</td>
-     <td class="Valor">${valorFormatado}</td>
+     <td class="Valor">${value}</td>
    `;
 
-  tr.dataset.index = index; // Define o atributo 'data-index' da linha da tabela com o índice da transação
+   tr.dataset.index = index; // Define o atributo 'data-index' da linha da tabela com o índice da transação
 
-  transactionsContainer.appendChild(tr)
-});
+   transactionsContainer.appendChild(tr)
+ });
 
+ 
 
-
+ 

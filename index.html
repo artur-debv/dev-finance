@@ -98,7 +98,7 @@
             <div id="logout">
                 <button id="logout_btn">
                     <i class="fa-solid fa-right-from-bracket"></i>
-                    <span class="item-description"> Sair </span>
+                    <span class="item-description" onclick="signOut()"> Sair </span>
                 </button>
             </div>
         </nav>
@@ -115,7 +115,7 @@
                         auth2.signOut().then(function () {
                             console.log('User signed out.');
                             // Redireciona para a página desejada após o logout
-                            window.location.href = "https://seusite.com/pagina_de_redirecionamento.html";
+                            window.location.href = "https://devfinancesss.netlify.app/form";
                         }).catch(function (error) {
                             console.error('Error signing out:', error);
                         });

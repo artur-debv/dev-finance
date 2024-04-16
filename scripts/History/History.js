@@ -30,16 +30,10 @@ const transactionsContainer = document.querySelector("#data-table tbody");
    const tr = document.createElement("tr"); // Cria um novo elemento 'tr' (linha da tabela)
    const date = month[0]; // Assume que o primeiro elemento do par seja a data
    const value = month[1]; // Assume que o segundo elemento do par seja o valor
-
-   formatCurrency(value); {
-    value = String(value).replace(/\D/g, ""); // Remove todos os caracteres não numéricos do valor
-    value = Number(value) / 100; // Converte o valor para centavos
-    value = value.toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    }); // Formata o valor como uma moeda brasileira
-  }
-
+   value.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  }); // Formata o valor como uma moeda brasileira
    // Define o conteúdo HTML da linha da tabela
    tr.innerHTML = `
      <td class="Data">${date}</td>

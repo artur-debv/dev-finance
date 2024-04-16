@@ -105,7 +105,6 @@
     </div>
     <main>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
-    
         <script>
             // Função para desconectar o usuário da conta do Google
             function signOut() {
@@ -115,8 +114,10 @@
                     if (auth2) {
                         auth2.signOut().then(function () {
                             console.log('User signed out.');
-                            // Redirecione para a página de login ou outra página após o logout
-                            window.location.href = "https://www.luiztools.com.br/post/autenticacao-em-node-js-com-passport-e-postgresql/";
+                            // Redireciona para a página desejada após o logout
+                            window.location.href = "https://seusite.com/pagina_de_redirecionamento.html";
+                        }).catch(function (error) {
+                            console.error('Error signing out:', error);
                         });
                     }
                 } else {
@@ -124,6 +125,7 @@
                 }
             }
         </script>
+        
         <div class="darkmode">
             <header>
                 <div class="icon">

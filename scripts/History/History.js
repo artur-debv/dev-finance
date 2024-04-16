@@ -31,7 +31,7 @@ monthlyExpensesArray.forEach((month, index) => {
   const date = month[0]; // Assume que o primeiro elemento do par seja a data
   // Função para formatar como dinheiro
   function formatarDinheiro(valor) {
-    return 'R$ ' + Math.abs(valor).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    return 'R$ ' + valor.toLocaleString('pt-BR', { minimumFractionDigits: 0 });
   }
 
   const value = month[1]; // Obtendo o valor do segundo elemento do array

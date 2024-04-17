@@ -110,27 +110,16 @@
             function disconnectUser() {
                 // Verifica se a biblioteca está carregada
                 if (typeof google.accounts !== 'undefined' && google.accounts.id) {
-                    // Obtém informações sobre o estado de autenticação do usuário
-                    google.accounts.id.getStatus().then((status) => {
-                        // Verifica se o usuário está autenticado
-                        if (status === google.accounts.id.Status.OK) {
-                            // Revoque o token de autenticação do usuário
-                            google.accounts.id.revoke().then(() => {
-                                console.log('Usuário desconectado com sucesso.');
-                                // Redireciona para a página desejada após a desconexão
-                                window.location.href = "https://devfinancesss.netlify.app/form";
-                            }).catch((error) => {
-                                console.error('Erro ao desconectar o usuário:', error);
-                                // Trate o erro aqui, se necessário
-                            });
-                        } else {
-                            // Se o usuário não estiver autenticado, não é necessário fazer nada
-                            console.log('Usuário não está autenticado.');
-                        }
-                    }).catch((error) => {
-                        console.error('Erro ao verificar o estado de autenticação do usuário:', error);
+                    try {
+                        
+                         google.accounts.id.revoke();
+
+                        // Redireciona para a página desejada após a desconexão (opcional)
+                       window.location.href = "https://devfinancesss.netlify.app/form";
+                    } catch (error) {
+                        console.error('Erro ao revogar o token de autenticação:', error);
                         // Trate o erro aqui, se necessário
-                    });
+                    }
                 } else {
                     console.error('Biblioteca google.accounts não carregada corretamente.');
                 }

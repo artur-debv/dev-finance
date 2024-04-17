@@ -106,30 +106,25 @@
     <main>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script>
-            function init() {
-                gapi.load('auth2', function () {
-                    gapi.auth2.init({
-                        client_id: '939125828914-u6tbs2k30r4tn6fr17k0erjb6j39l69d'
-                    }).then(function () {
-                        var auth2 = gapi.auth2.getAuthInstance();
-                        if (auth2) {
-                            var isSignedIn = auth2.isSignedIn.get();
-                            if (isSignedIn) {
-                                console.log('O usuário está conectado.');
-                            } else {
-                                console.log('O usuário não está conectado.');
-                            }
-                        } else {
-                            console.error('Falha ao obter a instância de autenticação.');
-                        }
-                    }).catch(function (error) {
-                        console.error('Erro ao inicializar auth2:', error);
-                    });
-                });
-            }
 
-            // Chama a função init quando a página é carregada
-            init();
+            // Função para desconectar o usuário da conta do Google e redirecioná-lo
+            function signOut() {
+                // Verifica se a biblioteca da API do Google está carregada
+                if (typeof gapi !== 'undefined' && gapi.auth2) {
+                    var auth2 = gapi.auth2.getAuthInstance();
+                    if (auth2) {
+                        auth2.signOut().then(function () {
+                            console.log('User signed out.');
+                            // Redireciona para a página desejada após o logout
+                            window.location.href = "https://devfinancesss.netlify.app/form";
+                        }).catch(function (error) {
+                            console.error('Erro ao fazer logout:', error);
+                        });
+                    }
+                } else {
+                    console.error('API do Google não carregada ou gapi.auth2 não disponível.');
+                }
+            }
 
         </script>
 

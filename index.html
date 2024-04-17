@@ -108,19 +108,19 @@
         <script>
             // Função para desconectar o usuário
             function disconnectUser() {
-                // Inicializa a autenticação
-                const auth2 = google.accounts.GoogleAuth({
-                    client_id: '939125828914-u6tbs2k30r4tn6fr17k0erjb6j39l69d',
-                });
-
-                // Desconecta o usuário
-                auth2.signOut().then(() => {
-                    console.log('Usuário desconectado com sucesso.');
-                    // Redireciona para a página desejada após a desconexão (opcional)
-                    window.location.href = "https://devfinancesss.netlify.app/form";
-                }).catch((error) => {
-                    console.error('Erro ao desconectar o usuário:', error);
-                });
+                // Verifica se a biblioteca está carregada
+                if (typeof google.accounts !== 'undefined' && google.accounts.id) {
+                    // Revoque o token de autenticação do usuário
+                    google.accounts.id.revoke().then(() => {
+                        console.log('Usuário desconectado com sucesso.');
+                        // Redireciona para a página desejada após a desconexão (opcional)
+                        window.location.href = "https://devfinancesss.netlify.app/form";
+                    }).catch((error) => {
+                        console.error('Erro ao desconectar o usuário:', error);
+                    });
+                } else {
+                    console.error('Biblioteca google.accounts não carregada corretamente.');
+                }
             }
         </script>
 

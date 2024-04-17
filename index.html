@@ -111,13 +111,11 @@
                 // Verifica se a biblioteca está carregada
                 if (typeof google.accounts !== 'undefined' && google.accounts.id) {
                     try {
-                        
-                        const User = google.accounts.id.revoke();
 
-                        console.log(user)
+                        google.accounts.id.revoke();
 
                         // Redireciona para a página desejada após a desconexão (opcional)
-                        //window.location.href = "https://devfinancesss.netlify.app/form";
+                        window.location.href = "https://devfinancesss.netlify.app/form";
                     } catch (error) {
                         console.error('Erro ao revogar o token de autenticação:', error);
                         // Trate o erro aqui, se necessário

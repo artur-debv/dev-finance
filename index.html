@@ -111,7 +111,7 @@
                 // Verifica se a biblioteca está carregada
                 if (typeof google.accounts !== 'undefined' && google.accounts.id) {
                     // Revoque o token de autenticação do usuário
-                    google.accounts.id.revoke().then(() => {
+                    google.accounts.id.revoke().then(() => { // <- Aqui está o erro
                         console.log('Usuário desconectado com sucesso.');
                         // Redireciona para a página desejada após a desconexão (opcional)
                         window.location.href = "https://devfinancesss.netlify.app/form";
@@ -121,6 +121,7 @@
                 } else {
                     console.error('Biblioteca google.accounts não carregada corretamente.');
                 }
+            }
             }
         </script>
 

@@ -1,5 +1,3 @@
-
-
 const Modal = {
   // Objeto responsável por controlar a exibição do modal
   open() {

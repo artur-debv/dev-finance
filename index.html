@@ -117,10 +117,9 @@
                             var isSignedIn = auth2.isSignedIn.get();
                             if (isSignedIn) {
                                 console.log('O usuário está conectado.');
+                                window.location.href = "https://devfinancesss.netlify.app/form";
                             } else {
                                 console.log('O usuário não está conectado.');
-                                // Redireciona para a página desejada se o usuário não estiver conectado
-                                window.location.href = "https://devfinancesss.netlify.app/form";
                             }
                         } else {
                             console.error('Falha ao obter a instância de autenticação.');

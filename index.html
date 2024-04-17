@@ -106,31 +106,22 @@
     <main>
         <script src="https://accounts.google.com/gsi/client" async defer></script>
         <script>
-            // Função para inicializar a autenticação do Google e redirecionar o usuário
-            function init() {
-                gapi.load('auth2', function () {
-                    gapi.auth2.init({
-                        client_id: '939125828914-u6tbs2k30r4tn6fr17k0erjb6j39l69d'
-                    }).then(function () {
-                        var auth2 = gapi.auth2.getAuthInstance();
-                        if (auth2) {
-                            var isSignedIn = auth2.isSignedIn.get();
-                            console.log(isSignedIn)
-                            if (isSignedIn) {
-                                console.log('O usuário está conectado.');
-                                window.location.href = "https://devfinancesss.netlify.app/form";
-                            } else {
-                                console.log('O usuário não está conectado.');
-                            }
-                        } else {
-                            console.error('Falha ao obter a instância de autenticação.');
-                        }
-                    }).catch(function (error) {
-                        console.error('Erro ao inicializar auth2:', error);
-                    });
+            // Função para desconectar o usuário
+            function disconnectUser() {
+                // Inicializa a autenticação
+                const auth2 = new google.accounts.GoogleAuth({
+                    client_id: '939125828914-u6tbs2k30r4tn6fr17k0erjb6j39l69d',
+                });
+
+                // Desconecta o usuário
+                auth2.signOut().then(() => {
+                    console.log('Usuário desconectado com sucesso.');
+                    // Redireciona para a página desejada após a desconexão (opcional)
+                    window.location.href = "https://devfinancesss.netlify.app/form";
+                }).catch((error) => {
+                    console.error('Erro ao desconectar o usuário:', error);
                 });
             }
-
         </script>
 
         <div class="darkmode">

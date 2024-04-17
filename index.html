@@ -115,6 +115,7 @@
                         var auth2 = gapi.auth2.getAuthInstance();
                         if (auth2) {
                             var isSignedIn = auth2.isSignedIn.get();
+                            console.log(isSignedIn)
                             if (isSignedIn) {
                                 console.log('O usuário está conectado.');
                                 window.location.href = "https://devfinancesss.netlify.app/form";

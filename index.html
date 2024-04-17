@@ -106,31 +106,12 @@
     <main>
         <script src="https://accounts.google.com/gsi/client" async defer></script>
         <script>
-            function init() {
-                gapi.load('auth2', function () {
-                    gapi.auth2.init({
-                        client_id: '939125828914-u6tbs2k30r4tn6fr17k0erjb6j39l69d.apps.googleusercontent.com' // Substitua pelo seu ID de cliente OAuth 2.0
-                    }).then(function () {
-                        var auth2 = gapi.auth2.getAuthInstance();
-                        if (auth2) {
-                            var isSignedIn = auth2.isSignedIn.get();
-                            if (isSignedIn) {
-                                console.log('O usuário está conectado.');
-                            } else {
-                                console.log('O usuário não está conectado.');
-                            }
-                        } else {
-                            console.error('Falha ao obter a instância de autenticação.');
-                        }
-                    }).catch(function (error) {
-                        console.error('Erro ao inicializar auth2:', error);
-                    });
+            function signOut() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    console.log('User signed out.');
                 });
             }
-
-            // Chama a função init quando a página é carregada
-            init();
-
         </script>
 
         <div class="darkmode">

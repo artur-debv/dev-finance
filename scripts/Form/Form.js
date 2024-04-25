@@ -106,6 +106,7 @@ function handleCredentialResponse(response) {
 function handleCredentialResponse(response) {
   console.log("Encoded JWT ID token: " + response.credential);
   var jwtToken = response.credential;
+  console.log(jwtToken)
   var decodedToken = parseJwt(jwtToken);
   console.log(decodedToken);
   

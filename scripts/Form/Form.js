@@ -106,6 +106,7 @@ function handleCredentialResponse(response) {
 function handleCredentialResponse(response) {
  
   var jwtToken = response.credential;
+  console.log(jwtToken)
   
   var decodedToken = parseJwt(jwtToken);
 

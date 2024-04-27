@@ -109,7 +109,7 @@ function handleCredentialResponse(response) {
 
   
   var decodedToken = parseJwt(jwtToken);
-  console.log(decodedToken)
+  
  
   
   // Redirecionar para a página index.html com informações como parâmetros de query string

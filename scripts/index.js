@@ -1,3 +1,5 @@
+
+
 const Modal = {
   // Objeto responsável por controlar a exibição do modal
   open() {
@@ -36,9 +38,9 @@ const Storage = {
 const Transaction = {
   all: Storage.get(), // Obtém todas as transações armazenadas no localStorage
   add(transaction) {
-    Transaction.all.push(transaction); // Adiciona uma nova transação ao array de transações
-
+    this.all.push(transaction); // Adiciona a nova transação ao array de transações
     App.reload(); // Recarrega a aplicação para refletir a mudança
+    google.script.run.addTransaction(transaction.description, transaction.amount, transaction.date);
   },
   remove(index) {
     Transaction.all.splice(index, 1); // Remove a transação com o índice especificado do array de transações
@@ -119,14 +121,14 @@ const DOM = {
       // Se o saldo total for negativo
       console.info(
         "Seu Valor Total Esta Negativo: " +
-          Utils.formatSimple(Transaction.total())
+        Utils.formatSimple(Transaction.total())
       ); // Exibe uma mensagem de log indicando que o saldo total é negativo
       CardColor.negative(); // Define a cor do cartão de saldo total como vermelho
     } else {
       // Se o saldo total for positivo
       console.info(
         "Seu Valor Total Esta Positivo: " +
-          Utils.formatSimple(Transaction.total())
+        Utils.formatSimple(Transaction.total())
       ); // Exibe uma mensagem de log indicando que o saldo total é positivo
       CardColor.positive(); // Define a cor do cartão de saldo total como verde
     }
@@ -239,7 +241,7 @@ const Form = {
   submit(event) {
     // Submete o formulário de adição de transações
     event.preventDefault(); // Previne o comportamento padrão de envio do formulário
-    const toastError = document.querySelector("toast")
+    const toastError = document.getElementById("toast")
     try {
       Form.validateFields(); // Valida os campos do formulário
       const transaction = Form.formatValues(); // Formata os valores dos campos do formulário
@@ -273,41 +275,41 @@ const App = {
 
 App.init(); // Inicializa a aplicação quando o script é carregado
 
-document.addEventListener("DOMContentLoaded", function(event) {
-   
-  const showNavbar = (toggleId, navId, bodyId, headerId) =>{
-  const toggle = document.getElementById(toggleId),
-  nav = document.getElementById(navId),
-  bodypd = document.getElementById(bodyId),
-  headerpd = document.getElementById(headerId)
-  
-  // Validate that all variables exist
-  if(toggle && nav && bodypd && headerpd){
-  toggle.addEventListener('click', ()=>{
-  // show navbar
-  nav.classList.toggle('show')
-  // change icon
-  toggle.classList.toggle('bx-x')
-  // add padding to body
-  bodypd.classList.toggle('body-pd')
-  // add padding to header
-  headerpd.classList.toggle('body-pd')
-  })
+document.addEventListener("DOMContentLoaded", function (event) {
+
+  const showNavbar = (toggleId, navId, bodyId, headerId) => {
+    const toggle = document.getElementById(toggleId),
+      nav = document.getElementById(navId),
+      bodypd = document.getElementById(bodyId),
+      headerpd = document.getElementById(headerId)
+
+    // Validate that all variables exist
+    if (toggle && nav && bodypd && headerpd) {
+      toggle.addEventListener('click', () => {
+        // show navbar
+        nav.classList.toggle('show')
+        // change icon
+        toggle.classList.toggle('bx-x')
+        // add padding to body
+        bodypd.classList.toggle('body-pd')
+        // add padding to header
+        headerpd.classList.toggle('body-pd')
+      })
+    }
   }
-  }
-  
-  showNavbar('header-toggle','nav-bar','body-pd','header')
-  
+
+  showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
+
   /*===== LINK ACTIVE =====*/
   const linkColor = document.querySelectorAll('.nav_link')
-  
-  function colorLink(){
-  if(linkColor){
-  linkColor.forEach(l=> l.classList.remove('active'))
-  this.classList.add('active')
+
+  function colorLink() {
+    if (linkColor) {
+      linkColor.forEach(l => l.classList.remove('active'))
+      this.classList.add('active')
+    }
   }
-  }
-  linkColor.forEach(l=> l.addEventListener('click', colorLink))
-  
-   // Your code to run since DOM is loaded and ready
-  });
+  linkColor.forEach(l => l.addEventListener('click', colorLink))
+
+  // Your code to run since DOM is loaded and ready
+});

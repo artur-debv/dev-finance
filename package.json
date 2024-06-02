@@ -1,5 +1,9 @@
 {
   "dependencies": {
-    "google-auth-library": "^9.7.0"
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "google-auth-library": "^9.7.0",
+    "google-spreadsheet": "^4.1.2"
   }
 }

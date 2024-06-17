@@ -105,27 +105,6 @@
     </div>
     <main>
         <script src="https://accounts.google.com/gsi/client" async defer></script>
-        <script>
-            // Função para desconectar o usuário
-            function disconnectUser() {
-                // Verifica se a biblioteca está carregada
-                if (typeof google.accounts !== 'undefined' && google.accounts.id) {
-                    try {
-                        
-                         google.accounts.id.revoke();
-
-                        // Redireciona para a página desejada após a desconexão (opcional)
-                       window.location.href = "https://devfinancesss.netlify.app/form";
-                    } catch (error) {
-                        console.error('Erro ao revogar o token de autenticação:', error);
-                        // Trate o erro aqui, se necessário
-                    }
-                } else {
-                    console.error('Biblioteca google.accounts não carregada corretamente.');
-                }
-
-            }
-        </script>
 
         <div class="darkmode">
             <header>
@@ -238,6 +217,7 @@
             <script src="scripts/Sidebar/sidebar.js"></script>
             <script src="scripts/InputSearch/inputSearch.js"></script>
             <script src="/scripts/History/History.js"></script>
+            <script src="scripts/DisconectUser/DisconectUsers.js"></script>
 
             <!-- The core Firebase JS SDK is always required and must be listed first -->
             <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>

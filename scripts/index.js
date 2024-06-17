@@ -39,8 +39,8 @@ const Transaction = {
   all: Storage.get(), // Obtém todas as transações armazenadas no localStorage
   add(transaction) {
     this.all.push(transaction); // Adiciona a nova transação ao array de transações
-    App.reload(); // Recarrega a aplicação para refletir a mudança
     google.script.run.addTransaction(transaction.description, transaction.amount, transaction.date);
+    App.reload(); // Recarrega a aplicação para refletir a mudança
   },
   remove(index) {
     Transaction.all.splice(index, 1); // Remove a transação com o índice especificado do array de transações
@@ -241,7 +241,6 @@ const Form = {
   submit(event) {
     // Submete o formulário de adição de transações
     event.preventDefault(); // Previne o comportamento padrão de envio do formulário
-    const toastError = document.getElementById("toast")
     try {
       Form.validateFields(); // Valida os campos do formulário
       const transaction = Form.formatValues(); // Formata os valores dos campos do formulário

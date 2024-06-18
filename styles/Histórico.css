@@ -29,7 +29,14 @@
     align-items: center;
 }
 
+.link_row{
+    color: black;
+}
 
+.bx-left-arrow-alt:before {
+    content: "\eb33";
+    margin-left: 20px;
+}
 
 
 .fa-sun:before {

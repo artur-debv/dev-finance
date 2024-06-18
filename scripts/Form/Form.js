@@ -9,10 +9,10 @@ function myMenuFunction() {
   }
 }
 
-var a = document.getElementById("loginBtn");
-var b = document.getElementById("registerBtn");
-var x = document.getElementById("login");
-var y = document.getElementById("register");
+const a = document.getElementById("loginBtn");
+const b = document.getElementById("registerBtn");
+const x = document.getElementById("login");
+const y = document.getElementById("register");
 function login() {
   x.style.left = "4px";
   y.style.right = "-520px";
@@ -77,7 +77,7 @@ function handleCredentialResponse(response) {
   const data = response.credential
 
   const informations = document.querySelector(".h2_information").innerHTML = `${data.email}`
- 
+
   if (data.email) {
     fullName.textContent = data.name;
     sub.textContent = data.sub;
@@ -95,23 +95,23 @@ function handleCredentialResponse(response) {
 //  jwt manipulation
 
 function handleCredentialResponse(response) {
- 
+
   const jwtToken = response.credential;
 
   const decodedToken = parseJwt(jwtToken);
-  
+
   // Redirecionar para a página index.html com informações como parâmetros de query string
   const queryString = "?name=" + encodeURIComponent(decodedToken.name) +
-                    "&email=" + encodeURIComponent(decodedToken.email) +
-                    "&picture=" + encodeURIComponent(decodedToken.picture);
+    "&email=" + encodeURIComponent(decodedToken.email) +
+    "&picture=" + encodeURIComponent(decodedToken.picture);
   window.location.href = "index.html" + queryString;
 }
 
 function parseJwt(token) {
- const base64Url = token.split('.')[1];
+  const base64Url = token.split('.')[1];
   const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-  const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  const jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
   }).join(''));
 
   return JSON.parse(jsonPayload);
@@ -119,12 +119,12 @@ function parseJwt(token) {
 
 window.onload = function () {
   google.accounts.id.initialize({
-      client_id: "647322329932-g0tfojd1a4mfhimglfrn478lge1h0rkq.apps.googleusercontent.com",
-      callback: handleCredentialResponse
+    client_id: "647322329932-g0tfojd1a4mfhimglfrn478lge1h0rkq.apps.googleusercontent.com",
+    callback: handleCredentialResponse
   });
   google.accounts.id.renderButton(
-      document.getElementById("buttonDiv"),
-      { theme: "outline",  }  // customization attributes
+    document.getElementById("buttonDiv"),
+    { theme: "outline", }  // customization attributes
   );
   google.accounts.id.prompt(); // also display the One Tap dialog
 }

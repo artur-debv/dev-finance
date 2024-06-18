@@ -1,4 +1,4 @@
-// alternar entre fazer login e cadastrar
+// switching between registration and login to the form
 
 function myMenuFunction() {
   var i = document.getElementById("navMenu");
@@ -71,18 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// function to log in with google
 
 function handleCredentialResponse(response) {
   const data = response.credential
 
   const informations = document.querySelector(".h2_information").innerHTML = `${data.email}`
-  console.log(informations)
-  console.log(data)
-
-
-  // Verifique se a propriedade 'email' está presente no objeto
+ 
   if (data.email) {
-    // Atualize os elementos HTML com os dados do usuário
     fullName.textContent = data.name;
     sub.textContent = data.sub;
     given_name.textContent = data.given_name;
@@ -94,35 +90,27 @@ function handleCredentialResponse(response) {
     console.error("Email não encontrado na resposta de credenciais.");
   }
 
-  /*sub.textContent = data.sub
-  given_name.textContent = data.given_name
-  family_name.textContent = data.family_name
-  email.textContent = data.email
-  verifiedEmail.textContent = data.email_verified
-  picture.setAttribute("src", data.picture)*/
 }
 
+//  jwt manipulation
 
 function handleCredentialResponse(response) {
  
-  var jwtToken = response.credential;
+  const jwtToken = response.credential;
 
-  
-  var decodedToken = parseJwt(jwtToken);
-  
- 
+  const decodedToken = parseJwt(jwtToken);
   
   // Redirecionar para a página index.html com informações como parâmetros de query string
-  var queryString = "?name=" + encodeURIComponent(decodedToken.name) +
+  const queryString = "?name=" + encodeURIComponent(decodedToken.name) +
                     "&email=" + encodeURIComponent(decodedToken.email) +
                     "&picture=" + encodeURIComponent(decodedToken.picture);
   window.location.href = "index.html" + queryString;
 }
 
 function parseJwt(token) {
-  var base64Url = token.split('.')[1];
-  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-  var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+ const base64Url = token.split('.')[1];
+  const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
       return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
   }).join(''));
 

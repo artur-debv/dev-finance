@@ -105,27 +105,7 @@
     </div>
     <main>
         <script src="https://accounts.google.com/gsi/client" async defer></script>
-        <script>
-            // Função para desconectar o usuário
-            function disconnectUser() {
-                // Verifica se a biblioteca está carregada
-                if (typeof google.accounts !== 'undefined' && google.accounts.id) {
-                    try {
-                        
-                         google.accounts.id.revoke();
-
-                        // Redireciona para a página desejada após a desconexão (opcional)
-                       window.location.href = "https://devfinancesss.netlify.app/form";
-                    } catch (error) {
-                        console.error('Erro ao revogar o token de autenticação:', error);
-                        // Trate o erro aqui, se necessário
-                    }
-                } else {
-                    console.error('Biblioteca google.accounts não carregada corretamente.');
-                }
-
-            }
-        </script>
+        
 
         <div class="darkmode">
             <header>
@@ -232,16 +212,16 @@
                 <img src="./assets/float-plus.svg" alt="Adicionar" width="16px" />
             </a>
 
+            <!--Scripts-->
+            
             <script src="./scripts/index.js" type="text/javascript"></script>
             <script src="./scripts/JsTheme/Theme.js"></script>
-
             <script src="scripts/Sidebar/sidebar.js"></script>
             <script src="scripts/InputSearch/inputSearch.js"></script>
             <script src="/scripts/History/History.js"></script>
-
+            <script src="scripts/DisconnectUsers/DisconnectUser.js"></script>
             <!-- The core Firebase JS SDK is always required and must be listed first -->
             <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
-
             <!-- TODO: Add SDKs for Firebase products that you want to use
                  https://firebase.google.com/docs/web/setup#available-libraries -->
             <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
@@ -249,26 +229,6 @@
             <script src="scripts/Index/index.js"></script>
             <script src="https://accounts.google.com/gsi/client" async></script>
             <script src="https://apis.google.com/js/platform.js" async defer></script>
-
-
-
-
-            <script>
-                // Your web app's Firebase configuration
-                // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-                var firebaseConfig = {
-                    apiKey: "AIzaSyACsu8pWaxRfoj8WiRpzI2Mo2vnSn8wVns",
-                    authDomain: "devfinances777.firebaseapp.com",
-                    projectId: "devfinances777",
-                    storageBucket: "devfinances777.appspot.com",
-                    messagingSenderId: "164547638392",
-                    appId: "1:164547638392:web:5324d388a389684bafa98d",
-                    measurementId: "G-VWV8XMYM95",
-                };
-                // Initialize Firebase
-                firebase.initializeApp(firebaseConfig);
-                firebase.analytics();
-            </script>
         </div>
     </main>
 </body>

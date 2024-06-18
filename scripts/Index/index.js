@@ -18,17 +18,17 @@ function UpdateData(name,email,pictureUrl){
 }
 
 // Obter o valor do parâmetro 'picture' da URL
-var pictureUrl = getParameterByName('picture');
+const pictureUrl = getParameterByName('picture');
 
 // Selecionar o elemento com o id 'user_avatar'
-var avatarElement = document.getElementById('user_avatar');
+const avatarElement = document.getElementById('user_avatar');
 
 // Definir o atributo src do elemento <img> com a URL da imagem
 avatarElement.src = pictureUrl;
 
 // Obter os valores dos parâmetros de query string
-var name = getParameterByName('name');
-var email = getParameterByName('email');
+const name = getParameterByName('name');
+const email = getParameterByName('email');
 
 UpdateData(name,email,pictureUrl)
 

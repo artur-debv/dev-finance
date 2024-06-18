@@ -1,6 +1,6 @@
 if (!localStorage.getItem('jwtToken')) {
     // Redireciona para a página de login se não houver um JWT válido
-    //window.location.href = '/Form.html';
+    window.location.href = '/Form.html';
 } else {
     function getParameterByName(name, url) {
         if (!url) url = window.location.href;

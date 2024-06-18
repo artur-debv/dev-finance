@@ -1,19 +1,26 @@
-// Função para obter parâmetros de query string da URL
-function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "g");
-    var results = [];
-    var match;
-    while (match = regex.exec(url)) {
-        results.push(decodeURIComponent(match[2].replace(/\+/g, " ")));
+if (!localStorage.getItem('jwtToken')) {
+    // Redireciona para a página de login se não houver um JWT válido
+    window.location.href = '/Form.html';
+} else {
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "g");
+        var results = [];
+        var match;
+        while (match = regex.exec(url)) {
+            results.push(decodeURIComponent(match[2].replace(/\+/g, " ")));
+        }
+        return results;
+
     }
-    return results;
-    
 }
 
-function UpdateData(name,email,pictureUrl){
-    document.querySelector('.item-description').innerHTML =   name
+// Função para obter parâmetros de query string da URL
+
+
+function UpdateData(name, email, pictureUrl) {
+    document.querySelector('.item-description').innerHTML = name
     avatarElement.src = pictureUrl;
 }
 
@@ -30,12 +37,12 @@ avatarElement.src = pictureUrl;
 const name = getParameterByName('name');
 const email = getParameterByName('email');
 
-UpdateData(name,email,pictureUrl)
+UpdateData(name, email, pictureUrl)
 
 var newUrl = window.location.pathname;
 window.history.pushState({}, '', newUrl);
 
- // Selecionar elementos do DOM
- const menuBar = document.getElementById('menu-bar');
- const menuIcon = document.getElementById('menu-icon');
- const sidebar = document.getElementById('sidebar');
+// Selecionar elementos do DOM
+const menuBar = document.getElementById('menu-bar');
+const menuIcon = document.getElementById('menu-icon');
+const sidebar = document.getElementById('sidebar');

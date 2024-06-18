@@ -97,7 +97,7 @@ function handleCredentialResponse(response) {
 function handleCredentialResponse(response) {
 
   const jwtToken = response.credential;
-  localStorage.setItem('jwtToken', jwtToken);
+  localStorage.setItem('2', jwtToken);
 
   const decodedToken = parseJwt(jwtToken);
 

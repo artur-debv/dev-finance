@@ -1,47 +1,34 @@
+const History = {
+  list() {
+    const sortedTransactions = Transaction.all.slice().sort((a, b) => Math.abs(b.amount) - Math.abs(a.amount));
+    const topTransactionsContainer = document.querySelector("#data-table tbody");
 
-const transactionsContainer = document.querySelector("#data-table tbody");
+    topTransactionsContainer.innerHTML = ""; // Clear any existing top transactions
 
-// Recuperando as transações do localStorage
-const transactions = JSON.parse(localStorage.getItem("dev.finances:transactions")) || [];
+    sortedTransactions.forEach((transaction, index) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = History.innerHTMLTransaction(transaction, index);
+      tr.dataset.index = index;
+      topTransactionsContainer.appendChild(tr);
+    });
+  },
 
-// Objeto para armazenar o total gasto em cada mêsd
-const monthlyExpenses = {};
+  innerHTMLTransaction(transaction, index) {
+    const CSSclass = transaction.amount > 0 ? "income" : "expense";
+    const amount = Utils.formatCurrency(transaction.amount);
+    const html = `
+      <td class="description">${transaction.description}</td>
+      <td class="${CSSclass}">${amount}</td>
+      <td class="date">${transaction.date}</td>
+      <td>
+          <img onclick="Transaction.remove(${index})" src="./assets/minus.svg" class="remove" alt="Remover Transação">
+      </td>
+    `;
+    return html;
+  },
+};
 
-// Iterar sobre as transações
-transactions.forEach(transaction => {
-  const { amount, date } = transaction;
-  const [day, month, year] = date.split('/'); // Ignorar o dia, se não for necessário
-
-  // Calcular o total gasto para cada mês
-  const monthYear = `${month}/${year}`;
-  monthlyExpenses[monthYear] = (monthlyExpenses[monthYear] || 0) + parseFloat(amount);
+// Call the function to list top transactions when the script is loaded
+document.addEventListener("DOMContentLoaded", function () {
+  History.list();
 });
-
-// Transformar o objeto monthlyExpenses em um array de pares (mês/ano, total gasto)
-const monthlyExpensesArray = Object.entries(monthlyExpenses);
-
-
-if (transactionsContainer) {
-  // Adiciona transações com os maiores gastos à lista de transações
-  monthlyExpensesArray.forEach((month, index) => {
-    const tr = document.createElement("tr"); // Cria um novo elemento 'tr' (linha da tabela)
-    const value = month[1]; // Assume que o segundo elemento do par seja o valor
-
-    // Define o conteúdo HTML da linha da tabela
-    tr.innerHTML = `
-    <td class="Valor">${value}</td>
-  `;
-
-    tr.dataset.index = index; // Define o atributo 'data-index' da linha da tabela com o índice da transação
-
-    transactionsContainer.appendChild(tr)
-  });
-} else {
-  console.log("Não foi possivel encontrar o elemento 'data-table tbody'");
-}
-
-
-
-// Ordenar o array por total gasto em ordem decrescente
-monthlyExpensesArray.sort((a, b) => b[1] - a[1]);
-

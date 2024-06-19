@@ -11,6 +11,8 @@ function updateUserInfo(user) {
 window.onload = function () {
   const jwtToken = localStorage.getItem('jwtToken');
 
+  console.log(jwtToken)
+
   if (!jwtToken) {
     // Redireciona para a página de login se não houver um JWT válido
     window.location.href = '/Form.html';

@@ -10,7 +10,7 @@ if (!localStorage.getItem('jwtToken')) {
         const decodedToken = parseJwt(jwtToken);
 
         if(decodedToken){
-            console.log(decodedToken)
+            UpdateData(decodedToken.name, decodedToken.email, decodedToken.picture)
         }else{
             console.log('erro')
         }

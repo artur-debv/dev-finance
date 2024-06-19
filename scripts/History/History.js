@@ -7,14 +7,16 @@ const TopTransactions = {
     const allTransactions = this.getAllTransactions();
     const monthlyExpenses = {};
 
-    // Calcular os gastos totais por mês
     allTransactions.forEach(transaction => {
-      const date = new Date(transaction.date);
+      // Dividir a data em dia, mês e ano usando split('/')
+      const parts = transaction.date.split('/');
+      const formattedDate = `${parts[1]}/${parts[0]}/${parts[2]}`; // Reorganizar para mm/dd/yyyy
+      const date = new Date(formattedDate);
 
-      // Verifica se a data é válida antes de prosseguir
+      // Verificar se a data é válida
       if (!isValidDate(date)) {
-        console.warn(`Ignorando transação inválida: ${transaction.description}`);
-        return; // Pula esta transação e continua para a próxima
+        console.warn(`Ignorando transação com data inválida: ${transaction.description}`);
+        return; // Ignora esta transação
       }
 
       const monthKey = `${date.getMonth() + 1}/${date.getFullYear()}`;
@@ -26,7 +28,6 @@ const TopTransactions = {
       monthlyExpenses[monthKey] += transaction.amount;
     });
 
-    // Encontrar o mês com o maior total de gastos
     let highestMonth = null;
     let highestExpense = -Infinity;
 
@@ -37,12 +38,10 @@ const TopTransactions = {
       }
     });
 
-    console.log("mês mais gasto:", highestMonth);
-
+    console.log("Mês com maior gasto:", highestMonth);
 
     return highestMonth;
   },
-
 
   renderMonthWithHighestExpenses() {
     const highestMonth = this.getMonthWithHighestExpenses();

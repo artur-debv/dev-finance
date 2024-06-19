@@ -5,7 +5,8 @@ if (!localStorage.getItem('jwtToken')) {
 
 
     window.onload = function () {
-        console.log("Carregado");
+        const jwtToken = localStorage.getItem('jwtToken');
+        console.log(jwtToken)
     }
 
 

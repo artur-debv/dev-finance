@@ -6,7 +6,10 @@ if (!localStorage.getItem('jwtToken')) {
 
     window.onload = function () {
         const jwtToken = localStorage.getItem('jwtToken');
-        console.log(jwtToken)
+       
+        const decodedToken = parseJwt(jwtToken);
+        console.log(decodedToken)
+
     }
 
 

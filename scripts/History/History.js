@@ -1,34 +1,35 @@
-const History = {
-  list() {
-    const sortedTransactions = Transaction.all.slice().sort((a, b) => Math.abs(b.amount) - Math.abs(a.amount));
-    const topTransactionsContainer = document.querySelector("#data-table tbody");
+const TopTransactions = {
+  getAllTransactions() {
+    return JSON.parse(localStorage.getItem("dev.finances:transactions")) || [];
+  },
 
-    topTransactionsContainer.innerHTML = ""; // Clear any existing top transactions
+  getTopTransactions(limit = 5) {
+    const allTransactions = this.getAllTransactions();
+    return allTransactions.sort((a, b) => Math.abs(b.amount) - Math.abs(a.amount)).slice(0, limit);
+  },
 
-    sortedTransactions.forEach((transaction, index) => {
+  renderTopTransactions() {
+    const transactionsContainer = document.querySelector("#data-table tbody");
+    const topTransactions = this.getTopTransactions();
+
+    transactionsContainer.innerHTML = ""; // Clear any existing rows
+
+    topTransactions.forEach(transaction => {
       const tr = document.createElement("tr");
-      tr.innerHTML = History.innerHTMLTransaction(transaction, index);
-      tr.dataset.index = index;
-      topTransactionsContainer.appendChild(tr);
-    });
-  },
+      const amountClass = transaction.amount > 0 ? "income" : "expense";
+      const amount = Utils.formatCurrency(transaction.amount);
+      
+      tr.innerHTML = `
+        <td class="description">${transaction.description}</td>
+        <td class="${amountClass}">${amount}</td>
+        <td class="date">${transaction.date}</td>
+      `;
 
-  innerHTMLTransaction(transaction, index) {
-    const CSSclass = transaction.amount > 0 ? "income" : "expense";
-    const amount = Utils.formatCurrency(transaction.amount);
-    const html = `
-      <td class="description">${transaction.description}</td>
-      <td class="${CSSclass}">${amount}</td>
-      <td class="date">${transaction.date}</td>
-      <td>
-          <img onclick="Transaction.remove(${index})" src="./assets/minus.svg" class="remove" alt="Remover Transação">
-      </td>
-    `;
-    return html;
-  },
+      transactionsContainer.appendChild(tr);
+    });
+  }
 };
 
-// Call the function to list top transactions when the script is loaded
-document.addEventListener("DOMContentLoaded", function () {
-  History.list();
+document.addEventListener("DOMContentLoaded", function() {
+  TopTransactions.renderTopTransactions();
 });

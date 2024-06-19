@@ -2,6 +2,13 @@ if (!localStorage.getItem('jwtToken')) {
     // Redireciona para a página de login se não houver um JWT válido
   window.location.href = '/Form.html';
 } else {
+
+
+    window.onload = function () {
+        console.log("Carregado");
+    }
+
+
     function getParameterByName(name, url) {
         if (!url) url = window.location.href;
         name = name.replace(/[\[\]]/g, "\\$&");

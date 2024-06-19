@@ -2,15 +2,8 @@
 window.onload = function () {
   const token = localStorage.getItem('jwtToken');
 
-  if (!token) {
-    // Redireciona para a página de login se não houver um JWT válido
-    window.location.href = '/Form.html';
-  } else {
-    // Decodificar o token JWT
-    const user = parseJwt(token);
-    // Atualizar a UI com as informações do usuário
-    updateUserInfo(user);
-  }
+  console.log(token)
+ 
 }
 
 //  jwt manipulation

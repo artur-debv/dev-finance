@@ -35,7 +35,6 @@ if (!localStorage.getItem('jwtToken')) {
 function UpdateData(name, email, pictureUrl) {
     document.querySelector('.item-description').innerHTML = name
     avatarElement.src = pictureUrl;
-    if (nameElement) nameElement.textContent = user.name;
     if (avatarElement) avatarElement.src = user.picture;
 }
 

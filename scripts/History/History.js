@@ -37,8 +37,12 @@ const TopTransactions = {
       }
     });
 
+    console.log("mês mais gasto:", highestMonth);
+
+
     return highestMonth;
   },
+
 
   renderMonthWithHighestExpenses() {
     const highestMonth = this.getMonthWithHighestExpenses();

@@ -29,9 +29,8 @@ const TopTransactions = {
         highestMonth = monthKey;
       }
     });
-    
-    console.log("Mês com o maior gasto:", highestMonth);
-    
+
+    console.log("Mês com maior gasto:", highestMonth); // Adicionar console.log() aqui
 
     return highestMonth;
   },

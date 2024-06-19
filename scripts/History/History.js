@@ -30,18 +30,21 @@ const TopTransactions = {
       }
     });
 
-    console.log("Mês com maior gasto:", highestMonth); // Adicionar console.log() aqui
-
-    return highestMonth;
+    return highestMonth ? { month: highestMonth, date: new Date(highestMonth) } : null;
   },
 
   renderMonthWithHighestExpenses() {
-    const highestMonth = this.getMonthWithHighestExpenses();
+    const highestMonthData = this.getMonthWithHighestExpenses();
 
     // Exibir o mês com maior gasto na interface
     const monthDisplay = document.querySelector("#highestMonthDisplay");
-    if (monthDisplay) {
-      monthDisplay.textContent = highestMonth || "Nenhum mês encontrado";
+    if (monthDisplay && highestMonthData) {
+      const monthName = highestMonthData.date.toLocaleString('pt-BR', { month: 'long' });
+      const formattedDate = `${monthName} - ${highestMonthData.date.getFullYear()}`;
+
+      monthDisplay.textContent = formattedDate;
+    } else {
+      monthDisplay.textContent = "Nenhum mês encontrado";
     }
   }
 };

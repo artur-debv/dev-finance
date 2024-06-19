@@ -1,28 +1,49 @@
-const transactions = JSON.parse(localStorage.getItem("dev.finances:transactions")) || [];
+const TopTransactions = {
+  getAllTransactions() {
+    return JSON.parse(localStorage.getItem("dev.finances:transactions")) || [];
+  },
 
-const monthlyExpenses = {}; // Objeto para armazenar os gastos por mês
+  getMonthWithHighestExpenses() {
+    const allTransactions = this.getAllTransactions();
+    const monthlyExpenses = {};
 
-transactions.forEach((transaction) => {
-  const date = new Date(transaction.date);
-  const month = date.getMonth(); // Retorna um valor entre 0 (Janeiro) e 11 (Dezembro)
+    // Calcular os gastos totais por mês
+    allTransactions.forEach(transaction => {
+      const date = new Date(transaction.date);
+      const monthKey = `${date.getMonth() + 1}/${date.getFullYear()}`;
 
-  if (!monthlyExpenses[month]) {
-    monthlyExpenses[month] = 0;
+      if (!monthlyExpenses[monthKey]) {
+        monthlyExpenses[monthKey] = 0;
+      }
+
+      monthlyExpenses[monthKey] += transaction.amount;
+    });
+
+    // Encontrar o mês com o maior total de gastos
+    let highestMonth = null;
+    let highestExpense = -Infinity;
+
+    Object.entries(monthlyExpenses).forEach(([monthKey, totalExpense]) => {
+      if (totalExpense > highestExpense) {
+        highestExpense = totalExpense;
+        highestMonth = monthKey;
+      }
+    });
+
+    return highestMonth;
+  },
+
+  renderMonthWithHighestExpenses() {
+    const highestMonth = this.getMonthWithHighestExpenses();
+
+    // Exibir o mês com maior gasto na interface
+    const monthDisplay = document.querySelector("#highestMonthDisplay");
+    if (monthDisplay) {
+      monthDisplay.textContent = highestMonth || "Nenhum mês encontrado";
+    }
   }
+};
 
-  monthlyExpenses[month] += transaction.amount;
+document.addEventListener("DOMContentLoaded", function() {
+  TopTransactions.renderMonthWithHighestExpenses();
 });
-
-let maxMonth = 0;
-let maxExpense = monthlyExpenses[0];
-
-for (const month in monthlyExpenses) {
-  if (monthlyExpenses[month] > maxExpense) {
-    maxExpense = monthlyExpenses[month];
-    maxMonth = parseInt(month); // Converte para número inteiro
-  }
-}
-
-// Agora você tem o mês com maior gasto (maxMonth) e o valor total (maxExpense)
-console.log("Mês com maior gasto:", maxMonth + 1); // Adicionamos 1 para exibir o mês correto (1 a 12)
-console.log("Valor total:", maxExpense);

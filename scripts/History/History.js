@@ -17,7 +17,7 @@ const TopTransactions = {
     topTransactions.forEach(transaction => {
       const tr = document.createElement("tr");
       const amountClass = transaction.amount > 0 ? "income" : "expense";
-      const amount = transaction.amount > 0 ? `+ ${Utils.formatCurrency(transaction.amount)}` : `- ${Utils.formatCurrency(transaction.amount)}`;
+      const amount = transaction.amount
       
       tr.innerHTML = `
         <td class="description">${transaction.description}</td>

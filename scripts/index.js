@@ -249,7 +249,7 @@ const Form = {
 
       Modal.close(); // Fecha o modal de adição de transações
     } catch (error) {
-    
+      console.log("deu erro")
     }
   },
 };

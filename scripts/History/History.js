@@ -22,7 +22,7 @@ const TopTransactions = {
     transactionsContainer.innerHTML = ""; // Limpa qualquer linha existente na tabela
 
     const tr = document.createElement("tr");
-    const amountClass = topTransaction.amount > 0 ? "income" : "expense";
+    const amountClass = topTransaction.amount 
     const amount = Utils.formatCurrency(topTransaction.amount);
 
     tr.innerHTML = `

@@ -8,7 +8,12 @@ if (!localStorage.getItem('jwtToken')) {
         const jwtToken = localStorage.getItem('jwtToken');
        
         const decodedToken = parseJwt(jwtToken);
-        console.log(decodedToken)
+        
+        if(decodedToken){
+            UpdateData(decodedToken)
+        }else{
+            console.log('Token inválido')
+        }
 
     }
 

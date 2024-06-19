@@ -1,40 +1,28 @@
-const TopTransactions = {
-  getAllTransactions() {
-    return JSON.parse(localStorage.getItem("dev.finances:transactions")) || [];
-  },
+const transactions = JSON.parse(localStorage.getItem("dev.finances:transactions")) || [];
 
-  getTopTransaction() {
-    const allTransactions = this.getAllTransactions();
-    let topTransaction = allTransactions[0]; // Inicia com a primeira transação
-    for (let i = 1; i < allTransactions.length; i++) {
-      // Compara o valor absoluto da transação atual com a transação com o maior valor absoluto encontrado até agora
-      if (Math.abs(allTransactions[i].amount) > Math.abs(topTransaction.amount)) {
-        topTransaction = allTransactions[i]; // Atualiza a transação com o maior valor absoluto
-      }
-    }
-    return topTransaction;
-  },
+const monthlyExpenses = {}; // Objeto para armazenar os gastos por mês
 
-  renderTopTransaction() {
-    const transactionsContainer = document.querySelector("#data-table tbody");
-    const topTransaction = this.getTopTransaction();
+transactions.forEach((transaction) => {
+  const date = new Date(transaction.date);
+  const month = date.getMonth(); // Retorna um valor entre 0 (Janeiro) e 11 (Dezembro)
 
-    transactionsContainer.innerHTML = ""; // Limpa qualquer linha existente na tabela
-
-    const tr = document.createElement("tr");
-    const amountClass = topTransaction.amount 
-    const amount = Utils.formatCurrency(topTransaction.amount);
-
-    tr.innerHTML = `
-      <td class="description">${topTransaction.description}</td>
-      <td class="${amountClass}">${amount}</td>
-      <td class="date">${topTransaction.date}</td>
-    `;
-
-    transactionsContainer.appendChild(tr);
+  if (!monthlyExpenses[month]) {
+    monthlyExpenses[month] = 0;
   }
-};
 
-document.addEventListener("DOMContentLoaded", function() {
-  TopTransactions.renderTopTransaction();
+  monthlyExpenses[month] += transaction.amount;
 });
+
+let maxMonth = 0;
+let maxExpense = monthlyExpenses[0];
+
+for (const month in monthlyExpenses) {
+  if (monthlyExpenses[month] > maxExpense) {
+    maxExpense = monthlyExpenses[month];
+    maxMonth = month;
+  }
+}
+
+// Agora você tem o mês com maior gasto (maxMonth) e o valor total (maxExpense)
+console.log("Mês com maior gasto:", maxMonth); // Exemplo: 8 (para Setembro)
+console.log("Valor total:", maxExpense);

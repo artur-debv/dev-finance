@@ -10,43 +10,34 @@ const TopTransactions = {
     // Calcular os gastos totais por mês
     allTransactions.forEach(transaction => {
       const date = new Date(transaction.date);
+
+      // Verifica se a data é válida antes de prosseguir
+      if (!isValidDate(date)) {
+        console.warn(`Ignorando transação inválida: ${transaction.description}`);
+        return; // Pula esta transação e continua para a próxima
+      }
+
       const monthKey = `${date.getMonth() + 1}/${date.getFullYear()}`;
 
       if (!monthlyExpenses[monthKey]) {
-        monthlyExpenses[monthKey] = {
-          totalExpense: 0,
-          highestExpenseDate: null
-        };
+        monthlyExpenses[monthKey] = 0;
       }
 
-      monthlyExpenses[monthKey].totalExpense += transaction.amount;
-
-      // Verificar se este é o maior gasto registrado para este mês
-      if (
-        monthlyExpenses[monthKey].highestExpenseDate === null ||
-        transaction.amount > monthlyExpenses[monthKey].totalExpense
-      ) {
-        monthlyExpenses[monthKey].highestExpenseDate = date;
-      }
+      monthlyExpenses[monthKey] += transaction.amount;
     });
 
     // Encontrar o mês com o maior total de gastos
     let highestMonth = null;
     let highestExpense = -Infinity;
 
-    Object.entries(monthlyExpenses).forEach(([monthKey, data]) => {
-      if (data.totalExpense > highestExpense) {
-        highestExpense = data.totalExpense;
-        highestMonth = data.highestExpenseDate; // Armazena o objeto Date com a data específica
+    Object.entries(monthlyExpenses).forEach(([monthKey, totalExpense]) => {
+      if (totalExpense > highestExpense) {
+        highestExpense = totalExpense;
+        highestMonth = monthKey;
       }
     });
 
-    document.querySelector(".date").innerHTML = highestMonth;
-
     return highestMonth;
-
-    
-
   },
 
   renderMonthWithHighestExpenses() {
@@ -60,6 +51,10 @@ const TopTransactions = {
   }
 };
 
-document.addEventListener("DOMContentLoaded", function () {
+function isValidDate(date) {
+  return date instanceof Date && !isNaN(date);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
   TopTransactions.renderMonthWithHighestExpenses();
 });

@@ -3,33 +3,34 @@ const TopTransactions = {
     return JSON.parse(localStorage.getItem("dev.finances:transactions")) || [];
   },
 
-  getTopTransactions(limit = 5) {
+  getTopTransaction() {
     const allTransactions = this.getAllTransactions();
-    return allTransactions.sort((a, b) => Math.abs(b.amount) - Math.abs(a.amount)).slice(0, limit);
+    const topTransaction = allTransactions.reduce((prev, current) => {
+      return Math.abs(current.amount) > Math.abs(prev.amount) ? current : prev;
+    });
+    return topTransaction;
   },
 
-  renderTopTransactions() {
+  renderTopTransaction() {
     const transactionsContainer = document.querySelector("#data-table tbody");
-    const topTransactions = this.getTopTransactions();
+    const topTransaction = this.getTopTransaction();
 
-    transactionsContainer.innerHTML = ""; // Clear any existing rows
+    transactionsContainer.innerHTML = ""; // Limpa qualquer linha existente na tabela
 
-    topTransactions.forEach(transaction => {
-      const tr = document.createElement("tr");
-      const amountClass = transaction.amount > 0 ? "income" : "expense";
-      const amount = transaction.amount
-      
-      tr.innerHTML = `
-        <td class="description">${transaction.description}</td>
-        <td class="${amountClass}">${amount}</td>
-        <td class="date">${transaction.date}</td>
-      `;
+    const tr = document.createElement("tr");
+    const amountClass = topTransaction.amount > 0 ? "income" : "expense";
+    const amount = Utils.formatCurrency(topTransaction.amount);
 
-      transactionsContainer.appendChild(tr);
-    });
+    tr.innerHTML = `
+      <td class="description">${topTransaction.description}</td>
+      <td class="${amountClass}">${amount}</td>
+      <td class="date">${topTransaction.date}</td>
+    `;
+
+    transactionsContainer.appendChild(tr);
   }
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-  TopTransactions.renderTopTransactions();
+  TopTransactions.renderTopTransaction();
 });

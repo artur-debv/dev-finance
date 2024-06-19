@@ -39,7 +39,7 @@ const Transaction = {
   all: Storage.get(), // Obtém todas as transações armazenadas no localStorage
   add(transaction) {
     this.all.push(transaction); // Adiciona a nova transação ao array de transações
-    google.script.run.addTransaction(transaction.description, transaction.amount, transaction.date);
+   transaction(transaction.description, transaction.amount, transaction.date);
     App.reload(); // Recarrega a aplicação para refletir a mudança
   },
   remove(index) {

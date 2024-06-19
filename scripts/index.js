@@ -1,35 +1,4 @@
 
-// Função para atualizar a interface com as informações do usuário
-function updateUserInfo(user) {
-  const avatarElement = document.getElementById('user_avatar');
-  const nameElement = document.querySelector('.item-description');
-  if (nameElement) nameElement.textContent = user.name;
-  if (avatarElement) avatarElement.src = user.picture;
-}
-
-// Verifica se há um token JWT no localStorage ao carregar a página
-window.onload = function () {
-  const jwtToken = localStorage.getItem('jwtToken');
-
-  console.log(jwtToken)
-
-  if (!jwtToken) {
-    // Redireciona para a página de login se não houver um JWT válido
-    window.location.href = '/Form.html';
-  } else {
-    // Decodifica o token JWT para obter as informações do usuário
-    const decodedToken = parseJwt(jwtToken);
-
-    if (decodedToken) {
-      // Atualiza a UI com as informações do usuário
-      updateUserInfo(decodedToken);
-    } else {
-      // Em caso de erro ao decodificar o JWT, redireciona para a página de login
-      window.location.href = '/Form.html';
-    }
-  }
-};
-
 const Modal = {
   // Objeto responsável por controlar a exibição do modal
   open() {

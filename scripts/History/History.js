@@ -30,7 +30,9 @@ const TopTransactions = {
       }
     });
 
-    console.log("Mês com maior gasto:", highestMonth); // Adicionar console.log() aqui
+    const date = document.querySelector(".date").innerHTML = highestMonth || "Nenhum mês encontrado";
+
+
 
     return highestMonth;
   },

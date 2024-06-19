@@ -13,26 +13,33 @@ const TopTransactions = {
       const monthKey = `${date.getMonth() + 1}/${date.getFullYear()}`;
 
       if (!monthlyExpenses[monthKey]) {
-        monthlyExpenses[monthKey] = 0;
+        monthlyExpenses[monthKey] = {
+          totalExpense: 0,
+          highestExpenseDate: null
+        };
       }
 
-      monthlyExpenses[monthKey] += transaction.amount;
+      monthlyExpenses[monthKey].totalExpense += transaction.amount;
+
+      // Verificar se este é o maior gasto registrado para este mês
+      if (
+        monthlyExpenses[monthKey].highestExpenseDate === null ||
+        transaction.amount > monthlyExpenses[monthKey].totalExpense
+      ) {
+        monthlyExpenses[monthKey].highestExpenseDate = date;
+      }
     });
 
     // Encontrar o mês com o maior total de gastos
     let highestMonth = null;
     let highestExpense = -Infinity;
 
-    Object.entries(monthlyExpenses).forEach(([monthKey, totalExpense]) => {
-      if (totalExpense > highestExpense) {
-        highestExpense = totalExpense;
-        highestMonth = monthKey;
+    Object.entries(monthlyExpenses).forEach(([monthKey, data]) => {
+      if (data.totalExpense > highestExpense) {
+        highestExpense = data.totalExpense;
+        highestMonth = data.highestExpenseDate; // Armazena o objeto Date com a data específica
       }
     });
-
-    const date = document.querySelector(".date").innerHTML = highestMonth || "Nenhum mês encontrado";
-
-
 
     return highestMonth;
   },
@@ -48,6 +55,6 @@ const TopTransactions = {
   }
 };
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   TopTransactions.renderMonthWithHighestExpenses();
 });

@@ -9,7 +9,11 @@ if (!localStorage.getItem('jwtToken')) {
        
         const decodedToken = parseJwt(jwtToken);
 
-        console.log(parseJwt(jwtToken))
+        if(decodedToken){
+            console.log(decodedToken)
+        }else{
+            console.log('erro')
+        }
         
    
     }

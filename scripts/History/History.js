@@ -41,7 +41,12 @@ const TopTransactions = {
       }
     });
 
+    document.querySelector(".date").innerHTML = highestMonth;
+
     return highestMonth;
+
+    
+
   },
 
   renderMonthWithHighestExpenses() {

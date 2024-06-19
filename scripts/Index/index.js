@@ -10,7 +10,7 @@ if (!localStorage.getItem('jwtToken')) {
         const decodedToken = parseJwt(jwtToken);
         
         if(decodedToken){
-            UpdateData(decodedToken)
+            UpdateData(name,pictureUrl)
         }else{
             console.log('Token inválido')
         }

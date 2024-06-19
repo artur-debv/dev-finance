@@ -5,39 +5,12 @@
     <meta charset="utf-8" />
     <meta name="language" content="pt-BR" />
     <title>Finance$</title>
-    <meta name="description" content="#MaratonaDiscover com a @Rocketseat, projeto dev.finance 💲💲💲" />
-    <meta name="robots" content="all" />
-    <meta name="rating" content="general" />
-    <meta name="distribution" content="global" />
-    <meta name="author" content="Matheus Vidigal - (NyctibiusVII)" />
-    <meta name="creator" content="Matheus Vidigal - (NyctibiusVII)" />
-    <meta name="keywords"
-        content="HTML, CSS, JavaScript, Financias, Organize seu dinheiro, Dinheiro, Rocketseat, MaratonaDiscover" />
-
-    <meta property="og:type" content="page" />
-    <meta property="og:url" content="https://dev-finances.vercel.app/" />
-    <meta property="og:locale" content="pt-BR" />
-    <meta property="og:title" content="Dev.Finances" />
-    <meta property="og:site_name" content="Dev.Finance$" />
-    <meta property="og:image" content="" />
-    <meta property="og:description" content="#MaratonaDiscover com a @Rocketseat, projeto dev.finance 💲💲💲" />
-
-    <meta property="article:author" content="Matheus Vidigal - (NyctibiusVII)" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Dev.Finances" />
-    <meta name="twitter:title" content="Dev.Finances" />
-    <meta name="twitter:creator" content="@NyctibiusVII" />
-    <meta name="twitter:description" content="#MaratonaDiscover com a @Rocketseat, projeto dev.finance 💲💲💲" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta http-equiv="content-language" content="pt-BR" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
     <link rel="stylesheet" href="styles/sidebar.css" />
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
-
     <link rel="stylesheet" href="styles/sidebar.css" />
     <link rel="stylesheet" href="./styles/main.css" />
     <link rel="stylesheet" href="./styles/responsivity.css" />
@@ -73,28 +46,18 @@
                     <p id="user_infos">
                         <span class="item-description"> </span>
                     </p>
-
                 </div>
-
                 <div>
                     <div id="users">
                         <a href="Histórico.html" target="_self" class="a_history"><img class="img_history"
                                 src="/assets/Histórico.png" alt="Avatar" />Histórico</a>
-
-
-
                     </div>
                 </div>
-
-
-
                 <ul id="side_items"></ul>
-
                 <button id="open_btn">
                     <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
                 </button>
             </div>
-
             <div id="logout" onclick="des=disconnectUser()">
                 <button id="logout_btn">
                     <i class="fa-solid fa-right-from-bracket"></i>
@@ -105,7 +68,10 @@
     </div>
     <main>
         <script src="https://accounts.google.com/gsi/client" async defer></script>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8e7333822473b51960326cc06638da5edf99e931
         <div class="darkmode">
             <header>
                 <div class="icon">
@@ -141,11 +107,8 @@
                         <p id="totalDisplay">R$ 0,00</p>
                     </div>
                 </section>
-
-
                 <section id="transaction">
                     <h2 class="sr-only">Transações</h2>
-
                     <!-- Substituído pelo FloatButton -->
                     <!-- <a href="#" onclick="Modal.open()" class="button new">+ Nova Transação</a> -->
                     <div class="containers">
@@ -166,7 +129,6 @@
                     </table>
                 </section>
             </main>
-
             <div class="modal-overlay">
                 <div class="modal">
                     <div id="form">
@@ -199,29 +161,30 @@
                     </div>
                 </div>
             </div>
-
             <div id="toast">
                 <div class="img">
                     <h1>×</h1>
                 </div>
                 <div class="description">Por favor, preencha todos os campos!</div>
             </div>
-
             <a href="#" onclick="Modal.open()" class="float-button">
                 <img src="./assets/float-plus.svg" alt="Adicionar" width="16px" />
             </a>
 
+            <!--Scripts-->
             <script src="./scripts/index.js" type="text/javascript"></script>
             <script src="./scripts/JsTheme/Theme.js"></script>
-
             <script src="scripts/Sidebar/sidebar.js"></script>
             <script src="scripts/InputSearch/inputSearch.js"></script>
             <script src="/scripts/History/History.js"></script>
+<<<<<<< HEAD
             <script src="scripts/DisconectUser/DisconectUsers.js"></script>
 
+=======
+            <script src="scripts/DisconnectUsers/DisconnectUser.js"></script>
+>>>>>>> 8e7333822473b51960326cc06638da5edf99e931
             <!-- The core Firebase JS SDK is always required and must be listed first -->
             <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
-
             <!-- TODO: Add SDKs for Firebase products that you want to use
                  https://firebase.google.com/docs/web/setup#available-libraries -->
             <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
@@ -229,26 +192,6 @@
             <script src="scripts/Index/index.js"></script>
             <script src="https://accounts.google.com/gsi/client" async></script>
             <script src="https://apis.google.com/js/platform.js" async defer></script>
-
-
-
-
-            <script>
-                // Your web app's Firebase configuration
-                // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-                var firebaseConfig = {
-                    apiKey: "AIzaSyACsu8pWaxRfoj8WiRpzI2Mo2vnSn8wVns",
-                    authDomain: "devfinances777.firebaseapp.com",
-                    projectId: "devfinances777",
-                    storageBucket: "devfinances777.appspot.com",
-                    messagingSenderId: "164547638392",
-                    appId: "1:164547638392:web:5324d388a389684bafa98d",
-                    measurementId: "G-VWV8XMYM95",
-                };
-                // Initialize Firebase
-                firebase.initializeApp(firebaseConfig);
-                firebase.analytics();
-            </script>
         </div>
     </main>
 </body>

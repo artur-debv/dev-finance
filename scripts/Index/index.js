@@ -15,21 +15,6 @@ if (!localStorage.getItem('jwtToken')) {
 
     }
 }
-
-
-window.onload = function() {
-    const token = localStorage.getItem('jwtToken');
-  
-    if (token) {
-        // Decodificar o token JWT
-        const user = parseJwt(token);
-  
-        // Atualizar a UI com as informações do usuário
-       UpdateData(user);
-    }
-  };
-
-
 // Função para obter parâmetros de query string da URL
 function UpdateData(name, email, pictureUrl) {
     document.querySelector('.item-description').innerHTML = name

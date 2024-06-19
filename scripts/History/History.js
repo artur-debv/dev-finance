@@ -5,9 +5,13 @@ const TopTransactions = {
 
   getTopTransaction() {
     const allTransactions = this.getAllTransactions();
-    const topTransaction = allTransactions.reduce((prev, current) => {
-      return Math.abs(current.amount) > Math.abs(prev.amount) ? current : prev;
-    });
+    let topTransaction = allTransactions[0]; // Inicia com a primeira transação
+    for (let i = 1; i < allTransactions.length; i++) {
+      // Compara o valor absoluto da transação atual com a transação com o maior valor absoluto encontrado até agora
+      if (Math.abs(allTransactions[i].amount) > Math.abs(topTransaction.amount)) {
+        topTransaction = allTransactions[i]; // Atualiza a transação com o maior valor absoluto
+      }
+    }
     return topTransaction;
   },
 

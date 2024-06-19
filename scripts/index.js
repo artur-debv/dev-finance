@@ -1,19 +1,32 @@
 
-window.onload = function () {
-  const token = localStorage.getItem('jwtToken');
-
-  console.log(token)
- 
-}
-
-//  jwt manipulation
-
+// Função para atualizar a interface com as informações do usuário
 function updateUserInfo(user) {
   const avatarElement = document.getElementById('user_avatar');
   const nameElement = document.querySelector('.item-description');
-  if (nameElement) nameElement.innerHTML = user.name;
+  if (nameElement) nameElement.textContent = user.name;
   if (avatarElement) avatarElement.src = user.picture;
 }
+
+// Verifica se há um token JWT no localStorage ao carregar a página
+window.onload = function () {
+  const jwtToken = localStorage.getItem('jwtToken');
+
+  if (!jwtToken) {
+    // Redireciona para a página de login se não houver um JWT válido
+    window.location.href = '/Form.html';
+  } else {
+    // Decodifica o token JWT para obter as informações do usuário
+    const decodedToken = parseJwt(jwtToken);
+
+    if (decodedToken) {
+      // Atualiza a UI com as informações do usuário
+      updateUserInfo(decodedToken);
+    } else {
+      // Em caso de erro ao decodificar o JWT, redireciona para a página de login
+      window.location.href = '/Form.html';
+    }
+  }
+};
 
 const Modal = {
   // Objeto responsável por controlar a exibição do modal
@@ -264,7 +277,7 @@ const Form = {
       Modal.close(); // Fecha o modal de adição de transações
     } catch (error) {
       console.log(error.message); // Exibe uma mensagem de aviso no console em caso de erro
-     // toastError(error.message); // Exibe um toast de erro com a mensagem de erro
+      // toastError(error.message); // Exibe um toast de erro com a mensagem de erro
     }
   },
 };

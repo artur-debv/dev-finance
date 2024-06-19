@@ -94,6 +94,8 @@ function handleCredentialResponse(response) {
 
 //  jwt manipulation
 
+
+
 function handleCredentialResponse(response) {
 
   const jwtToken = response.credential;

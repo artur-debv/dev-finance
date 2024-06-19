@@ -19,7 +19,7 @@ const TopTransactions = {
         return; // Ignora esta transação
       }
 
-      const monthKey = `${date.toLocaleString('pt-BR', { month: 'long' })} ${date.getFullYear()}`;
+      const monthKey = `${date.toLocaleString('pt-BR', { month: 'long' })} `;
 
 
       if (!monthlyExpenses[monthKey]) {

@@ -31,6 +31,7 @@ const TopTransactions = {
     });
     
     console.log("Mês com o maior gasto:", highestMonth);
+    
 
     return highestMonth;
   },

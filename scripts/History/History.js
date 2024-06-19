@@ -10,6 +10,13 @@ const TopTransactions = {
     // Calcular os gastos totais por mês
     allTransactions.forEach(transaction => {
       const date = new Date(transaction.date);
+
+      // Verifica se a data é válida antes de prosseguir
+      if (!isValidDate(date)) {
+        console.warn(`Ignorando transação inválida: ${transaction.description}`);
+        return; // Pula esta transação e continua para a próxima
+      }
+
       const monthKey = `${date.getMonth() + 1}/${date.getFullYear()}`;
 
       if (!monthlyExpenses[monthKey]) {
@@ -44,9 +51,6 @@ const TopTransactions = {
     document.querySelector(".date").innerHTML = highestMonth;
 
     return highestMonth;
-
-    
-
   },
 
   renderMonthWithHighestExpenses() {

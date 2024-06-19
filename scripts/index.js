@@ -249,7 +249,7 @@ const Form = {
 
       Modal.close(); // Fecha o modal de adição de transações
     } catch (error) {
-      console.warn(error.message); // Exibe uma mensagem de aviso no console em caso de erro
+     // console.warn(error.message); // Exibe uma mensagem de aviso no console em caso de erro
      // toastError(error.message); // Exibe um toast de erro com a mensagem de erro
     }
   },

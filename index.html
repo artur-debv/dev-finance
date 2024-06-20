@@ -180,6 +180,9 @@
             <!--Firebase Config -->
             <script>
 
+                import { initializeApp } from "firebase/app";
+                import { getFirestore } from "firebase/firestore";
+
                 const firebaseConfig = {
                     apiKey: "AIzaSyBRU61ZF7FvqQugFOlh3ZVNaFT-soe-lQY",
                     authDomain: "finances-36d4f.firebaseapp.com",
@@ -190,13 +193,18 @@
                     measurementId: "G-XH9KGXXZSD"
                 };
 
+
+                // Initialize Firebase
+                const app = initializeApp(firebaseConfig);
+
+
+                // Initialize Cloud Firestore and get a reference to the service
+                const db = getFirestore(app);
+
                 
 
-                const db = getFirestore( app );
 
-                const app = firebase.initializeApp(firebaseConfig);
-               
-                
+
             </script>
             <script src="scripts/Form/Form.js"></script>
             <script src="scripts/Index/index.js"></script>

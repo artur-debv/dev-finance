@@ -183,6 +183,8 @@
                 import { initializeApp } from "firebase/app";
                 import { getFirestore } from "firebase/firestore";
 
+                console.log(getFirestore(app))
+
                 const firebaseConfig = {
                     apiKey: "AIzaSyBRU61ZF7FvqQugFOlh3ZVNaFT-soe-lQY",
                     authDomain: "finances-36d4f.firebaseapp.com",
@@ -201,7 +203,7 @@
                 // Initialize Cloud Firestore and get a reference to the service
                 const db = getFirestore(app);
 
-                
+
 
 
 

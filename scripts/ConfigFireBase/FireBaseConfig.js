@@ -11,4 +11,8 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+console.log(firebase.database());
+console.log(firebase.database().ref('dev.finances:transactions'));
+console.log(firebase.database().ref('dev.finances:transactions').push());
+console.log(firebase.database().ref('dev.finances:transactions').push().key);
 export default firebase.database();

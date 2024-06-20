@@ -3,8 +3,10 @@
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "firebase": "^10.9.0",
+    "firebase": "^10.12.2",
     "google-auth-library": "^9.7.0",
-    "google-spreadsheet": "^4.1.2"
+    "google-spreadsheet": "^4.1.2",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
   }
 }

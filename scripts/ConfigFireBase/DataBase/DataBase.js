@@ -1,6 +1,14 @@
 const Description = document.querySelector("input#description")
-console.log(Description)
 const Amount = document.querySelector("input#amount")
-console.log(Amount)
 const Date = document.querySelector("input#date")
-console.log(Date)
+
+const Db = firebase.database()
+
+console.log(Db)
+
+const transactionsRef = Db.ref('dev.finances/transactions');
+
+
+ 
+
+

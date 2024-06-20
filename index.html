@@ -190,20 +190,13 @@
                     measurementId: "G-XH9KGXXZSD"
                 };
 
-                import { getDatabase } from "firebase/database";
-                const database = getDatabase();
+                import { getFirestore } from "firebase/firestore";
 
-                const sessionRef = database.ref('session').push();
-                const codigo = sessionRef.key; // Use esse código como quiser
-                sessionRef.set(firebase.auth().currentUser.uid);
+                const db = getFirestore( app );
 
-                const transactionsRef = database.ref('dev.finances:transactions');
-                transactionsRef.on('value', (snapshot) => {
-                    const data = snapshot.val();
-                    // Faça algo com os dados lidos
-                });
-
-                firebase.initializeApp(firebaseConfig);
+                const app = firebase.initializeApp(firebaseConfig);
+               
+                
             </script>
             <script src="scripts/Form/Form.js"></script>
             <script src="scripts/Index/index.js"></script>

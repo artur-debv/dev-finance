@@ -190,6 +190,12 @@
                     measurementId: "G-XH9KGXXZSD"
                 };
 
+                const db = firebase.database()
+
+                const transactionsRef = db.ref('dev.finances/transactions');
+
+                
+
                 firebase.initializeApp(firebaseConfig);
             </script>
             <script src="scripts/Form/Form.js"></script>

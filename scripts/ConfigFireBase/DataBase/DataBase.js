@@ -1,6 +1,3 @@
-const Description = document.querySelector("td .description");
-console.log(Description)
-const Amount = document.querySelector("td .income");
-console.log(Amount)
-const Date = document.querySelector("td .date");
-console.log(Date)
+const Description = document.querySelector("input#description")
+const Amount = document.querySelector("input#amount")
+const Date = document.querySelector("input#date")

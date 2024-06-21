@@ -196,10 +196,10 @@
 
                 async function salvarTransacao(descricao, valor, data) {
                     try {
-                        const db = collection(app, "Despesas"); // Substitua "Despesas" pelo nome da sua coleção
+                        const transacoesRef = collection(db, "Despesas"); // Substitua "Despesas" pelo nome da sua coleção
 
                         // Crie um novo documento com os dados da transação
-                        await addDoc(db, {
+                        await addDoc(transacoesRef, {
                             descricao: descricao,
                             valor: valor,
                             data: data

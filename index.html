@@ -177,8 +177,8 @@
             <script type="module">
                 // Import the functions you need from the SDKs you need
                 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-                import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"; 
-               
+                import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
 
                 const firebaseConfig = {
                     apiKey: "AIzaSyBRU61ZF7FvqQugFOlh3ZVNaFT-soe-lQY",
@@ -192,16 +192,33 @@
 
                 // Initialize Firebase
                 const app = initializeApp(firebaseConfig);
-           
 
-                async function fetchData(){
-                    const DocsCol = collectionq(db,'Despesas')
-                    const DocSnap = await getDocs(DocsCol)
-                    const DocList = DocSnap.docs.map(doc => doc.data())
-                    return DocList;
+
+                async function salvarTransacao(descricao, valor, data) {
+                    try {
+                        const db = collection(app, "Despesas"); // Substitua "Despesas" pelo nome da sua coleção
+
+                        // Crie um novo documento com os dados da transação
+                        await addDoc(db, {
+                            descricao: descricao,
+                            valor: valor,
+                            data: data
+                        });
+
+                        console.log("Transação salva com sucesso!");
+                    } catch (error) {
+                        console.error("Erro ao salvar a transação:", error);
+                    }
                 }
-               
-                
+
+                // Exemplo de uso:
+                const descricaoInput = document.querySelector("input#description").value;
+                const valorInput = parseFloat(document.querySelector("input#amount").value);
+                const dataInput = document.querySelector("input#date").value;
+
+                salvarTransacao(descricaoInput, valorInput, dataInput);
+
+
             </script>
 
             <script src="scripts/Form/Form.js"></script>

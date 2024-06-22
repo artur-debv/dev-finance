@@ -224,8 +224,11 @@
 
                 document.querySelector(".button_submit").addEventListener("click", (event) => {
                     const descricaoInput = document.querySelector("input#description").value;
+                    console.log(descricaoInput)
                     const valorInput = parseFloat(document.querySelector("input#amount").value);
+                    console.log(valorInput)
                     const dataInput = document.querySelector("input#date").value;
+                    console.log(dataInput)
 
                     salvarTransacao(descricaoInput, valorInput, dataInput);
                 })

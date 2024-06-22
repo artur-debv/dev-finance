@@ -207,7 +207,11 @@
                             data: data
                         });
 
-                        console.log(addDoc)
+                        // Limpe os campos do formulário
+
+                        document.querySelector("input#description").value = "";
+                        document.querySelector("input#amount").value = "";
+                        document.querySelector("input#date").value = "";
 
                         console.log("Transação salva com sucesso!");
                     } catch (error) {

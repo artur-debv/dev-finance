@@ -177,8 +177,9 @@
             <script type="module">
                 // Import the functions you need from the SDKs you need
                 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-                import {getFirestore, collection, getDocs, addDoc
-                 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+                import {
+                    getFirestore, collection, getDocs, addDoc
+                } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 
                 const firebaseConfig = {
@@ -207,7 +208,7 @@
                             data: data
                         });
 
-                        console.log("itens",transacoesRef)
+                        console.log("itens", transacoesRef)
 
                         // Limpe os campos do formulário
 
@@ -220,16 +221,14 @@
                         console.error("Erro ao salvar a transação:", error);
                     }
                 }
-                
-                document.querySelector()
 
-                // Exemplo de uso:
-                const descricaoInput = document.querySelector("input#description").value;
-                const valorInput = parseFloat(document.querySelector("input#amount").value);
-                const dataInput = document.querySelector("input#date").value;
+                document.querySelector(".button_submit").addEventListener("click", (event) => {
+                    const descricaoInput = document.querySelector("input#description").value;
+                    const valorInput = parseFloat(document.querySelector("input#amount").value);
+                    const dataInput = document.querySelector("input#date").value;
 
-                salvarTransacao(descricaoInput, valorInput, dataInput);
-
+                    salvarTransacao(descricaoInput, valorInput, dataInput);
+                })
 
             </script>
 

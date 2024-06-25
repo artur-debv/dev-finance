@@ -1,5 +1,5 @@
 
-const button = document.querySelector(".button_submit");
+/*const button = document.querySelector(".button_submit");
 
 
 const HandleSubmit = (event) => {
@@ -28,7 +28,7 @@ const HandleSubmit = (event) => {
     })
 }
 
-document.querySelector("form").addEventListener("submit", HandleSubmit);
+document.querySelector("form").addEventListener("submit", HandleSubmit);*/
 
 
 

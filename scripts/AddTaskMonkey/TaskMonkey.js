@@ -10,11 +10,11 @@ const HandleSubmit = (event) => {
     const date = document.querySelector("input#date").value;
 
     fetch("https://api.sheetmonkey.io/form/jxtYmjVnUoWL7zCNeE7XjQ", {
-        method: "POST",
-        mode: "no-cors",
+        method: "post",
         headers: {
             "Content-Type": "application/json",
-            "Accept": "application/json"
+            "Accept": "application/json",
+            "cors": "no-cors"
         },
         body: JSON.stringify({
             "Description": description,

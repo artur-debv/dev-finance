@@ -12,9 +12,12 @@ const HandleSubmit = (event) => {
     fetch("https://api.sheetmonkey.io/form/jxtYmjVnUoWL7zCNeE7XjQ", {
         method: "post",
         headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST",
+            "Access-Control-Allow-Headers": "Content-Type",
+            "Access-Control-Max-Age": "86400",
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "cors": "no-cors"
         },
         body: JSON.stringify({
             "Description": description,

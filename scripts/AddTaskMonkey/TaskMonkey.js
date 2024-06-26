@@ -3,12 +3,12 @@ document.getElementById('form').addEventListener('submit', function(event) {
 
     // Captura os dados do formulário
     const description = document.getElementById('description').value;
-    const quantidade = document.getElementById('amount').value;
+    const amount = document.getElementById('amount').value;
 
     // Cria o objeto com os dados da transação
     const transactionData = {
         description: description,
-        quantidade: quantidade
+        amount: amount
     };
 
     // Faz a solicitação POST para a API do Sheet Monkey

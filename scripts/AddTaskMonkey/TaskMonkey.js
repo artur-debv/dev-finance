@@ -23,4 +23,4 @@ const HandleSubmit = () => {
     });
 }
 
-document.querySelector("form").addEventListener("submit", HandleSubmit)
+document.querySelector("form").addEventListener("click", HandleSubmit)

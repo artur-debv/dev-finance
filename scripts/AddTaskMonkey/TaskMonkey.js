@@ -6,7 +6,7 @@ const handleSubmit = (event) => {
     const date = document.querySelector("input#date").value;
 
     fetch("http://localhost:3000/api/form/jxtYmjVnUoWL7zCNeE7XjQ", {
-        method: "POST",
+        method: "post",
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",

@@ -4,23 +4,41 @@ const ExcelJS = require('exceljs');
 const fs = require('fs');
 
 const app = express();
-const port = 4000;
+const port = 3000;
 
 app.use(bodyParser.json());
 
 app.post('/add-to-excel', async (req, res) => {
+    const { description, amount, date } = req.body;
 
     const workbook = new ExcelJS.Workbook();
-    const worksheet = workbook.addWorksheet('Sheet1');
-    worksheet.columns = [
-        { header: 'Description', key: 'description', width: 30 },
-        { header: 'Amount', key: 'amount', width: 10 },
-        { header: 'Date', key: 'date', width: 10 }
-    ];
-    worksheet.addRow({ description: 'Description', amount: 'Amount', date: 'Date' });
-    worksheet.addRow({ description: req.body.description, amount: req.body.amount, date: req.body.date });
-    await workbook.xlsx.writeFile('output.xlsx');
-  
+    const filePath = 'dados.xlsx';
+
+    // Verifica se o arquivo já existe
+    if (fs.existsSync(filePath)) {
+        await workbook.xlsx.readFile(filePath);
+    } else {
+        // Adiciona uma nova planilha se o arquivo não existir
+        workbook.addWorksheet('Dados');
+    }
+
+    const worksheet = workbook.getWorksheet('Dados');
+
+    // Adiciona cabeçalhos se a planilha estiver vazia
+    if (worksheet.rowCount === 0) {
+        worksheet.columns = [
+            { header: 'Descrição', key: 'description', width: 30 },
+            { header: 'Valor', key: 'amount', width: 15 },
+            { header: 'Data', key: 'date', width: 20 }
+        ];
+    }
+
+    // Adiciona uma nova linha com os dados
+    worksheet.addRow({ description, amount, date });
+
+    // Salva a planilha
+    await workbook.xlsx.writeFile(filePath);
+
     res.sendStatus(200);
 });
 

@@ -1,34 +1,30 @@
+document.getElementById('transactionForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita o envio padrão do formulário
 
+    // Captura os dados do formulário
+    const description = document.getElementById('description').value;
+    const amount = document.getElementById('amount').value;
 
+    // Cria o objeto com os dados da transação
+    const transactionData = {
+        description: description,
+        amount: amount
+    };
 
-document.getElementById('form').addEventListener('submit', async function(e) {
-    e.preventDefault(); // Evita o envio padrão do formulário
-
-    
-
-    const description = document.querySelector("input#description").value;
-    const amount = document.querySelector("input#amount").value;
-    const date = document.querySelector("input#date").value;
-
-    const workbook = new ExcelJS.Workbook();
-
-    const worksheet = workbook.addWorksheet('Despesas');
-
-    worksheet.columns = [
-        { header: 'Descricão', key: 'description', width: 50 },
-        { header: 'Valor', key: 'amount', width: 10 },
-        { header: 'Data', key: 'date', width: 10 },
-    ];
-
-    console.log(worksheet.addRow({ description, amount, date }));
-
-    console.log('planilha criada', worksheet);
-
-    worksheet.addRow({ description, amount, date });
-
-    workbook.xlsx.writeBuffer().then(function(buffer) {
-        const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-        saveAs(blob, 'despesas.xlsx');
+    // Faz a solicitação POST para a API do Sheet Monkey
+    fetch("https://api.sheetmonkey.io/form/jxtYmjVnUoWL7zCNeE7XjQ", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(transactionData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Transação adicionada com sucesso:", data);
+        // Aqui você pode adicionar lógica adicional, como limpar o formulário ou mostrar uma mensagem de sucesso
+    })
+    .catch(error => {
+        console.error("Erro ao adicionar transação:", error);
     });
-   
 });

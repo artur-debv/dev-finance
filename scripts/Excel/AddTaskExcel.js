@@ -1,5 +1,5 @@
 
-import ExcelJS from 'exceljs';
+import {ExcelJS} from 'exceljs';
 
 document.getElementById('form').addEventListener('submit', async function(e) {
     e.preventDefault(); // Evita o envio padrão do formulário

@@ -5,28 +5,16 @@ document.getElementById('form').addEventListener('submit', async function(e) {
     const amount = document.querySelector("input#amount").value;
     const date = document.querySelector("input#date").value;
 
-    const data = {
-        description,
-        amount,
-        date
-    };
+    const workbook = new ExcelJS.Workbook();
 
-    try {
-        const response = await fetch('http://localhost:4000/add-to-excel', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
+    const worksheet = workbook.addWorksheet('Despesas');
 
-        if (response.ok) {
-            alert('Dados adicionados com sucesso à planilha!');
-        } else {
-            alert('Erro ao adicionar dados à planilha.');
-        }
-    } catch (error) {
-        console.error('Erro:', error);
-        alert('Erro ao conectar ao servidor.');
-    }
+    worksheet.columns = [
+        { header: 'Descricão', key: 'description', width: 50 },
+        { header: 'Valor', key: 'amount', width: 10 },
+        { header: 'Data', key: 'date', width: 10 },
+    ];
+
+    worksheet.addRow({ description, amount, date });
+   
 });

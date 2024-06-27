@@ -11,6 +11,8 @@ document.getElementById('transactionForm').addEventListener('submit', function(e
         amount: amount
     };
 
+    console.log(transactionData)
+
     // Faz a solicitação POST para a API do Sheet Monkey
     fetch("https://api.sheetmonkey.io/form/jxtYmjVnUoWL7zCNeE7XjQ", {
         method: "POST",

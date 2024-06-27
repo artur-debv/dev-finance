@@ -1,7 +1,10 @@
+
+import ExcelJS from 'exceljs';
+
 document.getElementById('form').addEventListener('submit', async function(e) {
     e.preventDefault(); // Evita o envio padrão do formulário
 
-    const ExcelJS = require('exceljs');
+    
 
     const description = document.querySelector("input#description").value;
     const amount = document.querySelector("input#amount").value;

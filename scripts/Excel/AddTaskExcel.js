@@ -1,28 +1,32 @@
-const ExcelJS = require('exceljs');
+document.getElementById('dataForm').addEventListener('submit', async function(e) {
+    e.preventDefault(); // Evita o envio padrão do formulário
 
-const workbook = new ExcelJS.Workbook();
+    const description = document.querySelector("input#description").value;
+    const amount = document.querySelector("input#amount").value;
+    const date = document.querySelector("input#date").value;
 
-const worksheet = workbook.addWorksheet('Minha Planilha');
+    const data = {
+        description,
+        amount,
+        date
+    };
 
-// Adiciona cabeçalhos à planilha
-worksheet.columns = [
-    { header: 'ID', key: 'id', width: 10 },
-    { header: 'Nome', key: 'nome', width: 30 },
-    { header: 'Idade', key: 'idade', width: 10 }
-];
+    try {
+        const response = await fetch('/add-to-excel', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
 
-// Adiciona algumas linhas de dados
-worksheet.addRow({ id: 1, nome: 'João', idade: 25 });
-worksheet.addRow({ id: 2, nome: 'Maria', idade: 28 });
-worksheet.addRow({ id: 3, nome: 'Pedro', idade: 31 });
-
-// Salva o workbook em um arquivo
-workbook.xlsx.writeFile('minha_planilha.xlsx')
-    .then(() => {
-        console.log('Planilha criada com sucesso!');
-    })
-    .catch((err) => {
-        console.error('Erro ao criar a planilha:', err);
-    });
-
-
+        if (response.ok) {
+            alert('Dados adicionados com sucesso à planilha!');
+        } else {
+            alert('Erro ao adicionar dados à planilha.');
+        }
+    } catch (error) {
+        console.error('Erro:', error);
+        alert('Erro ao conectar ao servidor.');
+    }
+});

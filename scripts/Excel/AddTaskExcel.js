@@ -1,4 +1,4 @@
-document.getElementById('dataForm').addEventListener('submit', async function(e) {
+document.getElementById('form').addEventListener('submit', async function(e) {
     e.preventDefault(); // Evita o envio padrão do formulário
 
     const description = document.querySelector("input#description").value;

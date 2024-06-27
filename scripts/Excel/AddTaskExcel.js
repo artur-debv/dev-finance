@@ -25,5 +25,10 @@ document.getElementById('form').addEventListener('submit', async function(e) {
     console.log('planilha criada', worksheet);
 
     worksheet.addRow({ description, amount, date });
+
+    workbook.xlsx.writeBuffer().then(function(buffer) {
+        const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+        saveAs(blob, 'despesas.xlsx');
+    });
    
 });

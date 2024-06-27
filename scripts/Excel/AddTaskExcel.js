@@ -1,4 +1,4 @@
-document.getElementById('transactionForm').addEventListener('submit', function(event) {
+document.querySelector('form').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita o envio padrão do formulário
 
     // Captura os dados do formulário

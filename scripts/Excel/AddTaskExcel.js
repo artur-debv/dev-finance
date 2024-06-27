@@ -20,6 +20,8 @@ document.getElementById('form').addEventListener('submit', async function(e) {
         { header: 'Data', key: 'date', width: 10 },
     ];
 
+    console.log(worksheet.addRow({ description, amount, date }));
+
     worksheet.addRow({ description, amount, date });
    
 });

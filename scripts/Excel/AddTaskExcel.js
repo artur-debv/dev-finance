@@ -22,6 +22,8 @@ document.getElementById('form').addEventListener('submit', async function(e) {
 
     console.log(worksheet.addRow({ description, amount, date }));
 
+    console.log('planilha criada', worksheet);
+
     worksheet.addRow({ description, amount, date });
    
 });

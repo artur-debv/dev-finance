@@ -1,5 +1,5 @@
 
-import { Workbook } from 'exceljs';
+const ExcelJS = require('exceljs');
 
 document.getElementById('form').addEventListener('submit', async function(e) {
     e.preventDefault(); // Evita o envio padrão do formulário
@@ -10,7 +10,7 @@ document.getElementById('form').addEventListener('submit', async function(e) {
     const amount = document.querySelector("input#amount").value;
     const date = document.querySelector("input#date").value;
 
-    const workbook = new Workbook();
+    const workbook = new ExcelJS.Workbook();
 
     const worksheet = workbook.addWorksheet('Despesas');
 

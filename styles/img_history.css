@@ -22,6 +22,12 @@
     gap: 10px;
 }
 
+#userss{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .Infos{
     color: white;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,13 @@
     <link rel="stylesheet" href="styles/Investimentos.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
+
 <body>
     <header class="darkmode">
         <div class="icon">
             <a class="link_row" href="index.html"><i class='bx bx-left-arrow-alt'></i></a>
             <img src="./assets/logo.svg" alt="logo dev.finance$" />
-            
+
         </div>
     </header>
     <section id="transaction">
@@ -33,7 +35,39 @@
             <a href="#" onclick="Modal.open()" class="float-button">
                 <img src="./assets/float-plus.svg" alt="Adicionar" width="16px" />
             </a>
+            <div class="modal-overlay">
+                <div class="modal">
+                    <div id="form" onsubmit="Form.submit(event)">
+                        <h2>Nova Transação</h2>
+                        <form action="https://api.sheetmonkey.io/form/jxtYmjVnUoWL7zCNeE7XjQ" method="post">
+                            <div class="input-group">
+                                <label for="description" class="sr-only">Descrição</label>
+                                <input type="text" id="description" name="description" placeholder="Description" />
+                            </div>
+
+                            <div class="input-group">
+                                <label for="amount" class="sr-only">Valor</label>
+                                <input type="number" id="amount" name="amount" placeholder="0,00" step="0.01" />
+                            </div>
+
+                            <small class="help-for-modal">Use o sinal - (negativo) para despesas e , (vírgula) para
+                                casas decimais</small>
+
+                            <div class="input-group">
+                                <label for="date" class="sr-only">Data</label>
+                                <input type="date" id="date" name="date" />
+                            </div>
+
+                            <div class="input-group actions">
+                                <a href="#" onclick="Modal.close()" class="button cancel">Cancelar</a>
+                                <button class="button_submit" type="submit">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </table>
     </section>
 </body>
+
 </html>

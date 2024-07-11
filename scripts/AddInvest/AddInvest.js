@@ -86,21 +86,7 @@ const Modal = {
           </td>
           `;
       return html; // Retorna o HTML da transação
-    },
-  
-    updateBalance() {
-      // Atualiza o saldo total e as entradas e saídas na interface do usuário
-      document.querySelector("#incomeDisplay").innerHTML = Utils.formatCurrency(
-        Transaction.incomes()
-      ); // Atualiza o valor das entradas na interface do usuário
-      document.querySelector("#expenseDisplay").innerHTML = Utils.formatCurrency(
-        Transaction.expenses()
-      ); // Atualiza o valor das saídas na interface do usuário
-      document.querySelector("#totalDisplay").innerHTML = Utils.formatCurrency(
-        Transaction.total()
-      ); // Atualiza o saldo total na interface do usuário
-    },
-  
+    }  
     totalCardColor() {
       // Atualiza a cor do cartão de saldo total com base no valor do saldo
       if (Transaction.total() < 0) {

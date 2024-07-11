@@ -6,7 +6,7 @@
 }
 
 input {
-    width: 100%;
+    width: 60%;
     padding: 0.8rem;
     border: none;
     border-radius: 0.2rem;
@@ -102,7 +102,7 @@ a {
 }
 
 button {
-    width: 100%;
+    width: 60%;
     height: 50px;
 
     color: white;

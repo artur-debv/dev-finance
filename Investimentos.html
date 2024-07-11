@@ -15,5 +15,26 @@
             
         </div>
     </header>
+    <section id="transaction">
+        <h2 class="sr-only">Transações</h2>
+        <!-- Substituído pelo FloatButton -->
+        <!-- <a href="#" onclick="Modal.open()" class="button new">+ Nova Transação</a> -->
+        <div class="containers">
+            <input type="text" id="input_Search" placeholder="Digite sua Transação">
+            <button id="button_search" onclick="search()">Pesquisar</button>
+        </div>
+
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>Data</th>
+                    <th>Deletar Despesa</th>
+                </tr>
+            </thead>
+            <tbody class="tbodys"></tbody>
+        </table>
+    </section>
 </body>
 </html>

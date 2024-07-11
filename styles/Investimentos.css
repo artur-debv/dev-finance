@@ -37,7 +37,7 @@ input {
 
 .float-button {
     color: white;
-    background-color: var(--dark-green);
+    background-color: #282828;
     box-shadow: 2px 2px 3px var(--shadow);
     text-align: center;
     position: fixed;

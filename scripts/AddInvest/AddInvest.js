@@ -86,7 +86,7 @@ const Modal = {
           </td>
           `;
       return html; // Retorna o HTML da transação
-    }  
+    },
     totalCardColor() {
       // Atualiza a cor do cartão de saldo total com base no valor do saldo
       if (Transaction.total() < 0) {

@@ -34,6 +34,15 @@ input {
     --color-gradient: linear-gradient(90deg, var(--color-purple-50), var(--color-purple-100), var(--color-purple-200));
 }
 
+
+.containers{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+
 .icon{
     display: flex;
     justify-content: space-around;

@@ -75,12 +75,9 @@ const Modal = {
   
     innerHTMLTransaction(transactions, index) {
       // Retorna o HTML de uma transação
-      const CSSclass = transactions.amount > 0 ? "income" : "expense"; // Define a classe CSS com base no valor da transação
-      const amount = Utils.formatCurrency(transactions.amount); // Formata o valor da transação como uma moeda
+   
       const html = `
           <td class="tipoInvestimento">${transactions.tipoInvestimento}</td>
-          <td class="description">${transactions.description}</td>
-          <td class="${CSSclass}">${amount}</td>
           <td class="date">${transactions.date}</td>
           <td>
               <img onclick="Transaction.remove(${index})" src="./assets/minus.svg" class="remove" alt="Remover Transação">
@@ -159,25 +156,22 @@ const Modal = {
   const Form = {
     // Objeto responsável por lidar com o formulário de adição de transações
     tipoInvestimento: document.querySelector("select#tipoInvestimento"),
-    amount: document.querySelector("input#amount"),
     date: document.querySelector("input#date"),
   
     getValues() {
       // Obtém os valores dos campos do formulário
       return {
         tipoInvestimento: Form.tipoInvestimento.value,
-        amount: Form.amount.value,
         date: Form.date.value,
       }; // Retorna um objeto contendo os valores dos campos do formulário
     },
   
     validateFields() {
       // Valida os campos do formulário
-      const { tipoInvestimento , amount, date } = Form.getValues(); // Obtém os valores dos campos do formulário
+      const { tipoInvestimento ,  date } = Form.getValues(); // Obtém os valores dos campos do formulário
   
       if (
         tipoInvestimento.trim() === "" ||
-        amount.trim() === "" ||
         date.trim() === ""
       ) {
         // Se algum campo estiver vazio
@@ -187,14 +181,13 @@ const Modal = {
   
     formatValues() {
       // Formata os valores dos campos do formulário
-      let { tipoInvestimento, amount, date } = Form.getValues(); // Obtém os valores dos campos do formulário
+      let { tipoInvestimento,  date } = Form.getValues(); // Obtém os valores dos campos do formulário
   
-      amount = Utils.formatAmount(amount); // Formata o valor da transação como uma quantidade de dinheiro
+     
       date = Utils.formatDate(date); // Formata a data da transação
   
       return {
         tipoInvestimento,
-        amount,
         date,
       }; // Retorna um objeto contendo os valores formatados
     },
@@ -207,7 +200,6 @@ const Modal = {
     clearFields() {
       // Limpa os campos do formulário
       Form.tipoInvestimento.value = ""; // Limpa o campo de descrição
-      Form.amount.value = ""; // Limpa o campo de valor
       Form.date.value = ""; // Limpa o campo de data
     },
   

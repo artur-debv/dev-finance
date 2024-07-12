@@ -172,10 +172,10 @@ const Modal = {
   
     validateFields() {
       // Valida os campos do formulário
-      const { description, amount, date } = Form.getValues(); // Obtém os valores dos campos do formulário
+      const { tipoInvestimento , amount, date } = Form.getValues(); // Obtém os valores dos campos do formulário
   
       if (
-        //description.trim() === "" ||
+        tipoInvestimento.trim() === "" ||
         amount.trim() === "" ||
         date.trim() === ""
       ) {
@@ -186,13 +186,13 @@ const Modal = {
   
     formatValues() {
       // Formata os valores dos campos do formulário
-      let { description, amount, date } = Form.getValues(); // Obtém os valores dos campos do formulário
+      let { tipoInvestimento, amount, date } = Form.getValues(); // Obtém os valores dos campos do formulário
   
       amount = Utils.formatAmount(amount); // Formata o valor da transação como uma quantidade de dinheiro
       date = Utils.formatDate(date); // Formata a data da transação
   
       return {
-        description,
+        tipoInvestimento,
         amount,
         date,
       }; // Retorna um objeto contendo os valores formatados
@@ -205,7 +205,7 @@ const Modal = {
   
     clearFields() {
       // Limpa os campos do formulário
-      Form.description.value = ""; // Limpa o campo de descrição
+      Form.tipoInvestimento.value = ""; // Limpa o campo de descrição
       Form.amount.value = ""; // Limpa o campo de valor
       Form.date.value = ""; // Limpa o campo de data
     },

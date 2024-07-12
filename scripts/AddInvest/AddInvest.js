@@ -158,7 +158,7 @@ const Modal = {
   
   const Form = {
     // Objeto responsável por lidar com o formulário de adição de transações
-    description: document.querySelector("input#tipoInvestimento"),
+    //description: document.querySelector("input#tipoInvestimento"),
     amount: document.querySelector("input#amount"),
     date: document.querySelector("input#date"),
   

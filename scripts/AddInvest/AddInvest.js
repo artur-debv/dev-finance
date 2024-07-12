@@ -165,7 +165,7 @@ const Modal = {
     getValues() {
       // Obtém os valores dos campos do formulário
       return {
-        description: Form.description.value,
+        //description: Form.description.value,
         amount: Form.amount.value,
         date: Form.date.value,
       }; // Retorna um objeto contendo os valores dos campos do formulário

@@ -175,7 +175,7 @@ const Modal = {
       const { description, amount, date } = Form.getValues(); // Obtém os valores dos campos do formulário
   
       if (
-        description.trim() === "" ||
+        //description.trim() === "" ||
         amount.trim() === "" ||
         date.trim() === ""
       ) {

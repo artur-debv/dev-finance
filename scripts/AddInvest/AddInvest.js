@@ -78,6 +78,7 @@ const Modal = {
       const CSSclass = transactions.amount > 0 ? "income" : "expense"; // Define a classe CSS com base no valor da transação
       const amount = Utils.formatCurrency(transactions.amount); // Formata o valor da transação como uma moeda
       const html = `
+          <td class="description">${transactions.tipoInvestimento}</td>
           <td class="description">${transactions.description}</td>
           <td class="${CSSclass}">${amount}</td>
           <td class="date">${transactions.date}</td>

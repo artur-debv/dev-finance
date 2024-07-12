@@ -85,7 +85,7 @@ const Modal = {
           `;
       return html; // Retorna o HTML da transação
     },
-    totalCardColor() {
+  /*  totalCardColor() {
       // Atualiza a cor do cartão de saldo total com base no valor do saldo
       if (Transaction.total() < 0) {
         // Se o saldo total for negativo
@@ -100,9 +100,9 @@ const Modal = {
           "Seu Valor Total Esta Positivo: " +
           Utils.formatSimple(Transaction.total())
         ); // Exibe uma mensagem de log indicando que o saldo total é positivo
-        CardColor.positive(); // Define a cor do cartão de saldo total como verde
+        
       }
-    },
+    },*/
   
     clearTransactions() {
       // Remove todas as transações da interface do usuário

@@ -2,7 +2,7 @@ function search() {
     const buttonSearch = document.getElementById('button_search');
 
     buttonSearch.addEventListener('click', function () {
-        const selectedInvestmentType = document.getElementById('select_investmentType').value.toLowerCase();
+        const selectedInvestmentType = document.getElementById('select#tipoInvestimento').value.toLowerCase();
         const transactions = document.querySelectorAll('.tbodys tr');
 
         transactions.forEach(function (transaction) {

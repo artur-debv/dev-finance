@@ -232,7 +232,6 @@ const Modal = {
     // Objeto responsável por inicializar a aplicação
     init() {
       Transaction.all.forEach(DOM.addTransaction); // Adiciona todas as transações à interface do usuário
-      DOM.updateBalance(); // Atualiza o saldo total e as entradas e saídas na interface do usuário
       DOM.totalCardColor(); // Atualiza a cor do cartão de saldo total na interface do usuário
   
       Storage.set(Transaction.all); // Salva todas as transações no localStorage

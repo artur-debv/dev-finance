@@ -318,6 +318,10 @@ footer {
     color: black;
 }
 
+.select .a_history{
+    color: white;
+}
+
 .dark table tbody td{
     background-color:#282828;
     color: white;

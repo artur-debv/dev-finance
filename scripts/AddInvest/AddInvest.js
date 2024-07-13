@@ -16,7 +16,7 @@ const Modal = {
     },
     set(transactions) {
       localStorage.setItem(
-        "dev.finances: investments",
+        "dev.finances:investments",
         JSON.stringify(transactions)
       ); // Define as transações no localStorage após converter para JSON
     },

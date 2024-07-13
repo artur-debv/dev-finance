@@ -10,17 +10,17 @@ const Modal = {
   };
   
   const Storage = {
-    // Objeto responsável por lidar com o armazenamento de transações no localStorage
     get() {
-      return JSON.parse(localStorage.getItem("dev.finances:transactions")) || []; // Obtém as transações armazenadas no localStorage ou retorna um array vazio se não houver transações
+      const data = JSON.parse(localStorage.getItem("dev.financesss:investments")) || [];
+      console.log("Getting from LocalStorage:", data);
+      return data;
     },
     set(transactions) {
-      localStorage.setItem(
-        "dev.finances: investments",
-        JSON.stringify(transactions)
-      ); // Define as transações no localStorage após converter para JSON
+      localStorage.setItem("dev.financesss:investments", JSON.stringify(transactions));
+      console.log("Setting to LocalStorage:", transactions);
     },
   };
+  
   
   const Transaction = {
     all: Storage.get(), // Obtém todas as transações armazenadas no localStorage

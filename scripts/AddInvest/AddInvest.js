@@ -1,110 +1,110 @@
 const Modal = {
   open() {
-      document.querySelector(".modal-overlay").classList.add("active");
+    document.querySelector(".modal-overlay").classList.add("active");
   },
   close() {
-      document.querySelector(".modal-overlay").classList.remove("active");
+    document.querySelector(".modal-overlay").classList.remove("active");
   },
 };
 
 const Storage = {
   get() {
-      const data = JSON.parse(localStorage.getItem("dev.financesss:investments")) || [];
-      console.log("Getting from LocalStorage:", data);
-      return data;
+    const data = JSON.parse(localStorage.getItem("dev.financesss:investments")) || [];
+    console.log("Getting from LocalStorage:", data);
+    return data;
   },
   set(transactions) {
-      localStorage.setItem("dev.financesss:investments", JSON.stringify(transactions));
-      console.log("Setting to LocalStorage:", transactions);
+    localStorage.setItem("dev.financesss:investments", JSON.stringify(transactions));
+    console.log("Setting to LocalStorage:", transactions);
   },
 };
 
 const Transaction = {
   all: Storage.get(),
   add(transaction) {
-      this.all.push(transaction);
-      Storage.set(this.all); // Adiciona o set aqui para garantir que o armazenamento seja atualizado
-      App.reload();
+    this.all.push(transaction);
+    Storage.set(this.all); // Adiciona o set aqui para garantir que o armazenamento seja atualizado
+    App.reload();
   },
   remove(index) {
-      this.all.splice(index, 1);
-      Storage.set(this.all); // Adiciona o set aqui para garantir que o armazenamento seja atualizado
-      App.reload();
+    this.all.splice(index, 1);
+    Storage.set(this.all); // Adiciona o set aqui para garantir que o armazenamento seja atualizado
+    App.reload();
   },
   incomes() {
-      let income = 0;
-      this.all.forEach((transaction) => {
-          if (transaction.amount > 0) {
-              income += transaction.amount;
-          }
-      });
-      return income;
+    let income = 0;
+    this.all.forEach((transaction) => {
+      if (transaction.amount > 0) {
+        income += transaction.amount;
+      }
+    });
+    return income;
   },
   expenses() {
-      let expense = 0;
-      this.all.forEach((transaction) => {
-          if (transaction.amount < 0) {
-              expense += transaction.amount;
-          }
-      });
-      return expense;
+    let expense = 0;
+    this.all.forEach((transaction) => {
+      if (transaction.amount < 0) {
+        expense += transaction.amount;
+      }
+    });
+    return expense;
   },
   total() {
-      return this.incomes() + this.expenses();
+    return this.incomes() + this.expenses();
   },
 };
 
 const DOM = {
   transactionsContainer: document.querySelector("#data-table tbody"),
   addTransaction(transaction, index) {
-      const tr = document.createElement("tr");
-      tr.innerHTML = this.innerHTMLTransaction(transaction, index);
-      tr.dataset.index = index;
-      this.transactionsContainer.prepend(tr);
+    const tr = document.createElement("tr");
+    tr.innerHTML = this.innerHTMLTransaction(transaction, index);
+    tr.dataset.index = index;
+    this.transactionsContainer.prepend(tr);
   },
   innerHTMLTransaction(transaction, index) {
-      const html = `
+    const html = `
           <td class="tipoInvestimento">${transaction.tipoInvestimento}</td>
           <td class="date">${transaction.date}</td>
           <td>
               <img onclick="Transaction.remove(${index})" src="./assets/minus.svg" class="remove" alt="Remover Transação">
           </td>
       `;
-      return html;
+    return html;
   },
   clearTransactions() {
-      this.transactionsContainer.innerHTML = "";
+    this.transactionsContainer.innerHTML = "";
   },
 };
 
 const Utils = {
   formatCurrency(value) {
-      const signal = Number(value) < 0 ? "-&nbsp;" : "+&nbsp;";
-      value = String(value).replace(/\D/g, "");
-      value = Number(value) / 100;
-      value = value.toLocaleString("pt-BR", {
-          style: "currency",
-          currency: "BRL",
-      });
-      return signal + value;
+    const signal = Number(value) < 0 ? "-&nbsp;" : "+&nbsp;";
+    value = String(value).replace(/\D/g, "");
+    value = Number(value) / 100;
+    value = value.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+    return signal + value;
   },
   formatAmount(value) {
-      value = value * 100;
-      return Math.round(value);
+    value = value * 100;
+    return Math.round(value);
   },
   formatSimple(value) {
-      const signal = Number(value) < 0 ? "- " : "+ ";
-      value = String(value).replace(/\D/g, "");
-      value = Number(value) / 100;
-      value = value.toLocaleString("pt-BR", {
-          style: "currency",
-          currency: "BRL",
-      });
-      return signal + value;
+    const signal = Number(value) < 0 ? "- " : "+ ";
+    value = String(value).replace(/\D/g, "");
+    value = Number(value) / 100;
+    value = value.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+    return signal + value;
   },
   formatDate(date) {
-      const splittedDate = date.split("-");
-      return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`;
+    const splittedDate = date.split("-");
+    return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`;
   },
 };
 
@@ -112,51 +112,51 @@ const Form = {
   tipoInvestimento: document.querySelector("select#tipoInvestimento"),
   date: document.querySelector("input#date"),
   getValues() {
-      return {
-          tipoInvestimento: this.tipoInvestimento.value,
-          date: this.date.value,
-      };
+    return {
+      tipoInvestimento: this.tipoInvestimento.value,
+      date: this.date.value,
+    };
   },
   validateFields() {
-      const { tipoInvestimento, date } = this.getValues();
-      if (tipoInvestimento.trim() === "" || date.trim() === "") {
-          throw new Error("Por favor, preencha todos os campos!");
-      }
+    const { tipoInvestimento, date } = this.getValues();
+    if (tipoInvestimento.trim() === "" || date.trim() === "") {
+      throw new Error("Por favor, preencha todos os campos!");
+    }
   },
   formatValues() {
-      let { tipoInvestimento, date } = this.getValues();
-      date = Utils.formatDate(date);
-      return { tipoInvestimento, date };
+    let { tipoInvestimento, date } = this.getValues();
+    date = Utils.formatDate(date);
+    return { tipoInvestimento, date };
   },
   saveTransaction(transaction) {
-      Transaction.add(transaction);
+    Transaction.add(transaction);
   },
   clearFields() {
-      this.tipoInvestimento.value = "";
-      this.date.value = "";
+    this.tipoInvestimento.value = "";
+    this.date.value = "";
   },
   submit(event) {
-      event.preventDefault();
-      try {
-          this.validateFields();
-          const transaction = this.formatValues();
-          this.saveTransaction(transaction);
-          this.clearFields();
-          Modal.close();
-      } catch (error) {
-          console.log(error.message);
-      }
+    event.preventDefault();
+    try {
+      this.validateFields();
+      const transaction = this.formatValues();
+      this.saveTransaction(transaction);
+      this.clearFields();
+      Modal.close();
+    } catch (error) {
+      console.log(error.message);
+    }
   },
 };
 
 const App = {
   init() {
-      Transaction.all.forEach(DOM.addTransaction);
-      Storage.set(Transaction.all);
+    Transaction.all.forEach(DOM.addTransaction);
+    Storage.set(Transaction.all);
   },
   reload() {
-      DOM.clearTransactions();
-      this.init();
+    DOM.clearTransactions();
+    this.init();
   },
 };
 
@@ -164,29 +164,29 @@ App.init();
 
 document.addEventListener("DOMContentLoaded", function (event) {
   const showNavbar = (toggleId, navId, bodyId, headerId) => {
-      const toggle = document.getElementById(toggleId),
-          nav = document.getElementById(navId),
-          bodypd = document.getElementById(bodyId),
-          headerpd = document.getElementById(headerId);
+    const toggle = document.getElementById(toggleId),
+      nav = document.getElementById(navId),
+      bodypd = document.getElementById(bodyId),
+      headerpd = document.getElementById(headerId);
 
-      if (toggle && nav && bodypd && headerpd) {
-          toggle.addEventListener('click', () => {
-              nav.classList.toggle('show');
-              toggle.classList.toggle('bx-x');
-              bodypd.classList.toggle('body-pd');
-              headerpd.classList.toggle('body-pd');
-          });
-      }
+    if (toggle && nav && bodypd && headerpd) {
+      toggle.addEventListener('click', () => {
+        nav.classList.toggle('show');
+        toggle.classList.toggle('bx-x');
+        bodypd.classList.toggle('body-pd');
+        headerpd.classList.toggle('body-pd');
+      });
+    }
   };
 
   showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header');
 
   const linkColor = document.querySelectorAll('.nav_link');
   function colorLink() {
-      if (linkColor) {
-          linkColor.forEach(l => l.classList.remove('active'));
-          this.classList.add('active');
-      }
+    if (linkColor) {
+      linkColor.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+    }
   }
   linkColor.forEach(l => l.addEventListener('click', colorLink));
 });

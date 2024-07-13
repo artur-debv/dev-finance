@@ -23,12 +23,12 @@ const Transaction = {
   all: Storage.get(),
   add(transaction) {
       this.all.push(transaction);
-      Storage.set(this.all); // Adiciona o set aqui para garantir que o armazenamento seja atualizado
+      Storage.set(this.all);
       App.reload();
   },
   remove(index) {
       this.all.splice(index, 1);
-      Storage.set(this.all); // Adiciona o set aqui para garantir que o armazenamento seja atualizado
+      Storage.set(this.all);
       App.reload();
   },
   incomes() {
@@ -57,6 +57,7 @@ const Transaction = {
 const DOM = {
   transactionsContainer: document.querySelector("#data-table tbody"),
   addTransaction(transaction, index) {
+      console.log("Adding transaction to DOM:", transaction, index); // Log para debug
       const tr = document.createElement("tr");
       tr.innerHTML = this.innerHTMLTransaction(transaction, index);
       tr.dataset.index = index;
@@ -73,6 +74,7 @@ const DOM = {
       return html;
   },
   clearTransactions() {
+      console.log("Clearing transactions from DOM"); // Log para debug
       this.transactionsContainer.innerHTML = "";
   },
 };
@@ -151,7 +153,10 @@ const Form = {
 
 const App = {
   init() {
-      Transaction.all.forEach(DOM.addTransaction);
+      console.log("Initializing App with transactions:", Transaction.all); // Log para debug
+      Transaction.all.forEach((transaction, index) => {
+          DOM.addTransaction(transaction, index);
+      });
       Storage.set(Transaction.all);
   },
   reload() {

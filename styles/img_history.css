@@ -16,6 +16,10 @@
     font-size: 14px;
 }
 
+.dark .a_history{
+    color: black;
+}
+
 #users{
     display: flex;
     align-items: center;

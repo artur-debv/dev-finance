@@ -314,7 +314,9 @@ footer {
     color: white;
 }
 
-
+.dark .a_history{
+    color: black;
+}
 
 .dark table tbody td{
     background-color:#282828;

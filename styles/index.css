@@ -313,10 +313,6 @@ footer {
     color: black;
 }
 
-.select #user_infos span:last-child{
-    color: white;
-}
-
 .dark #user{
     color: white;
 }

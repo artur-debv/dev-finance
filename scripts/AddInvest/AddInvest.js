@@ -12,7 +12,7 @@ const Modal = {
   const Storage = {
     // Objeto responsável por lidar com o armazenamento de transações no localStorage
     get() {
-      return JSON.parse(localStorage.getItem("dev.finances:transactions")) || []; // Obtém as transações armazenadas no localStorage ou retorna um array vazio se não houver transações
+      return JSON.parse(localStorage.getItem("dev.finances:investments")) || []; // Obtém as transações armazenadas no localStorage ou retorna um array vazio se não houver transações
     },
     set(transactions) {
       localStorage.setItem(

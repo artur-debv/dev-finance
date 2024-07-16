@@ -310,15 +310,17 @@ footer {
 }
 
 
-
-.select #user_infos span:last-child{
-    color: white;
-}
-
 .dark #user{
     color: white;
 }
 
+.dark .a_history{
+    color: black;
+}
+
+.select .a_history{
+    color: white;
+}
 
 .dark table tbody td{
     background-color:#282828;

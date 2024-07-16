@@ -12,9 +12,11 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    color: white;
+    color: black;
     font-size: 14px;
 }
+
+
 
 #users{
     display: flex;

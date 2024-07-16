@@ -1,13 +1,4 @@
-#input_Search{
-    width: 40%;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 0.2rem;
-    -webkit-border-radius: 0.2rem;
-    -moz-border-radius: 0.2rem;
-    -ms-border-radius: 0.2rem;
-    -o-border-radius: 0.2rem;
-}/* Form */
+/* Form */
 
 #tipoInvestimento{
     width: 100%;

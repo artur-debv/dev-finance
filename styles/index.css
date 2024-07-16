@@ -331,6 +331,10 @@ footer {
     gap: 9px;
 }
 
+.select button{
+    color: black;
+}
+
 .login{
     color: white;
 }

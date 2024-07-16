@@ -80,7 +80,7 @@ button {
     height: 50px;
 
     color: white;
-    background: var(--normal-green);
+    background: #1F2020;
 
     padding: 0;
 
@@ -333,9 +333,7 @@ footer {
     gap: 9px;
 }
 
-.select button{
-    color: black;
-}
+
 
 .login{
     color: white;

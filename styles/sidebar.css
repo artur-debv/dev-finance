@@ -75,8 +75,9 @@ main{
 
 .side-item:hover:not(.active),
 #logout_btn:hover {
-    background-color: #e3e9f7;
-    color: black;
+    background: #282828;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
 }
 
 .side-item a {

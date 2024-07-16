@@ -175,7 +175,7 @@ button:hover {
     color: white;
 }
 .card.total.positive {
-    background: var(--normal-green);
+    background: #1F2020;
 }
 .card.total.negative {
     background: #8d041a;

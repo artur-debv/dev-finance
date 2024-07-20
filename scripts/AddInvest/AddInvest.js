@@ -90,6 +90,9 @@ const Utils = {
       });
       return signal + value;
   },
+  separarPalavras(texto) {
+    return texto.replace(/([a-z])([A-Z])/g, '$1 $2');
+  },
   formatAmount(value) {
       value = value * 100;
       return Math.round(value);
@@ -128,6 +131,7 @@ const Form = {
   formatValues() {
       let { tipoInvestimento, date } = this.getValues();
       date = Utils.formatDate(date);
+      tipoInvestimento = Utils.separarPalavras(tipoInvestimento);
       return { tipoInvestimento, date };
   },
   saveTransaction(transaction) {

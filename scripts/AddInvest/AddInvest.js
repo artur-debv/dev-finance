@@ -93,6 +93,9 @@ const Utils = {
   separarPalavras(texto) {
     return texto.replace(/([a-z])([A-Z])/g, '$1 $2');
   },
+  capitalaze(texto) {
+    return texto.replace(/\b\w/g, char => char.toUpperCase());
+  },
   formatAmount(value) {
       value = value * 100;
       return Math.round(value);
@@ -132,6 +135,8 @@ const Form = {
       let { tipoInvestimento, date } = this.getValues();
       date = Utils.formatDate(date);
       tipoInvestimento = Utils.separarPalavras(tipoInvestimento);
+      tipoInvestimento = Utils.capitalaze(tipoInvestimento);
+      tipoInvestimento
       return { tipoInvestimento, date };
   },
   saveTransaction(transaction) {

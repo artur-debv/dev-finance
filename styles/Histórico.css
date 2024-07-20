@@ -23,6 +23,16 @@
     --color-gradient: linear-gradient(90deg, var(--color-purple-50), var(--color-purple-100), var(--color-purple-200));
 }
 
+.input_Search{
+    padding: 0.8rem;
+    border: none;
+    border-radius: 0.2rem;
+    -webkit-border-radius: 0.2rem;
+    -moz-border-radius: 0.2rem;
+    -ms-border-radius: 0.2rem;
+    -o-border-radius: 0.2rem;
+}
+
 .icon{
     display: flex;
     justify-content: space-around;
@@ -38,6 +48,8 @@
     margin-left: 20px;
     color: white;
 }
+
+
 
 
 .fa-sun:before {

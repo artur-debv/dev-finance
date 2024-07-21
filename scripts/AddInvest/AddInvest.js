@@ -123,7 +123,7 @@ const Form = {
   },
   validateFields() {
       const { tipoInvestimento, date } = this.getValues();
-      if (tipoInvestimento.trim() === "" || date.trim() === "" || amount.trim() === "") {
+      if (tipoInvestimento.trim() === "" || date.trim() === "") {
           throw new Error("Por favor, preencha todos os campos!");
       }
   },

@@ -90,15 +90,6 @@ const Utils = {
       });
       return signal + value;
   },
-  separarPalavras(texto) {
-    return texto.replace(/([a-z])([A-Z])/g, '$1 $2');
-  },
-    Normalize(texto) {
-    return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  },
-  capitalaze(texto) {
-    return texto.replace(/\b\w/g, char => char.toUpperCase());
-  },
   formatAmount(value) {
       value = value * 100;
       return Math.round(value);
@@ -122,29 +113,21 @@ const Utils = {
 const Form = {
   tipoInvestimento: document.querySelector("select#tipoInvestimento"),
   date: document.querySelector("input#date"),
-  amount: document.querySelector("input#amount"),
   getValues() {
       return {
           tipoInvestimento: this.tipoInvestimento.value,
-          date: Form.date.value,
-          amount: Form.amount.value,
-          valor: Form.valor.value
+          date: this.date.value,
       };
-      
   },
   validateFields() {
-      const {amount, tipoInvestimento, date } = this.getValues();
-      if (tipoInvestimento.trim() === "" || date.trim() === "" || amount.trim() === "") {
+      const { tipoInvestimento, date } = this.getValues();
+      if (tipoInvestimento.trim() === "" || date.trim() === "") {
           throw new Error("Por favor, preencha todos os campos!");
       }
   },
   formatValues() {
-      let { amount, tipoInvestimento, date } = this.getValues();
+      let { tipoInvestimento, date } = this.getValues();
       date = Utils.formatDate(date);
-      amount = Utils.formatAmount(amount)
-      tipoInvestimento = Utils.separarPalavras(tipoInvestimento);
-      tipoInvestimento = Utils.capitalaze(tipoInvestimento);
-      tipoInvestimento = Utils.Normalize(tipoInvestimento);
       return { tipoInvestimento, date };
   },
   saveTransaction(transaction) {

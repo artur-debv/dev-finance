@@ -140,7 +140,6 @@ const Form = {
       tipoInvestimento = Utils.separarPalavras(tipoInvestimento);
       tipoInvestimento = Utils.capitalaze(tipoInvestimento);
       tipoInvestimento = Utils.Normalize(tipoInvestimento);
-      tipoInvestimento
       return { tipoInvestimento, date };
   },
   saveTransaction(transaction) {

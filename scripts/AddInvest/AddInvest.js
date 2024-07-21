@@ -128,10 +128,10 @@ const Form = {
       }
   },
   formatValues() {
-      let { tipoInvestimento, date } = this.getValues();
+      let { amount, tipoInvestimento, date } = this.getValues();
       date = Utils.formatDate(date);
-      amout = Utils.formatAmount(amount);
-      return { tipoInvestimento, date };
+      amount = Utils.formatAmount(amount);
+      return { amount, tipoInvestimento, date };
   },
   saveTransaction(transaction) {
       Transaction.add(transaction);

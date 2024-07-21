@@ -113,21 +113,24 @@ const Utils = {
 const Form = {
   tipoInvestimento: document.querySelector("select#tipoInvestimento"),
   date: document.querySelector("input#date"),
+  amount: document.querySelector("input#amount"),
   getValues() {
       return {
           tipoInvestimento: this.tipoInvestimento.value,
           date: this.date.value,
+          amount: this.amount.value
       };
   },
   validateFields() {
       const { tipoInvestimento, date } = this.getValues();
-      if (tipoInvestimento.trim() === "" || date.trim() === "") {
+      if (tipoInvestimento.trim() === "" || date.trim() === "" || amount.trim() === "") {
           throw new Error("Por favor, preencha todos os campos!");
       }
   },
   formatValues() {
       let { tipoInvestimento, date } = this.getValues();
       date = Utils.formatDate(date);
+      amout = Utils.formatAmount(amount);
       return { tipoInvestimento, date };
   },
   saveTransaction(transaction) {
@@ -136,6 +139,7 @@ const Form = {
   clearFields() {
       this.tipoInvestimento.value = "";
       this.date.value = "";
+      this.amount.value = "";
   },
   submit(event) {
       event.preventDefault();

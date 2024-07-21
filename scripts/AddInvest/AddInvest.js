@@ -122,11 +122,14 @@ const Utils = {
 const Form = {
   tipoInvestimento: document.querySelector("select#tipoInvestimento"),
   date: document.querySelector("input#date"),
+  Valor: document.querySelector("input#income"),
   getValues() {
       return {
           tipoInvestimento: this.tipoInvestimento.value,
           date: this.date.value,
+          valor: this.valor.value
       };
+      
   },
   validateFields() {
       const { tipoInvestimento, date } = this.getValues();

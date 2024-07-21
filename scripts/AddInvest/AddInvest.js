@@ -127,7 +127,7 @@ const Form = {
       return {
           tipoInvestimento: this.tipoInvestimento.value,
           date: this.date.value,
-          amount: Form.amount.value,
+          amount: this.amount.value,
           valor: this.valor.value
       };
       

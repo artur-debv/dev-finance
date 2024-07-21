@@ -133,14 +133,15 @@ const Form = {
       
   },
   validateFields() {
-      const { tipoInvestimento, date } = this.getValues();
-      if (tipoInvestimento.trim() === "" || date.trim() === "") {
+      const {amount, tipoInvestimento, date } = this.getValues();
+      if (tipoInvestimento.trim() === "" || date.trim() === "" || amount.trim() === "") {
           throw new Error("Por favor, preencha todos os campos!");
       }
   },
   formatValues() {
-      let { tipoInvestimento, date } = this.getValues();
+      let { amount, tipoInvestimento, date } = this.getValues();
       date = Utils.formatDate(date);
+      amount = Utils.formatAmount(amount)
       tipoInvestimento = Utils.separarPalavras(tipoInvestimento);
       tipoInvestimento = Utils.capitalaze(tipoInvestimento);
       tipoInvestimento = Utils.Normalize(tipoInvestimento);

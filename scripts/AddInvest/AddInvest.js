@@ -93,8 +93,8 @@ const Utils = {
   separarPalavras(texto) {
     return texto.replace(/([a-z])([A-Z])/g, '$1 $2');
   },
-  Normalize(texto){
-   return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    Normalize(texto) {
+    return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   },
   capitalaze(texto) {
     return texto.replace(/\b\w/g, char => char.toUpperCase());

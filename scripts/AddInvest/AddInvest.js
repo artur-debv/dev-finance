@@ -126,9 +126,9 @@ const Form = {
   getValues() {
       return {
           tipoInvestimento: this.tipoInvestimento.value,
-          date: this.date.value,
-          amount: this.amount.value,
-          valor: this.valor.value
+          date: Form.date.value,
+          amount: Form.amount.value,
+          valor: Form.valor.value
       };
       
   },

@@ -155,7 +155,7 @@
                                 <a href="#" onclick="Modal.close()" class="button cancel">Cancelar</a>
                                 <button class="button_submit" type="submit">Salvar</button>
                             </div>
-                          </form>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -182,7 +182,14 @@
             <script src="scripts/Index/index.js"></script>
             <script src="https://accounts.google.com/gsi/client" async></script>
             <script src="https://apis.google.com/js/platform.js" async defer></script>
-            <script src="scripts/Supabase/Supabase.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+            <script type="module">
+                import { createClient } from '@supabase/supabase-js'
+
+                const supabaseUrl = 'https://your-project.supabase.co';
+                const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2bm92YnViZWFqb2t6aWduYWJpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjE3Mzc0MzcsImV4cCI6MjAzNzMxMzQzN30.zv5JXOAoTR6ivRcycWx6eOtV7uLLqIuxjQZX9jjMwvM';
+                const supabase = createClient(supabaseUrl, supabaseKey);
+            </script>
         </div>
     </main>
 </body>

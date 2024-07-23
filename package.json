@@ -1,6 +1,7 @@
 {
   "type": "module",
   "dependencies": {
+    "@supabase/supabase-js": "^2.44.4",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "exceljs": "^4.4.0",

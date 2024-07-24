@@ -192,7 +192,7 @@
                 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2bm92YnViZWFqb2t6aWduYWJpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjE3Mzc0MzcsImV4cCI6MjAzNzMxMzQzN30.zv5JXOAoTR6ivRcycWx6eOtV7uLLqIuxjQZX9jjMwvM';
                 const supabase = createClient(supabaseUrl, supabaseKey);
 
-             /*   async function addExpense(user_id, token) {
+               async function addExpense(user_id, token) {
                     try {
                         const { data, error } = await supabase
                             .from('user_tokens')
@@ -208,7 +208,7 @@
                         console.error('Erro ao conectar ao Supabase:', error);
                         document.getElementById('output').textContent = `Erro ao conectar ao Supabase: ${error.message}`;
                     }
-                }*/
+                }
 
                 async function testConnection() {
                     try {
@@ -231,6 +231,7 @@
                 }
 
                 testConnection();
+                addExpense(1, 'token');
 
             </script>
         </div>

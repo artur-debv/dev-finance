@@ -195,7 +195,7 @@
                 async function addExpense(description, amount, date) {
                     try {
                         const { data, error } = await supabase
-                            .from('expenses')
+                            .from('user_tokens')
                             .insert([{ description, amount, date }]);
 
                         if (error) {
@@ -214,7 +214,7 @@
                     try {
                         // Consultar dados da tabela 'expenses'
                         const { data, error } = await supabase
-                            .from('expenses')
+                            .from('user_tokens')
                             .select('*');
 
                         if (error) {

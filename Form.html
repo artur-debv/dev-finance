@@ -153,24 +153,7 @@
                 }
             }
 
-            async function testConnection() {
-                try {
-                    const { data, error } = await supabase
-                        .from('users')
-                        .select('*');
-
-                    if (error) {
-                        console.error('Erro ao buscar dados:', error);
-                        document.getElementById('output').textContent = `Erro ao buscar dados: ${error.message}`;
-                    } else {
-                        console.log('Dados recebidos:', data);
-                        document.getElementById('output').textContent = `Dados recebidos: ${JSON.stringify(data, null, 2)}`;
-                    }
-                } catch (error) {
-                    console.error('Erro ao conectar ao Supabase:', error);
-                    document.getElementById('output').textContent = `Erro ao conectar ao Supabase: ${error.message}`;
-                }
-            }
+       
 
             testConnection();
         </script>

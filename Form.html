@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="/styles/ResponsivoForm.css">
     <title>Login</title>
 </head>
-
 <body>
     <div class="modes">
         <div class="wrapper">
@@ -42,8 +41,7 @@
                     <div class="input-box">
                         <input type="submit" class="submit" value="Entrar">
                         <div class="div_icon"><span>------------------------</span> OU
-                            <span>------------------------</span>
-                        </div>
+                            <span>------------------------</span></div>
                         <div id="buttonDiv"></div>
                     </div>
                     <!--
@@ -91,72 +89,6 @@
         </div>
         <script src="scripts/Form/Form.js"></script>
         <script src="https://accounts.google.com/gsi/client" async></script>
-        <script type="module">
-            import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.0.0/+esm';
-
-            const supabaseUrl = 'https://wvnovbubeajokzignabi.supabase.co';
-            const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2bm92YnViZWFqb2t6aWduYWJpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjE3Mzc0MzcsImV4cCI6MjA3MzEzNDM3fQ.zv5JXOAoTR6ivRcycWx6eOtV7uLLqIuxjQZX9jjMwvM';
-            const supabase = createClient(supabaseUrl, supabaseKey);
-
-            window.onload = function () {
-                google.accounts.id.initialize({
-                    client_id: "647322329932-g0tfojd1a4mfhimglfrn478lge1h0rkq.apps.googleusercontent.com",
-                    callback: handleCredentialResponse
-                });
-                google.accounts.id.renderButton(
-                    document.getElementById("buttonDiv"),
-                    { theme: "outline" }
-                );
-                google.accounts.id.prompt(); // also display the One Tap dialog
-            }
-
-            async function handleCredentialResponse(response) {
-                console.log('Encoded JWT ID token: ' + response.credential);
-
-                // Supabase authentication using the Google credential
-                const { data, error } = await supabase.auth.signInWithIdToken({
-                    id_token: response.credential,
-                    provider: 'google'
-                });
-
-                if (error) {
-                    console.error('Erro ao fazer login:', error);
-                    document.getElementById('output').textContent = `Erro ao fazer login: ${error.message}`;
-                } else {
-                    const user = data.user;
-                    const session = data.session;
-
-                    console.log('Usuário autenticado:', user);
-                    console.log('Sessão:', session);
-
-                    // Salvar token no banco de dados
-                    await addUser(user.id, session.access_token);
-                }
-            }
-
-            async function addUser(user_id, Token) {
-                try {
-                    const { data, error } = await supabase
-                        .from('users')
-                        .insert([{ user_id, Token }]);
-
-                    if (error) {
-                        console.error('Erro ao inserir dados:', error);
-                        document.getElementById('output').textContent = `Erro ao inserir dados: ${error.message}`;
-                    } else {
-                        console.log('Dados inseridos:', data);
-                        document.getElementById('output').textContent = 'Dados inseridos com sucesso';
-                    }
-                } catch (error) {
-                    console.error('Erro ao conectar ao Supabase:', error);
-                    document.getElementById('output').textContent = `Erro ao conectar ao Supabase: ${error.message}`;
-                }
-            }
-
-       
-
-            testConnection();
-        </script>
     </div>
 </body>
 

@@ -4,7 +4,7 @@ if (!localStorage.getItem('jwtToken')) {
 } else {
 
 
-    window.onload = function () {
+    /*(window.onload = function () {
         const jwtToken = localStorage.getItem('jwtToken');
        
         const decodedToken = parseJwt(jwtToken);
@@ -16,7 +16,7 @@ if (!localStorage.getItem('jwtToken')) {
         }
         
    
-    }
+    }*/
 
 
     function getParameterByName(name, url) {

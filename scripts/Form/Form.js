@@ -116,14 +116,3 @@ function parseJwt(token) {
   return JSON.parse(jsonPayload);
 }
 
-window.onload = function () {
-  google.accounts.id.initialize({
-    client_id: "647322329932-g0tfojd1a4mfhimglfrn478lge1h0rkq.apps.googleusercontent.com",
-    callback: handleCredentialResponse
-  });
-  google.accounts.id.renderButton(
-    document.getElementById("buttonDiv"),
-    { theme: "outline", }  // customization attributes
-  );
-  google.accounts.id.prompt(); // also display the One Tap dialog
-}
